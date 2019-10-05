@@ -25,10 +25,6 @@ public class Castle : MonoBehaviour
     {
         CreateSides();
     }
-    private void OnValidate()
-    {
-        CreateSides();
-    }
     public void CreateSides()
     {
         ResetEpouvantail();
