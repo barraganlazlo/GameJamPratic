@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51013ff003693fd4b958c28c16e101bd, type: 3}
-  m_Name: Escouade1
+  m_Script: {fileID: 11500000, guid: 227e8261692d6844f8f4471e3fdeef78, type: 3}
+  m_Name: Fantassin drapeau
   m_EditorClassIdentifier: 
-  height: 1
-  width: 3
-  waveBegin: 0
-  waveEnd: 15
-  units: 020000000300000002000000
+  id: 3
+  damagesToEpou: 3
+  damagesOnEpouDie: 6
+  damagesToBluff: 3
+  prefab: {fileID: 3361394176959143569, guid: ba777795095718a40a7ba01ce1cfbae2, type: 3}

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51013ff003693fd4b958c28c16e101bd, type: 3}
-  m_Name: Escouade1
+  m_Name: Escouade5
   m_EditorClassIdentifier: 
-  height: 1
-  width: 3
-  waveBegin: 0
-  waveEnd: 15
-  units: 020000000300000002000000
+  height: 2
+  width: 2
+  waveBegin: 5
+  waveEnd: 0
+  units: 010000000100000000000000ffffffff
