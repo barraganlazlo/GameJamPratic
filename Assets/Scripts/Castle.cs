@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[ExecuteInEditMode]
 public class Castle : MonoBehaviour
 {
     [Range(0,10)]
@@ -21,7 +20,7 @@ public class Castle : MonoBehaviour
 
     GameObject epouvantailsParent;
     GameObject spawnersParent;
-    private void Awake()
+    private void Start()
     {
         CreateSides();
     }
