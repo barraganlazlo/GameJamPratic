@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombreDeCote: 6
   ratioX: 0.8
+  offSet: {x: 0, y: 0}
   ratioY: 0.5
   radius: 0.5
   spawnDistance: 8
@@ -299,6 +300,8 @@ MonoBehaviour:
     type: 3}
   prefabSpawner: {fileID: 583525862503101625, guid: 397b534a4f067f247a551357fdf1159b,
     type: 3}
+  epouvantailFace: {fileID: 0}
+  epouvantailDos: {fileID: 0}
 --- !u!68 &1916401610
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -532,6 +535,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3952952267969309035, guid: c7b087b86600bd94384d6d146c9f8710,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2821048905021913596, guid: 8df652b8006f13b40a11bf058dacc20d,
+        type: 3}
+    - target: {fileID: 3952952267969309035, guid: c7b087b86600bd94384d6d146c9f8710,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7b087b86600bd94384d6d146c9f8710, type: 3}
