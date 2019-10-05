@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private WhichPlayer multiplayerScript;
 
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 2.5f;
+    [SerializeField] private float moveSpeed = 1.2f;
     private Vector2 movement;
 
     private Rigidbody2D rb;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        movement.x = Input.GetAxis("Horizontal"+multiplayerScript.idPlayer);
-        movement.y = Input.GetAxis("Vertical" + multiplayerScript.idPlayer);
+        movement.x = Input.GetAxisRaw("Horizontal"+multiplayerScript.idPlayer);
+        movement.y = Input.GetAxisRaw("Vertical" + multiplayerScript.idPlayer);
     }
 }

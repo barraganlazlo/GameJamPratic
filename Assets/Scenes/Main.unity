@@ -141,12 +141,12 @@ PrefabInstance:
     - target: {fileID: 4086580232559884119, guid: 05fbedba63c89f74e89ea01663f62994,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0073269755
+      value: -0.586
       objectReference: {fileID: 0}
     - target: {fileID: 4086580232559884119, guid: 05fbedba63c89f74e89ea01663f62994,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.884
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 4086580232559884119, guid: 05fbedba63c89f74e89ea01663f62994,
         type: 3}
@@ -337,6 +337,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 557453755402136162, guid: bb4f3888d182ce54690a7e1e5ea26062,
+        type: 3}
+      propertyPath: coolDown
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb4f3888d182ce54690a7e1e5ea26062, type: 3}
 --- !u!1 &1916401604
@@ -350,7 +355,9 @@ GameObject:
   - component: {fileID: 1916401606}
   - component: {fileID: 1916401605}
   - component: {fileID: 1916401608}
+  - component: {fileID: 1916401610}
   - component: {fileID: 1916401607}
+  - component: {fileID: 1916401611}
   - component: {fileID: 1916401609}
   m_Layer: 8
   m_Name: Chateau
@@ -397,7 +404,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 427f22ea64458c34bb7a281a875b3279, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f09e088489e3e464387f5989612c1ee3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -431,40 +438,27 @@ EdgeCollider2D:
   m_GameObject: {fileID: 1916401604}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 7086ffe17534a994dab32ce2980b130c, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.3296125, y: -0.62226254}
-  - {x: 0.062277555, y: -0.65175587}
-  - {x: -0.20800662, y: -0.6438826}
-  - {x: -0.4628573, y: -0.58513194}
-  - {x: -0.7418482, y: -0.47095397}
-  - {x: -1.006937, y: -0.20654255}
-  - {x: -1.0488721, y: -0.10399136}
-  - {x: -1.0405929, y: -0.07476236}
-  - {x: -1.0520644, y: -0.07712384}
-  - {x: -1.0618081, y: -0.0037486404}
-  - {x: -1.0410469, y: 0.092498526}
-  - {x: -1.0203791, y: 0.19279696}
-  - {x: -0.92144513, y: 0.33198887}
-  - {x: -0.6882391, y: 0.511406}
-  - {x: -0.36746046, y: 0.62528163}
-  - {x: 0.017023325, y: 0.6692061}
-  - {x: 0.24883956, y: 0.6510073}
-  - {x: 0.49053022, y: 0.60203356}
-  - {x: 0.7271707, y: 0.50780237}
-  - {x: 0.94020116, y: 0.34046775}
-  - {x: 1.0585456, y: 0.1886797}
-  - {x: 1.0903356, y: 0.00042907894}
-  - {x: 1.0587926, y: -0.14743795}
-  - {x: 1.0197556, y: -0.23851393}
-  - {x: 0.82526875, y: -0.4234408}
-  - {x: 0.6119973, y: -0.5463151}
-  - {x: 0.3304901, y: -0.6264669}
+  - {x: -0.9534668, y: 0.11702829}
+  - {x: -1.0235618, y: 0.15388195}
+  - {x: -0.9920546, y: 0.23415086}
+  - {x: -0.9286109, y: 0.32024968}
+  - {x: -0.77975017, y: 0.44271782}
+  - {x: -0.50912964, y: 0.586378}
+  - {x: -0.25712588, y: 0.6420626}
+  - {x: 0.027390808, y: 0.66160643}
+  - {x: 0.41795042, y: 0.61786944}
+  - {x: 0.71329343, y: 0.5083755}
+  - {x: 0.93731654, y: 0.3566615}
+  - {x: 1.0265366, y: 0.20915571}
+  - {x: 1.0624917, y: 0.1242514}
+  - {x: 0.99416625, y: 0.096707694}
 --- !u!68 &1916401608
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -520,13 +514,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb49a3e0ca29ae84fbc5654fa63c42ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreDeCote: 8
+  nombreDeCote: 6
   ratioX: 0.8
   ratioY: 0.5
   radius: 0.5
   spawnDistance: 8
-  prefabEpouvantail: {fileID: 0}
-  prefabSpawner: {fileID: 0}
+  prefabEpouvantail: {fileID: 5646022127109137646, guid: e3a28a346fbe6db4ba03b81ce9598b6e,
+    type: 3}
+  prefabSpawner: {fileID: 583525862503101625, guid: 397b534a4f067f247a551357fdf1159b,
+    type: 3}
+--- !u!68 &1916401610
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916401604}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.7219335, y: -0.21237771}
+  - {x: -1.0144876, y: -0.18557258}
+  - {x: -0.94409263, y: -0.30910844}
+  - {x: -0.65830016, y: -0.5204569}
+  - {x: -0.3345006, y: -0.63314325}
+  - {x: -0.012269914, y: -0.65393126}
+  - {x: 0.28106377, y: -0.638684}
+  - {x: 0.57946956, y: -0.5564071}
+  - {x: 0.83666253, y: -0.43048668}
+  - {x: 0.95557684, y: -0.3147786}
+  - {x: 1.0626119, y: -0.17828608}
+  - {x: 0.75017285, y: -0.25936002}
+--- !u!68 &1916401611
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916401604}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.7106876, y: 0.071165815}
+  - {x: -0.9481079, y: 0.11852875}
+  - {x: -0.81191343, y: 0.2677704}
+  - {x: -0.5899879, y: 0.39403105}
+  - {x: -0.35799456, y: 0.48030773}
+  - {x: 0.008861572, y: 0.52379346}
+  - {x: 0.26270646, y: 0.49690452}
+  - {x: 0.6818247, y: 0.3892238}
+  - {x: 1.0008469, y: 0.09717292}
+  - {x: 0.73610353, y: 0.06099929}
 --- !u!1 &1926431323
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShakeCamera : MonoBehaviour
 {
-
+    public static ShakeCamera instance;
     /// <summary>
     /// fait trembler la camera 
     /// celon l'amplitude voulut 
@@ -19,7 +19,14 @@ public class ShakeCamera : MonoBehaviour
     public float _Amplitude = 0.2f;
     public float _Duration = 0.5f;
 
-
+    private void Awake()
+    {
+        if (instance != null){
+            Debug.LogError("There are Multiples intances of ShakeCamera but it can only be one");
+            return;
+        }
+        instance = this;
+    }
     //__________________________________________________________________________________________________________________
     // Start is called before the first frame update
     void Start()
@@ -29,17 +36,10 @@ public class ShakeCamera : MonoBehaviour
 
     }
 
-    //__________________________________________________________________________________________________________________
-    // Update is called once per frame
-    void Update()
+   
+    public void ShakeCam(float duree, float amplitude)
     {
-        
-        //condition test;
-        if(shake == true)
-        {
-            StartCoroutine(Shaking(_Duration, _Amplitude));
-        }
-
+        StartCoroutine(Shaking(duree, amplitude));
     }
 
     IEnumerator Shaking (float dura, float ampli)
