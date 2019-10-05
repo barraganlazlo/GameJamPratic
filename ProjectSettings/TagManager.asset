@@ -6,6 +6,7 @@ TagManager:
   tags:
   - weapon
   - shootZone
+  - Castle
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - wall
   - playerEnv
   - playerPylr
-  - 
-  - 
+  - unit
+  - castle
   - 
   - 
   - 

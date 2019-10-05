@@ -15,7 +15,7 @@ public class Castle : MonoBehaviour
     public GameObject prefabEpouvantail;
     public GameObject prefabSpawner;
 
-    List<GameObject> epouvantails;
+    List<Epouvantail> epouvantails;
     List<Spawner> spawners;
 
     GameObject epouvantailsParent;
@@ -33,22 +33,26 @@ public class Castle : MonoBehaviour
         {
             float ang = 360f / nombreDeCote;
 
-            GameObject Epouvantail = Instantiate<GameObject>(prefabEpouvantail);
-            Epouvantail.transform.position = PlaceInCircle(i * ang );
-            Epouvantail.transform.parent = epouvantailsParent.transform;
-            epouvantails.Add(Epouvantail);
+            GameObject epou = Instantiate<GameObject>(prefabEpouvantail);
+            epou.transform.position = PlaceInCircle(i * ang );
+            epou.transform.rotation = Quaternion.Euler(0, 0, -i * ang);
+            epou.transform.parent = epouvantailsParent.transform;
+            epouvantails.Add(epou.GetComponent<Epouvantail>());
 
-            GameObject Spawner = Instantiate<GameObject>(prefabSpawner);
-            Spawner.transform.position = PlaceInCircle(i * ang,spawnDistance);
-            Spawner.transform.parent = spawnersParent.transform;
-            spawners.Add(Spawner.GetComponent<Spawner>());
+            GameObject spaw = Instantiate<GameObject>(prefabSpawner);
+            spaw.transform.position = PlaceInCircle(i * ang,spawnDistance);
+            spaw.transform.rotation = Quaternion.Euler(0,0,180 - i * ang);
+            spaw.transform.parent = spawnersParent.transform;
+            spawners.Add(spaw.GetComponent<Spawner>());
+
+           
         }
     }
     void ResetSides()
     {
         if (epouvantails == null)
         {
-            epouvantails = new List<GameObject>();
+            epouvantails = new List<Epouvantail>();
         }
         
         if (spawnersParent != null)
@@ -84,8 +88,8 @@ public class Castle : MonoBehaviour
         Vector3 center = transform.position;
 
         Vector3 pos;
-        pos.x = ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin( ang * Mathf.Deg2Rad));
-        pos.y = ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
+        pos.x = transform.localScale.x *ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin( ang * Mathf.Deg2Rad));
+        pos.y = transform.localScale.y * ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
         pos.z = center.z;
         pos *= distance;
         return pos;
