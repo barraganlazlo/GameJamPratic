@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   height: 2
   width: 2
-  waveBegin: 5
-  waveEnd: 0
+  waveBegin: 2
+  waveEnd: 4
   units: 010000000100000000000000ffffffff
