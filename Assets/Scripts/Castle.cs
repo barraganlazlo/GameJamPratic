@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class Castle : MonoBehaviour
 {
-    [Range(0,10)]
+    public static Castle instance;
+    [Range(0, 10)]
     public int nombreDeCote;
 
     public float ratioX;
@@ -23,26 +23,54 @@ public class Castle : MonoBehaviour
 
     GameObject epouvantailsParent;
     GameObject spawnersParent;
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("There are Multiples Castles but it can be only one");
+            return;
+        }
+        instance = this;
+    }
     private void Start()
     {
         CreateSides();
+    }
+
+    public IEnumerator WavesCoroutine()
+    {
+        foreach (Wave wave in GameManager.instance.waves)
+        {
+            int nbEscouades = Random.Range(wave.nbEscouadeMin, wave.nbEscouadeMax);
+            for (int i = 0; i < nbEscouades; i++)
+            {
+                Spawner sp = spawners[Random.Range(0, spawners.Count)];
+                EscouadeType[] esList = UnitManager.instance.GetEscouadeTypesOfCurrentWave();
+                EscouadeType e = esList[Random.Range(0,esList.Length)];
+                sp.SpawnEscouade(e);
+                float cdNextEscouade = Random.Range(wave.cdNextEscouadeMin,wave.cdNextEscouadeMax);
+                yield return new WaitForSeconds(cdNextEscouade);
+            }
+
+            yield return new WaitForSeconds(wave.cdNextWave);
+        }
     }
     public void CreateSides()
     {
         ResetSides();
         epouvantailsParent = new GameObject("EpouvantailsParent");
         spawnersParent = new GameObject("SpawnersParent");
-        for (int i=0; i<nombreDeCote; i++)
+        for (int i = 0; i < nombreDeCote; i++)
         {
             float ang = 360f / nombreDeCote;
 
             GameObject epou = Instantiate<GameObject>(prefabEpouvantail);
-            epou.transform.position = PlaceInCircle(i * ang );
+            epou.transform.position = PlaceInCircle(i * ang);
             epou.transform.parent = epouvantailsParent.transform;
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
             epouScript.id = i;
             epouvantails.Add(epouScript);
-            if (i >= nombreDeCote*0.25f && i<nombreDeCote * 0.75f)
+            if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)
             {
                 epouScript.SetSprite(epouvantailFace);
                 if (i >= nombreDeCote / 2f + 1)
@@ -53,15 +81,15 @@ public class Castle : MonoBehaviour
             else
             {
                 epouScript.SetSprite(epouvantailDos);
-                if (i >= 1 && i<= nombreDeCote*0.75f)
+                if (i >= 1 && i <= nombreDeCote * 0.75f)
                 {
                     epouScript.SetSprite(epouvantailDos, true);
                 }
             }
 
             GameObject spaw = Instantiate<GameObject>(prefabSpawner);
-            spaw.transform.position = PlaceInCircle(i * ang,spawnDistance);
-            spaw.transform.rotation = Quaternion.Euler(0,0,180 - i * ang);
+            spaw.transform.position = PlaceInCircle(i * ang, spawnDistance);
+            spaw.transform.rotation = Quaternion.Euler(0, 0, 180 - i * ang);
             spaw.transform.parent = spawnersParent.transform;
             Spawner spawScript = spaw.GetComponent<Spawner>();
             spawScript.id = i;
@@ -77,7 +105,7 @@ public class Castle : MonoBehaviour
         {
             epouvantails = new List<Epouvantail>();
         }
-        
+
         if (spawnersParent != null)
         {
             Debug.Log("Destroy ep");
@@ -90,7 +118,7 @@ public class Castle : MonoBehaviour
         {
             spawners = new List<Spawner>();
         }
-        
+
         if (spawnersParent != null)
         {
             Debug.Log("Destroy sp");
@@ -99,13 +127,13 @@ public class Castle : MonoBehaviour
 
         spawners.Clear();
     }
-    Vector3 PlaceInCircle(float ang,float distance= 1)
+    Vector3 PlaceInCircle(float ang, float distance = 1)
     {
         Vector3 center = transform.position;
 
         Vector3 pos;
-        pos.x =offSet.x + transform.localScale.x *ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin( ang * Mathf.Deg2Rad));
-        pos.y = offSet.y+ transform.localScale.y * ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
+        pos.x = offSet.x + transform.localScale.x * ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin(ang * Mathf.Deg2Rad));
+        pos.y = offSet.y + transform.localScale.y * ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
         pos.z = center.z;
         pos *= distance;
         return pos;

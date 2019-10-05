@@ -228,9 +228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombreDeCote: 6
   ratioX: 0.8
-  offSet: {x: 0, y: 0.15}
+  offSet: {x: 0, y: 0.2}
   ratioY: 0.55
-  radius: 0.5
+  radius: 0.65
   spawnDistance: 8
   prefabEpouvantail: {fileID: 5646022127109137646, guid: e3a28a346fbe6db4ba03b81ce9598b6e,
     type: 3}

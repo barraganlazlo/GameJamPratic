@@ -11,16 +11,26 @@ public class Spawner : MonoBehaviour
     public int id;
 
     List<Escouade> escouades;
+
+    public int escouadeId;
     private void Awake()
     {
         escouades = new List<Escouade>();
     }
-    public void SpawnEscouade()
+    public void SpawnEscouade(EscouadeType escouadeType)
     {
         GameObject escouadeGO = Instantiate<GameObject>(escouadePrefab,transform.position,Quaternion.identity);
         Escouade escouade =escouadeGO.GetComponent<Escouade>();
-        escouade.SetType(UnitManager.instance.escouadeTypes[Random.Range(0, UnitManager.instance.escouadeTypes.Length)]);
+        escouade.SetType(escouadeType);
         escouade.Instantiate(this);
         escouades.Add(escouade);
+    }
+    public void SpawnEscouade(int i)
+    {
+        SpawnEscouade(UnitManager.instance.GetEscouadeTypesOfCurrentWave()[i]);
+    }
+    public void SpawnRandomEscouade()
+    {
+        SpawnEscouade(Random.Range(0, UnitManager.instance.GetEscouadeTypesOfCurrentWave().Length));
     }
 }

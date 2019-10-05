@@ -212,7 +212,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 100
   life: 0
+  wave: 0
   buffBar: {fileID: 3142542991561497285}
+  StartCd: 0
+  waves:
+  - nbEscouade: 15
+    cdNextEscouade: 3
+    cdNextWave: 5
+  - nbEscouade: 15
+    cdNextEscouade: 3
+    cdNextWave: 5
 --- !u!1001 &5998809306163357541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,12 +292,12 @@ PrefabInstance:
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -996.4
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1105.6
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
@@ -303,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
@@ -313,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
@@ -323,12 +332,12 @@ PrefabInstance:
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8708980317690936456, guid: 11aab1d2e6fceee4da6822fdb5d44ca0,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11aab1d2e6fceee4da6822fdb5d44ca0, type: 3}

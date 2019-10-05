@@ -10,7 +10,11 @@ public class SpawnerEditor : Editor
         Spawner spawner = (Spawner)target;
         if (GUILayout.Button("Spawn Escouade"))
         {
-            spawner.SpawnEscouade();
+            spawner.SpawnEscouade(spawner.escouadeId);
+        }
+        if (GUILayout.Button("Spawn Random Escouade"))
+        {
+            spawner.SpawnRandomEscouade();
         }
     }
 }

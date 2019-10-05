@@ -1,14 +1,15 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Escouade : MonoBehaviour
 {
     EscouadeType type;
     [HideInInspector]
     public Spawner spawner;
-    Unit[,] units;
-
+    List<Unit> units;
     public float horizontalMargin;
     public float verticalMargin;
+
     public void SetType(EscouadeType type)
     {
         this.type = type;
@@ -16,7 +17,7 @@ public class Escouade : MonoBehaviour
     public void Instantiate(Spawner spawner)
     {
         this.spawner = spawner;
-        units = new Unit[type.height, type.width];
+        units = new List<Unit>();
         for (int i = 0; i < type.height; i++)
         {
             for (int j = 0; j < type.width; j++)
@@ -34,8 +35,9 @@ public class Escouade : MonoBehaviour
                     pos.x += j * hSpace;
                     pos.y += i * vSpace;
                     unitGO.transform.position = pos;
-                    units[i, j] = unitGO.GetComponent<Unit>();
-                    units[i, j].escouade = this;
+                    Unit u = unitGO.GetComponent<Unit>();
+                    units.Add(u);
+                    u.escouade = this;
                 }
                
             }
