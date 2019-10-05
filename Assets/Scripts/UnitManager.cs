@@ -17,15 +17,20 @@ public class UnitManager : MonoBehaviour
             Debug.LogError("There are Multiples UnitManager in the scene but it can only be one ");
         }
         instance = this;
+        LoadEscouadeTypes();
+        LoadUnitTypes();
     }
 
     private void LoadUnitTypes()
     {
         unitTypes = Resources.LoadAll<UnitType>("UnitTypes");
+        Debug.Log("Loaded " + unitTypes.Length + " UnitTypes");
+
     }
     private void LoadEscouadeTypes()
     {
-        unitTypes = Resources.LoadAll<UnitType>("UnitTypes");
+        escouadeTypes = Resources.LoadAll<EscouadeType>("EscouadeTypes");
+        Debug.Log("Loaded " + escouadeTypes.Length + " EscouadeTypes");
     }
 
 }
