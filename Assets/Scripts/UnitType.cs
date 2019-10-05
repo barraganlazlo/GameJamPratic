@@ -4,6 +4,8 @@
 public class UnitType : ScriptableObject
 {
     public int id;
-    public int damages;
+    public int damagesToEpou;
+    public int damagesOnEpouDie;
+    public int damagesToBluff;
     public GameObject prefab;
 }
