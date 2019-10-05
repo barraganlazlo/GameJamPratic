@@ -24,10 +24,6 @@ public class Castle : MonoBehaviour
     {
         CreateSides();
     }
-    private void OnDestroy()
-    {
-        ResetSides();
-    }
     public void CreateSides()
     {
         ResetSides();
