@@ -12,6 +12,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     private GameObject pickableWeapon;
     private Weapon weaponScript;
     private bool canPickWeapon;
+    [SerializeField] private GameObject weaponPos;
 
     [Header("Shoot")]
     private bool canShoot;
@@ -22,9 +23,11 @@ public class PlayerHandleWeapon : MonoBehaviour
     }
     private void Update()
     {
+        //PickDrop
         if (Input.GetButtonDown("PickButton"+multiplayerScript.idPlayer)){
             PickUp();
         }
+        //Shoot
         else if (canShoot && Input.GetButtonDown("InteractButton"+multiplayerScript.idPlayer))
         {
             Shoot();
@@ -56,7 +59,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             weaponScript.isHeld = true;
             canPickWeapon = false;
             newWeapon.transform.parent = this.transform;
-            newWeapon.transform.position = this.transform.position;
+            newWeapon.transform.position = weaponPos.transform.position;
             pickableWeapon = null;
         }
         else

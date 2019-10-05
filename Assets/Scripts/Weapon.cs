@@ -17,12 +17,16 @@ public class Weapon : MonoBehaviour
     [SerializeField] private int accessory_defaultOrderLayer;
     [SerializeField] private int accessory_heldOrderLayer;
 
+    [SerializeField] private GameObject secondSpriteObject;
+
     [Header ("Shoot")]
     [SerializeField] private float distance = 3.0f;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float coolDown;
     private float currentTime;
     private bool coolingDown = false;
+    [SerializeField] private float amplitude;
+    [SerializeField] private float duree;
 
     //apparence 
     public GameObject[] skins;
@@ -74,6 +78,7 @@ public class Weapon : MonoBehaviour
         if (!coolingDown)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
+            ShakeCamera.instance.ShakeCam(duree, amplitude);
             coolingDown = true;
 
             if(switchSkin == false) //changer skin

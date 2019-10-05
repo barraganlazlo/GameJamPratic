@@ -47,7 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   defaultOrderLayer: 4
-  heldOrderLayer: 15
+  heldOrderLayer: 4
+  accessory: {fileID: 0}
+  accessory_defaultOrderLayer: 0
+  accessory_heldOrderLayer: 0
+  secondSpriteObject: {fileID: 0}
   distance: 3
   projectile: {fileID: 0}
   coolDown: 0.5
