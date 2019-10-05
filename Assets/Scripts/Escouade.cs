@@ -3,7 +3,8 @@
 public class Escouade : MonoBehaviour
 {
     EscouadeType type;
-    Spawner spawner;
+    [HideInInspector]
+    public Spawner spawner;
     Unit[,] units;
 
     public float horizontalMargin;
@@ -32,6 +33,7 @@ public class Escouade : MonoBehaviour
                 pos.y += i * vSpace;
                 unitGO.transform.position = pos;
                 units[i, j] = unitGO.GetComponent<Unit>();
+                units[i, j].escouade = this;
             }
         }
         transform.rotation = spawner.transform.rotation;

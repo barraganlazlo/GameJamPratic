@@ -15,20 +15,17 @@ public class Castle : MonoBehaviour
     public float spawnDistance;
     public GameObject prefabEpouvantail;
     public GameObject prefabSpawner;
-    public Sprite epouvantailFace;
-    public Sprite epouvantailDos;
-    public int startLife = 100;
-    [HideInInspector]
-    public int life;
+    public int epouvantailFace;
+    public int epouvantailDos;
+
     List<Epouvantail> epouvantails;
     List<Spawner> spawners;
 
     GameObject epouvantailsParent;
     GameObject spawnersParent;
-    private void Awake()
+    private void Start()
     {
         CreateSides();
-        life = startLife;
     }
     public void CreateSides()
     {
@@ -51,9 +48,7 @@ public class Castle : MonoBehaviour
                 if (i >= nombreDeCote / 2f + 1)
                 {
                     epouScript.SetSprite(epouvantailFace, true);
-
                 }
-
             }
             else
             {
@@ -87,7 +82,6 @@ public class Castle : MonoBehaviour
         {
             Debug.Log("Destroy ep");
             DestroyImmediate(epouvantailsParent);
-            Destroy(epouvantailsParent);
         }
 
         epouvantails.Clear();

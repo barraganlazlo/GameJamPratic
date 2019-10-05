@@ -5,24 +5,77 @@ public class Unit : MonoBehaviour
     [HideInInspector]
     public UnitType type;
     public float speed;
-    Escouade escouade;
+    [HideInInspector]
+    public Escouade escouade;
     public Rigidbody2D r2d;
     bool moving = true;
     bool attacking =false;
     bool attacked=false;
-    private void Start()
+    bool fleeing = false;
+    public float attackSpeed = 1f;
+    float attackTimer;
+    void Start()
     {
-        r2d.velocity = -speed * transform.parent.position.normalized;
+        if (r2d == null)
+        {
+            r2d=GetComponent<Rigidbody2D>();
+        }
+        r2d.velocity = speed * -escouade.transform.position.normalized ;
     }
-    private void Update()
+    void Update()
     {
-        
+        if (attacking)
+        {
+            if (attackTimer < 0)
+            {
+                attackTimer = 1f / attackSpeed;
+                Attack();
+            }
+            else
+            {
+                attackTimer -= Time.deltaTime;
+            }
+        }
     }
-    public void SetMoving(bool b)
+
+    void SetMoving(bool b)
     {
         moving = b;
         r2d.simulated = b;
         GetComponent<Collider2D>().enabled = b;
     }
-
+    public void StartAttacking()
+    {
+        if (attacking)
+        {
+            return;
+        }
+        attacking = true;
+        SetMoving(false);
+    }
+    void StopAttacking()
+    {
+        attacking = false;
+    }
+    public void StartFleeing()
+    {
+        fleeing = true;
+        StopAttacking();
+        Vector3 rot = transform.rotation.eulerAngles;
+        rot.z += 180;
+        transform.rotation = Quaternion.Euler(rot);
+        SetMoving(true);
+    }
+    public bool IsFleeing()
+    {
+        return fleeing;
+    }
+    public void Attack()
+    {
+        DamageEpouvantail();
+    }
+    public void DamageEpouvantail()
+    {
+        escouade.spawner.epouvantail.Damage(type);
+    }
 }
