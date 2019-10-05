@@ -46,6 +46,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             weaponScript.isHeld = true;
             canPickWeapon = false;
             newWeapon.transform.parent = this.transform;
+            newWeapon.transform.position = this.transform.position;
             pickableWeapon = null;
         }
         else

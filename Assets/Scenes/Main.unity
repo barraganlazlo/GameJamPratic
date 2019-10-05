@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 1916401605}
   - component: {fileID: 1916401608}
   - component: {fileID: 1916401607}
+  - component: {fileID: 1916401609}
   m_Layer: 8
   m_Name: Chateau
   m_TagString: Untagged
@@ -507,6 +508,25 @@ EdgeCollider2D:
   - {x: -1.3067691, y: -0.22644848}
   - {x: -1.355331, y: -0.010358065}
   - {x: -1.3176639, y: 0.20601937}
+--- !u!114 &1916401609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916401604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb49a3e0ca29ae84fbc5654fa63c42ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombreDeCote: 8
+  ratioX: 0.8
+  ratioY: 0.5
+  radius: 0.5
+  spawnDistance: 8
+  prefabEpouvantail: {fileID: 0}
+  prefabSpawner: {fileID: 0}
 --- !u!1 &1926431323
 GameObject:
   m_ObjectHideFlags: 0
