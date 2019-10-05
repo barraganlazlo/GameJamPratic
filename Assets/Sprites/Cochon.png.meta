@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: -490187859223187958
     second: Cochon_3
+  - first:
+      213: 2821048905021913596
+    second: Cochon_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -139,8 +142,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 80
-        height: 64
+        width: 100
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,7 +151,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36cf220726f5622418b995f939719e2c
+      spriteID: 610c4cbbbc5ebb0409a948bb887ebc9b
       internalID: 4987720951155222239
       vertices: []
       indices: 
@@ -158,10 +161,10 @@ TextureImporter:
       name: Cochon_1
       rect:
         serializedVersion: 2
-        x: 80
+        x: 100
         y: 0
-        width: 80
-        height: 64
+        width: 100
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,7 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5378227b7f4cedc4ab22b68aebb9beff
+      spriteID: a550d11171fd0fc4bae12e316cfe3698
       internalID: 1703956132825525605
       vertices: []
       indices: 
@@ -179,10 +182,10 @@ TextureImporter:
       name: Cochon_2
       rect:
         serializedVersion: 2
-        x: 160
+        x: 200
         y: 0
-        width: 80
-        height: 64
+        width: 100
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,7 +193,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bb568c7c62dfbc46827ea3d18f7a3bc
+      spriteID: 72297cd3775d45b4aa4c31fc1410a4b0
       internalID: 3556830796591849826
       vertices: []
       indices: 
@@ -200,10 +203,10 @@ TextureImporter:
       name: Cochon_3
       rect:
         serializedVersion: 2
-        x: 240
+        x: 300
         y: 0
-        width: 80
-        height: 64
+        width: 100
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,8 +214,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ce4ae11cfea732418e55857be0220ef
+      spriteID: 2adfca881c98daf4c85bd160a9becc7d
       internalID: -490187859223187958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cochon_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 100
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1225e498dff2c409d5a3c2420a8897
+      internalID: 2821048905021913596
       vertices: []
       indices: 
       edges: []
