@@ -20,6 +20,10 @@ public class Weapon : MonoBehaviour
     private float currentTime;
     private bool coolingDown = false;
 
+    //apparence 
+    public GameObject[] skins;
+    public bool switchSkin = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +58,17 @@ public class Weapon : MonoBehaviour
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
             coolingDown = true;
+
+            if(switchSkin == false) //changer skin
+            {
+                skins[1].SetActive(false);
+
+            }
+            else
+            {
+                skins[0].SetActive(false);
+                skins[1].SetActive(true);
+            }
         }
     }
 
@@ -61,6 +76,7 @@ public class Weapon : MonoBehaviour
     {
         if (coolingDown)
         {
+
             Debug.Log(currentTime);
             currentTime -= Time.deltaTime;
             if (currentTime <= 0)
@@ -68,6 +84,19 @@ public class Weapon : MonoBehaviour
                 //canShoot
                 currentTime = coolDown;
                 coolingDown = false;
+
+                if (switchSkin == false) //changer skin une fois le timer finis
+                {
+                    skins[1].SetActive(true);
+
+                }
+                else
+                {
+                    skins[0].SetActive(true);
+                    skins[1].SetActive(false);
+                }
+
+
             }
         }
     }
