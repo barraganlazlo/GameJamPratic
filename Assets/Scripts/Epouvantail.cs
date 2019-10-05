@@ -3,16 +3,19 @@ using System.Collections;
 
 public class Epouvantail : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start()
+    SpriteRenderer spriteRenderer;
+    void Awake()
     {
-
+        spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetSprite(Sprite sprite, bool flipX = false)
     {
-
+        if (spriteRenderer==null)
+        {
+            spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
+        }
+        spriteRenderer.sprite = sprite;
+        spriteRenderer.flipX = flipX;
     }
 }
