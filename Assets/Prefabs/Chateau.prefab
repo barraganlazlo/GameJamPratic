@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2194289305204784842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 3149953486571311178}
   m_Father: {fileID: 0}
@@ -228,12 +228,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombreDeCote: 6
   ratioX: 0.8
-  ratioY: 0.5
+  offSet: {x: 0, y: 0.15}
+  ratioY: 0.55
   radius: 0.5
   spawnDistance: 8
   prefabEpouvantail: {fileID: 5646022127109137646, guid: e3a28a346fbe6db4ba03b81ce9598b6e,
     type: 3}
   prefabSpawner: {fileID: 583525862503101625, guid: 397b534a4f067f247a551357fdf1159b,
+    type: 3}
+  epouvantailFace: {fileID: -1670035609148076765, guid: 5b12165bf2333a84483d5efc3c061537,
+    type: 3}
+  epouvantailDos: {fileID: 3810609747141767923, guid: 5b12165bf2333a84483d5efc3c061537,
     type: 3}
 --- !u!1 &6964879460278388695
 GameObject:

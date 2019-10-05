@@ -6,6 +6,8 @@ public class PlayerHandleWeapon : MonoBehaviour
 {
     private WhichPlayer multiplayerScript;
 
+    private Animator animator;
+
     [Header ("Pick and Drop")]
     private GameObject currentWeapon = null;
     private bool holdingWeapon = false;
@@ -20,6 +22,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     private void Start()
     {
         multiplayerScript = GetComponent<WhichPlayer>();
+        animator = GetComponentInChildren<Animator>();
     }
     private void Update()
     {
@@ -30,6 +33,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         //Shoot
         else if (canShoot && Input.GetButtonDown("InteractButton"+multiplayerScript.idPlayer))
         {
+            animator.SetTrigger("angry");
             Shoot();
         }
         
@@ -78,6 +82,7 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     void Shoot()
     {
+
         weaponScript.Shoot();
     }
 

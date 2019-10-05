@@ -9,19 +9,33 @@ public class Castle : MonoBehaviour
     public int nombreDeCote;
 
     public float ratioX;
+    public Vector2 offSet;
     public float ratioY;
     public float radius;
     public float spawnDistance;
     public GameObject prefabEpouvantail;
     public GameObject prefabSpawner;
+    public Sprite epouvantailFace;
+    public Sprite epouvantailDos;
+
 
     List<Epouvantail> epouvantails;
     List<Spawner> spawners;
 
     GameObject epouvantailsParent;
     GameObject spawnersParent;
-    private void Start()
+    private void Awake()
     {
+        GameObject go = GameObject.Find("EpouvantailsParent");
+        if (go != null)
+        {
+            Destroy(go);
+        }
+        go = GameObject.Find("SpawnersParent");
+        if (go != null)
+        {
+            Destroy(go);
+        }
         CreateSides();
     }
     public void CreateSides()
@@ -35,17 +49,33 @@ public class Castle : MonoBehaviour
 
             GameObject epou = Instantiate<GameObject>(prefabEpouvantail);
             epou.transform.position = PlaceInCircle(i * ang );
-            epou.transform.rotation = Quaternion.Euler(0, 0, -i * ang);
             epou.transform.parent = epouvantailsParent.transform;
-            epouvantails.Add(epou.GetComponent<Epouvantail>());
+            Epouvantail epouScript = epou.GetComponent<Epouvantail>();
+            epouvantails.Add(epouScript);
+            if (i >= nombreDeCote*0.25f && i<nombreDeCote * 0.75f)
+            {
+                epouScript.SetSprite(epouvantailFace);
+                if (i >= nombreDeCote / 2f + 1)
+                {
+                    epouScript.SetSprite(epouvantailFace, true);
+
+                }
+
+            }
+            else
+            {
+                epouScript.SetSprite(epouvantailDos);
+                if (i >= 1 && i<= nombreDeCote*0.75f)
+                {
+                    epouScript.SetSprite(epouvantailDos, true);
+                }
+            }
 
             GameObject spaw = Instantiate<GameObject>(prefabSpawner);
             spaw.transform.position = PlaceInCircle(i * ang,spawnDistance);
             spaw.transform.rotation = Quaternion.Euler(0,0,180 - i * ang);
             spaw.transform.parent = spawnersParent.transform;
             spawners.Add(spaw.GetComponent<Spawner>());
-
-           
         }
     }
     void ResetSides()
@@ -58,8 +88,8 @@ public class Castle : MonoBehaviour
         if (spawnersParent != null)
         {
             Debug.Log("Destroy ep");
-            //StartCoroutine(Destroy(epouvantailsParent));//allow destroying in edit Mode
             DestroyImmediate(epouvantailsParent);
+            Destroy(epouvantailsParent);
         }
 
         epouvantails.Clear();
@@ -73,23 +103,17 @@ public class Castle : MonoBehaviour
         {
             Debug.Log("Destroy sp");
             DestroyImmediate(spawnersParent);
-            //StartCoroutine(Destroy(spawnersParent));//allow destroying in edit Mode
         }
 
         spawners.Clear();
-    }
-    IEnumerator Destroy(GameObject go) //destroy go in edit mode
-    {
-        yield return new WaitForEndOfFrame();
-        DestroyImmediate(go);
     }
     Vector3 PlaceInCircle(float ang,float distance= 1)
     {
         Vector3 center = transform.position;
 
         Vector3 pos;
-        pos.x = transform.localScale.x *ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin( ang * Mathf.Deg2Rad));
-        pos.y = transform.localScale.y * ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
+        pos.x =offSet.x + transform.localScale.x *ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin( ang * Mathf.Deg2Rad));
+        pos.y = offSet.y+ transform.localScale.y * ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
         pos.z = center.z;
         pos *= distance;
         return pos;
