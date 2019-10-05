@@ -3,6 +3,11 @@ using System.Collections;
 
 public class Epouvantail : MonoBehaviour
 {
+    [HideInInspector]
+    public int id;
+
+    [HideInInspector]
+    public Spawner spawner;
     SpriteRenderer spriteRenderer;
     void Awake()
     {

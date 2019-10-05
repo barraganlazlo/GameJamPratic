@@ -17,8 +17,9 @@ public class Castle : MonoBehaviour
     public GameObject prefabSpawner;
     public Sprite epouvantailFace;
     public Sprite epouvantailDos;
-
-
+    public int startLife = 100;
+    [HideInInspector]
+    public int life;
     List<Epouvantail> epouvantails;
     List<Spawner> spawners;
 
@@ -26,17 +27,8 @@ public class Castle : MonoBehaviour
     GameObject spawnersParent;
     private void Awake()
     {
-        GameObject go = GameObject.Find("EpouvantailsParent");
-        if (go != null)
-        {
-            Destroy(go);
-        }
-        go = GameObject.Find("SpawnersParent");
-        if (go != null)
-        {
-            Destroy(go);
-        }
         CreateSides();
+        life = startLife;
     }
     public void CreateSides()
     {
@@ -51,6 +43,7 @@ public class Castle : MonoBehaviour
             epou.transform.position = PlaceInCircle(i * ang );
             epou.transform.parent = epouvantailsParent.transform;
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
+            epouScript.id = i;
             epouvantails.Add(epouScript);
             if (i >= nombreDeCote*0.25f && i<nombreDeCote * 0.75f)
             {
@@ -75,7 +68,12 @@ public class Castle : MonoBehaviour
             spaw.transform.position = PlaceInCircle(i * ang,spawnDistance);
             spaw.transform.rotation = Quaternion.Euler(0,0,180 - i * ang);
             spaw.transform.parent = spawnersParent.transform;
-            spawners.Add(spaw.GetComponent<Spawner>());
+            Spawner spawScript = spaw.GetComponent<Spawner>();
+            spawScript.id = i;
+            spawners.Add(spawScript);
+            spawScript.epouvantail = epouScript;
+            epouScript.spawner = spawScript;
+
         }
     }
     void ResetSides()
