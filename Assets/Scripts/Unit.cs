@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
@@ -8,10 +6,17 @@ public class Unit : MonoBehaviour
     public UnitType type;
     public float speed;
     Escouade escouade;
-    void Update()
+    public Rigidbody2D r2d;
+    bool moving = true;
+    private void Start()
     {
-        Vector3 v = - speed * transform.parent.position.normalized * Time.deltaTime;
-        transform.position +=  v;
-        Debug.Log(v);
+        r2d.velocity = -speed * transform.parent.position.normalized;
     }
+    public void SetMoving(bool b)
+    {
+        moving = b;
+        r2d.simulated = b;
+        GetComponent<Collider2D>().enabled = b;
+    }
+
 }

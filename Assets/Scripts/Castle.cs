@@ -88,8 +88,8 @@ public class Castle : MonoBehaviour
         Vector3 center = transform.position;
 
         Vector3 pos;
-        pos.x = ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin( ang * Mathf.Deg2Rad));
-        pos.y = ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
+        pos.x = transform.localScale.x *ratioX * (center.x + Mathf.Sin(ang * Mathf.Deg2Rad) + radius * Mathf.Sin( ang * Mathf.Deg2Rad));
+        pos.y = transform.localScale.y * ratioY * (center.y + Mathf.Cos(ang * Mathf.Deg2Rad) + radius * Mathf.Cos(ang * Mathf.Deg2Rad));
         pos.z = center.z;
         pos *= distance;
         return pos;

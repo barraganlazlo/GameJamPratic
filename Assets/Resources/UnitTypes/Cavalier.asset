@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   damages: 5
-  prefab: {fileID: 0}
+  horizontalSize: 0.3
+  verticalSize: 0.3
+  prefab: {fileID: 5318487154560606895, guid: ec272c8628f8a4b409d8eb6c664b238d, type: 3}
