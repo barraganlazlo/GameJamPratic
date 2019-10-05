@@ -11,13 +11,13 @@ public class ShakeCamera : MonoBehaviour
     /// et pendant le temps indiqué.
     /// </summary>
 
-    public bool shake = false;
+    [HideInInspector] public bool shake = false;
 
     private Vector3 startPosition;
     private Transform _Cam;
 
-    public float _Amplitude = 0.2f;
-    public float _Duration = 0.5f;
+    private float _Amplitude = 0.2f;
+    private float _Duration = 0.5f;
 
     private void Awake()
     {
@@ -31,15 +31,25 @@ public class ShakeCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _Cam = GameObject.FindObjectOfType<Camera>().transform;
+        _Cam = Camera.main.transform;
         startPosition = _Cam.position;
 
     }
 
-   
+    private void Update()
+    {
+        if (shake)
+        {
+            StartCoroutine(Shaking(_Duration, _Amplitude));
+        }
+    }
+
+
     public void ShakeCam(float duree, float amplitude)
     {
-        StartCoroutine(Shaking(duree, amplitude));
+        _Amplitude = amplitude;
+        _Duration = duree;
+        shake = true;
     }
 
     IEnumerator Shaking (float dura, float ampli)

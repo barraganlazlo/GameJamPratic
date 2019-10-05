@@ -68,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 3
   m_Sprite: {fileID: 5295613734372021565, guid: d77bf26616c570149bc73e818540e6ac,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -148,26 +148,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
+    - target: {fileID: 7451529737212236921, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5427662184602737365, guid: d77bf26616c570149bc73e818540e6ac,
-        type: 3}
-    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      propertyPath: m_LocalPosition.x
+      value: -0.028299995
       objectReference: {fileID: 0}
-    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
+    - target: {fileID: 7451529737212236920, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
+      propertyPath: m_Name
+      value: Arme
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -190,15 +179,56 @@ PrefabInstance:
       propertyPath: skins.Array.data[1]
       value: 
       objectReference: {fileID: 2770952382352253275}
-    - target: {fileID: 7451529737212236921, guid: 7f5f1af8584c912438c698fcdf45440e,
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.028299995
+      propertyPath: accessory
+      value: 
+      objectReference: {fileID: 2770952382352253275}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: accessory_heldOrderLayer
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 7451529737212236920, guid: 7f5f1af8584c912438c698fcdf45440e,
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: m_Name
-      value: Arme
+      propertyPath: accessory_defaultOrderLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: coolDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: amplitude
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: duree
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5427662184602737365, guid: d77bf26616c570149bc73e818540e6ac,
+        type: 3}
+    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f5f1af8584c912438c698fcdf45440e, type: 3}
