@@ -21,7 +21,7 @@ public class Epouvantail : MonoBehaviour
     public void SetSprite(int id, bool flipX = false)
     {
         spriteId = id;
-        spriteRenderer.sprite = UnitManager.instance.EpouvantailsSprites[id];
+        spriteRenderer.sprite = UnitManager.instance.epouvantailsSprites[id];
         spriteRenderer.flipX = flipX;
     }
     public void Damage(UnitType type)

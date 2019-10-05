@@ -27,14 +27,13 @@ public class GameManager : MonoBehaviour
         if (life > val)
         {
             life -= val;
-            buffBar.rectTransform.localScale = new Vector2((float) life / (float) startLife, 1);
+            buffBar.fillAmount =((float) life )/ ((float) startLife);
         }
         else
         {
             life = 0;
             Lose();
-            buffBar.rectTransform.localScale = new Vector2(0, 1);
-
+            buffBar.fillAmount = 0;
         }
     }
     public void Lose()

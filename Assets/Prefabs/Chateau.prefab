@@ -236,10 +236,8 @@ MonoBehaviour:
     type: 3}
   prefabSpawner: {fileID: 583525862503101625, guid: 397b534a4f067f247a551357fdf1159b,
     type: 3}
-  epouvantailFace: {fileID: -1670035609148076765, guid: 5b12165bf2333a84483d5efc3c061537,
-    type: 3}
-  epouvantailDos: {fileID: 3810609747141767923, guid: 5b12165bf2333a84483d5efc3c061537,
-    type: 3}
+  epouvantailFace: 0
+  epouvantailDos: 4
 --- !u!1 &6964879460278388695
 GameObject:
   m_ObjectHideFlags: 0
