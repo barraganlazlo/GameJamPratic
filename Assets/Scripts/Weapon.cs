@@ -8,10 +8,14 @@ public class Weapon : MonoBehaviour
  
     private Collider2D trigger;
     private SpriteRenderer sr;
+    private SpriteRenderer asr;
 
     [Header ("Set sorting orders")]
     [SerializeField] private int defaultOrderLayer;
     [SerializeField] private int heldOrderLayer;
+    [SerializeField] private GameObject accessory;
+    [SerializeField] private int accessory_defaultOrderLayer;
+    [SerializeField] private int accessory_heldOrderLayer;
 
     [Header ("Shoot")]
     [SerializeField] private float distance = 3.0f;
@@ -30,6 +34,11 @@ public class Weapon : MonoBehaviour
         trigger = GetComponent<Collider2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         sr.sortingOrder = defaultOrderLayer;
+        if (accessory != null)
+        {
+            asr = accessory.GetComponent<SpriteRenderer>();
+            asr.sortingOrder = accessory_defaultOrderLayer;
+        }
 
         currentTime = coolDown;
     }
@@ -41,11 +50,19 @@ public class Weapon : MonoBehaviour
         {
             trigger.enabled = false;
             sr.sortingOrder = heldOrderLayer;
+            if (accessory != null)
+            {
+                asr.sortingOrder = accessory_heldOrderLayer;
+            }
         }
         else if (!isHeld && !trigger.enabled)
         {
             trigger.enabled = true;
             sr.sortingOrder = defaultOrderLayer;
+            if (accessory != null)
+            {
+                asr.sortingOrder = accessory_defaultOrderLayer;
+            }
             currentTime = coolDown;
         }
 
@@ -62,7 +79,6 @@ public class Weapon : MonoBehaviour
             if(switchSkin == false) //changer skin
             {
                 skins[1].SetActive(false);
-
             }
             else
             {
@@ -95,8 +111,6 @@ public class Weapon : MonoBehaviour
                     skins[0].SetActive(true);
                     skins[1].SetActive(false);
                 }
-
-
             }
         }
     }
