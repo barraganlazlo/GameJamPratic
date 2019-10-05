@@ -12,5 +12,6 @@ public class CastleEditor : Editor
         {
             castle.CreateSides();
         }
+        EditorUtility.SetDirty(castle);
     }
 }

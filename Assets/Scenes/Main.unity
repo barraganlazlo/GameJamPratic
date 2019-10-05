@@ -141,12 +141,12 @@ PrefabInstance:
     - target: {fileID: 4086580232559884119, guid: 05fbedba63c89f74e89ea01663f62994,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0073269755
+      value: -0.586
       objectReference: {fileID: 0}
     - target: {fileID: 4086580232559884119, guid: 05fbedba63c89f74e89ea01663f62994,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.884
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 4086580232559884119, guid: 05fbedba63c89f74e89ea01663f62994,
         type: 3}
@@ -192,6 +192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086580232559884112, guid: 05fbedba63c89f74e89ea01663f62994,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05fbedba63c89f74e89ea01663f62994, type: 3}
@@ -351,6 +356,7 @@ GameObject:
   - component: {fileID: 1916401605}
   - component: {fileID: 1916401608}
   - component: {fileID: 1916401607}
+  - component: {fileID: 1916401609}
   m_Layer: 8
   m_Name: Chateau
   m_TagString: Untagged
@@ -507,6 +513,27 @@ EdgeCollider2D:
   - {x: -1.3067691, y: -0.22644848}
   - {x: -1.355331, y: -0.010358065}
   - {x: -1.3176639, y: 0.20601937}
+--- !u!114 &1916401609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916401604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb49a3e0ca29ae84fbc5654fa63c42ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombreDeCote: 6
+  ratioX: 0.8
+  ratioY: 0.5
+  radius: 0.5
+  spawnDistance: 8
+  prefabEpouvantail: {fileID: 5646022127109137646, guid: e3a28a346fbe6db4ba03b81ce9598b6e,
+    type: 3}
+  prefabSpawner: {fileID: 583525862503101625, guid: 397b534a4f067f247a551357fdf1159b,
+    type: 3}
 --- !u!1 &1926431323
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[ExecuteInEditMode]
 public class Castle : MonoBehaviour
 {
     [Range(0,10)]
@@ -21,17 +20,13 @@ public class Castle : MonoBehaviour
 
     GameObject epouvantailsParent;
     GameObject spawnersParent;
-    private void Awake()
-    {
-        CreateSides();
-    }
-    private void OnValidate()
+    private void Start()
     {
         CreateSides();
     }
     public void CreateSides()
     {
-        ResetEpouvantail();
+        ResetSides();
         epouvantailsParent = new GameObject("EpouvantailsParent");
         spawnersParent = new GameObject("SpawnersParent");
         for (int i=0; i<nombreDeCote; i++)
@@ -49,20 +44,34 @@ public class Castle : MonoBehaviour
             spawners.Add(Spawner.GetComponent<Spawner>());
         }
     }
-    void ResetEpouvantail()
+    void ResetSides()
     {
         if (epouvantails == null)
         {
             epouvantails = new List<GameObject>();
         }
-        StartCoroutine(Destroy(epouvantailsParent));//allow destroying in edit Mode
+        
+        if (spawnersParent != null)
+        {
+            Debug.Log("Destroy ep");
+            //StartCoroutine(Destroy(epouvantailsParent));//allow destroying in edit Mode
+            DestroyImmediate(epouvantailsParent);
+        }
+
         epouvantails.Clear();
 
         if (spawners == null)
         {
             spawners = new List<Spawner>();
         }
-        StartCoroutine(Destroy(spawnersParent));//allow destroying in edit Mode
+        
+        if (spawnersParent != null)
+        {
+            Debug.Log("Destroy sp");
+            DestroyImmediate(spawnersParent);
+            //StartCoroutine(Destroy(spawnersParent));//allow destroying in edit Mode
+        }
+
         spawners.Clear();
     }
     IEnumerator Destroy(GameObject go) //destroy go in edit mode

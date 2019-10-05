@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7451529736856992031}
   - component: {fileID: 7451529736856992030}
   m_Layer: 0
-  m_Name: arme
+  m_Name: arme_base
   m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHeld: 0
+  defaultOrderLayer: 4
+  heldOrderLayer: 6
+  distance: 3
+  projectile: {fileID: 0}
 --- !u!61 &7451529736856992030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,7 +146,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
