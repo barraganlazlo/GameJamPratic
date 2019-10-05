@@ -15,27 +15,16 @@ public class Castle : MonoBehaviour
     public float spawnDistance;
     public GameObject prefabEpouvantail;
     public GameObject prefabSpawner;
-    public Sprite epouvantailFace;
-    public Sprite epouvantailDos;
-
+    public int epouvantailFace;
+    public int epouvantailDos;
 
     List<Epouvantail> epouvantails;
     List<Spawner> spawners;
 
     GameObject epouvantailsParent;
     GameObject spawnersParent;
-    private void Awake()
+    private void Start()
     {
-        GameObject go = GameObject.Find("EpouvantailsParent");
-        if (go != null)
-        {
-            Destroy(go);
-        }
-        go = GameObject.Find("SpawnersParent");
-        if (go != null)
-        {
-            Destroy(go);
-        }
         CreateSides();
     }
     public void CreateSides()
@@ -51,6 +40,7 @@ public class Castle : MonoBehaviour
             epou.transform.position = PlaceInCircle(i * ang );
             epou.transform.parent = epouvantailsParent.transform;
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
+            epouScript.id = i;
             epouvantails.Add(epouScript);
             if (i >= nombreDeCote*0.25f && i<nombreDeCote * 0.75f)
             {
@@ -58,9 +48,7 @@ public class Castle : MonoBehaviour
                 if (i >= nombreDeCote / 2f + 1)
                 {
                     epouScript.SetSprite(epouvantailFace, true);
-
                 }
-
             }
             else
             {
@@ -75,7 +63,12 @@ public class Castle : MonoBehaviour
             spaw.transform.position = PlaceInCircle(i * ang,spawnDistance);
             spaw.transform.rotation = Quaternion.Euler(0,0,180 - i * ang);
             spaw.transform.parent = spawnersParent.transform;
-            spawners.Add(spaw.GetComponent<Spawner>());
+            Spawner spawScript = spaw.GetComponent<Spawner>();
+            spawScript.id = i;
+            spawners.Add(spawScript);
+            spawScript.epouvantail = epouScript;
+            epouScript.spawner = spawScript;
+
         }
     }
     void ResetSides()
@@ -89,7 +82,6 @@ public class Castle : MonoBehaviour
         {
             Debug.Log("Destroy ep");
             DestroyImmediate(epouvantailsParent);
-            Destroy(epouvantailsParent);
         }
 
         epouvantails.Clear();

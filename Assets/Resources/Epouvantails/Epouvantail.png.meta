@@ -160,7 +160,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47c4e39ad079c274bb6c43851a92907a
+      spriteID: e1ace0ab2a9549845935683c9d7de117
       internalID: -1670035609148076765
       vertices: []
       indices: 
@@ -181,11 +181,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c5a23e23b543b342a4b2de50588174b
       internalID: 3810609747141767923
-      vertices: []
-      indices: 
-      edges: []
       weights: []
     - serializedVersion: 2
       name: Epouvantail_2
@@ -202,7 +198,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50766d5011d76f449b323cba77ffa0df
+      spriteID: cb2671096122cd246bdf00c260cfd926
       internalID: -5632822477468176328
       vertices: []
       indices: 
@@ -223,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4d758bb5b2e80247843c53a2a5f7365
+      spriteID: e2411c8505742e64683df8dd4049d639
       internalID: 8056934753510498889
       vertices: []
       indices: 
@@ -244,7 +240,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0cccfcc2b00bdb4ea575d90f621e501
+      spriteID: 4cf84c705f7326d4386a388b56f1029a
       internalID: 715456767119698030
       vertices: []
       indices: 
@@ -265,7 +261,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20c825820f867f74285555c53a3cfe64
+      spriteID: 3563b612f374bbc4fa5415d5ff674ee5
       internalID: 4648765645241944404
       vertices: []
       indices: 
@@ -286,7 +282,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c620d07c3e26cfd46b4b2c7f978c3ff9
+      spriteID: 503d1f9686f74ea43b0ccb3d03c0594d
       internalID: 8396275322206535918
       vertices: []
       indices: 
@@ -307,7 +303,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 801c5afbec1c12f4a9df88c990de7084
+      spriteID: da7378b68f7648148bbf5242e746962a
       internalID: 6872714609550613455
       vertices: []
       indices: 

@@ -10,6 +10,9 @@ public class UnitManager : MonoBehaviour
     public EscouadeType[] escouadeTypes;
     [HideInInspector]
     public UnitType[] unitTypes;
+
+    [HideInInspector]
+    public Sprite[] EpouvantailsSprites;
     void Awake()
     {
         if (instance != null)
@@ -19,6 +22,7 @@ public class UnitManager : MonoBehaviour
         instance = this;
         LoadEscouadeTypes();
         LoadUnitTypes();
+        EpouvantailsSprites = Resources.LoadAll<Sprite>("Epouvantails");
     }
 
     private void LoadUnitTypes()

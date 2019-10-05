@@ -5,6 +5,10 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject escouadePrefab;
+    [HideInInspector]
+    public Epouvantail epouvantail;
+    [HideInInspector]
+    public int id;
 
     List<Escouade> escouades;
     private void Awake()
