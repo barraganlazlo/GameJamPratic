@@ -40,12 +40,12 @@ public class Castle : MonoBehaviour
 
             GameObject Epouvantail = Instantiate<GameObject>(prefabEpouvantail);
             Epouvantail.transform.position = PlaceInCircle(i * ang );
-            Epouvantail.transform.parent = spawnersParent.transform;
+            Epouvantail.transform.parent = epouvantailsParent.transform;
             epouvantails.Add(Epouvantail);
 
             GameObject Spawner = Instantiate<GameObject>(prefabSpawner);
             Spawner.transform.position = PlaceInCircle(i * ang,spawnDistance);
-            Spawner.transform.parent = epouvantailsParent.transform;
+            Spawner.transform.parent = spawnersParent.transform;
             spawners.Add(Spawner.GetComponent<Spawner>());
         }
     }
