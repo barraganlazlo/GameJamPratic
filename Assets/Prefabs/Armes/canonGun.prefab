@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6977588666976523133
+--- !u!1001 &6840075404596567404
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7451529736856992024, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Name
-      value: arbaliste
+      value: canonGun
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -71,22 +71,22 @@ PrefabInstance:
         type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 3007598990034543012, guid: 49bb125bb64b255429a0551c9bea6c1d,
+      objectReference: {fileID: 7362510732819067313, guid: 5937f12e7d25da541b9e6c05acee4148,
         type: 3}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.9433962
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.8191196
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.04004982
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f5f1af8584c912438c698fcdf45440e, type: 3}

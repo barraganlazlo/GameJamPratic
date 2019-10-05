@@ -8,8 +8,14 @@ public class Weapon : MonoBehaviour
  
     private Collider2D trigger;
     private SpriteRenderer sr;
+
+    [Header ("Set sorting orders")]
     [SerializeField] private int defaultOrderLayer;
     [SerializeField] private int heldOrderLayer;
+
+    [Header ("Shoot")]
+    [SerializeField] private float distance = 3.0f;
+    [SerializeField] private GameObject projectile;
 
     // Start is called before the first frame update
     void Start()
@@ -32,5 +38,11 @@ public class Weapon : MonoBehaviour
             trigger.enabled = true;
             sr.sortingOrder = defaultOrderLayer;
         }
+    }
+
+    public void Shoot()
+    {
+        Debug.Log("Shoooooooooooooooooooot");
+        Instantiate(projectile, transform.position, Quaternion.identity);
     }
 }
