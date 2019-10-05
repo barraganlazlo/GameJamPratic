@@ -16,6 +16,9 @@ public class Weapon : MonoBehaviour
     [Header ("Shoot")]
     [SerializeField] private float distance = 3.0f;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private float coolDown;
+    private float currentTime;
+    private bool coolingDown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +26,8 @@ public class Weapon : MonoBehaviour
         trigger = GetComponent<Collider2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         sr.sortingOrder = defaultOrderLayer;
+
+        currentTime = coolDown;
     }
 
     // Update is called once per frame
@@ -37,12 +42,33 @@ public class Weapon : MonoBehaviour
         {
             trigger.enabled = true;
             sr.sortingOrder = defaultOrderLayer;
+            currentTime = coolDown;
         }
+
+        timer();
     }
 
     public void Shoot()
     {
-        Debug.Log("Shoooooooooooooooooooot");
-        Instantiate(projectile, transform.position, Quaternion.identity);
+        if (!coolingDown)
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            coolingDown = true;
+        }
+    }
+
+    private void timer()
+    {
+        if (coolingDown)
+        {
+            Debug.Log(currentTime);
+            currentTime -= Time.deltaTime;
+            if (currentTime <= 0)
+            {
+                //canShoot
+                currentTime = coolDown;
+                coolingDown = false;
+            }
+        }
     }
 }

@@ -50,6 +50,7 @@ MonoBehaviour:
   heldOrderLayer: 6
   distance: 3
   projectile: {fileID: 0}
+  coolDown: 1.5
 --- !u!61 &7451529736856992030
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        movement.x = Input.GetAxis("Horizontal"+multiplayerScript.idPlayer);
-        movement.y = Input.GetAxis("Vertical" + multiplayerScript.idPlayer);
+        movement.x = Input.GetAxisRaw("Horizontal"+multiplayerScript.idPlayer);
+        movement.y = Input.GetAxisRaw("Vertical" + multiplayerScript.idPlayer);
     }
 }
