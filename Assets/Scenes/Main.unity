@@ -152,12 +152,14 @@ MonoBehaviour:
   sounds:
   - name: PickWeapon
     clip: {fileID: 8300000, guid: cc46ff6b1c0730846a968c7ecb45f402, type: 3}
-    volume: 0.2
+    loop: 0
+    volume: 0.1
     pitch: 1
     source: {fileID: 0}
   - name: DropWeapon
     clip: {fileID: 8300000, guid: bc992777ac67ed74e8afc818fc604a2b, type: 3}
-    volume: 0.2
+    loop: 0
+    volume: 0.1
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &614007910
