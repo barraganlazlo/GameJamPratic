@@ -45,7 +45,6 @@ public class Escouade : MonoBehaviour
                
             }
         }
-        transform.rotation = spawner.transform.rotation;
     }
     public bool Flee(int id)
     {
@@ -71,6 +70,13 @@ public class Escouade : MonoBehaviour
         {
             units.Remove(toRemove[0]);
             toRemove.RemoveAt(0);
+        }
+    }
+    public void Flip()
+    {
+        foreach(Unit u in units)
+        {
+            u.Flip();
         }
     }
 }

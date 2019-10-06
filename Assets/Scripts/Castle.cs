@@ -9,7 +9,7 @@ public class Castle : MonoBehaviour
     public bool spawning = true;
     [Range(0, 10)]
     public int nombreDeCote;
-
+    public float Decallage;
     public float ratioX;
     public Vector2 offSet;
     public float ratioY;
@@ -69,36 +69,41 @@ public class Castle : MonoBehaviour
             float ang = 360f / nombreDeCote;
 
             GameObject epou = Instantiate<GameObject>(prefabEpouvantail);
-            epou.transform.position = PlaceInCircle(i * ang);
+            epou.transform.position = PlaceInCircle(i * ang +Decallage);
             epou.transform.parent = epouvantailsParent.transform;
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
             epouScript.id = i;
             epouvantails.Add(epouScript);
-            /*if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)
+            if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)
             {
-                epouScript.SetSprite(epouvantailFace);
                 if (i >= nombreDeCote / 2f + 1)
                 {
-                    epouScript.SetSprite(epouvantailFace, true);
+                    epouScript.SetSprite(true);
                 }
             }
             else
             {
-                epouScript.SetSprite(epouvantailDos);
                 if (i >= 1 && i <= nombreDeCote * 0.75f)
                 {
-                    epouScript.SetSprite(epouvantailDos, true);
+                    epouScript.SetSprite( true);
                 }
-            }*/
+            }
 
             GameObject spaw = Instantiate<GameObject>(prefabSpawner);
-            spaw.transform.position = PlaceInCircle(i * ang, spawnDistance);
+            spaw.transform.position = PlaceInCircle(i * ang +Decallage, spawnDistance);
             spaw.transform.rotation = Quaternion.Euler(0, 0, 180 - i * ang);
             spaw.transform.parent = spawnersParent.transform;
             Spawner spawScript = spaw.GetComponent<Spawner>();
             spawScript.id = i;
             spawners.Add(spawScript);
-
+            if (i+1>nombreDeCote/2f)
+            {
+                spawScript.flip = true;
+            }
+            else
+            {
+                spawScript.flip = false;
+            }
             spawScript.epouvantail = epouScript;
             epouScript.spawner = spawScript;
         }

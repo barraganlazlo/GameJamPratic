@@ -11,6 +11,9 @@ public class Spawner : MonoBehaviour
 
     List<Escouade> escouades;
 
+    [HideInInspector]
+    public bool flip;
+
     public int escouadeId;
     private void Awake()
     {
@@ -22,6 +25,10 @@ public class Spawner : MonoBehaviour
         Escouade escouade = escouadeGO.GetComponent<Escouade>();
         escouade.SetType(escouadeType);
         escouade.Instantiate(this);
+        if (flip)
+        {
+            escouade.Flip();
+        }
         escouades.Add(escouade);
     }
     public void SpawnEscouade(int i)

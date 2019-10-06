@@ -10,7 +10,6 @@ public class Epouvantail : MonoBehaviour
     //[HideInInspector]
     public Spawner spawner;
     SpriteRenderer spriteRenderer;
-    int spriteId;
     bool broken;
     void Awake()
     {
@@ -18,10 +17,8 @@ public class Epouvantail : MonoBehaviour
         spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
     }
 
-    public void SetSprite(int id, bool flipX = false)
+    public void SetSprite(bool flipX )
     {
-        spriteId = id;
-        spriteRenderer.sprite = UnitManager.instance.epouvantailsSprites[id];
         spriteRenderer.flipX = flipX;
     }
     public void Damage(UnitType type)

@@ -15,13 +15,17 @@ public class Unit : MonoBehaviour
     public float attackSpeed = 1f;
     public float attackSpeedStart = 1f;
     float attackTimer;
-    void Start()
+
+    Animator animator;
+    void Awake()
     {
-        if (r2d == null)
-        {
-            r2d=GetComponent<Rigidbody2D>();
-        }
-        r2d.velocity = speed * -escouade.transform.position.normalized ;
+        r2d=GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+
+    }
+    private void Start()
+    {
+        r2d.velocity = speed * -escouade.transform.position.normalized;
     }
     void Update()
     {
@@ -44,6 +48,8 @@ public class Unit : MonoBehaviour
         moving = b;
         r2d.simulated = b;
         GetComponent<Collider2D>().enabled = b;
+        animator.SetBool("moving", b);
+
     }
     public void StartAttacking()
     {
@@ -73,7 +79,7 @@ public class Unit : MonoBehaviour
     }
     public void Attack()
     {
-        DamageEpouvantail();
+        animator.SetTrigger("attack");
     }
     public void DamageEpouvantail()
     {
@@ -85,5 +91,9 @@ public class Unit : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void Flip()
+    {
+        GetComponentInChildren<SpriteRenderer>().flipX = true;
     }
 }
