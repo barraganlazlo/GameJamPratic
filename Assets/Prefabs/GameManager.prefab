@@ -219,28 +219,28 @@ MonoBehaviour:
   waves:
   - nbEscouadeMin: 7
     nbEscouadeMax: 9
-    cdNextEscouadeMin: 3.75
-    cdNextEscouadeMax: 3.25
-    cdNextWave: 4
+    cdNextEscouadeMin: 4
+    cdNextEscouadeMax: 3.5
+    cdNextWave: 5
   - nbEscouadeMin: 10
     nbEscouadeMax: 12
-    cdNextEscouadeMin: 3.5
-    cdNextEscouadeMax: 3
-    cdNextWave: 4
+    cdNextEscouadeMin: 3.75
+    cdNextEscouadeMax: 3.5
+    cdNextWave: 4.5
   - nbEscouadeMin: 13
     nbEscouadeMax: 15
-    cdNextEscouadeMin: 3.5
-    cdNextEscouadeMax: 3
-    cdNextWave: 4
+    cdNextEscouadeMin: 3.75
+    cdNextEscouadeMax: 3.5
+    cdNextWave: 4.5
   - nbEscouadeMin: 16
     nbEscouadeMax: 18
-    cdNextEscouadeMin: 3.5
-    cdNextEscouadeMax: 3
-    cdNextWave: 4
+    cdNextEscouadeMin: 3.75
+    cdNextEscouadeMax: 3.5
+    cdNextWave: 4.5
   - nbEscouadeMin: -1
     nbEscouadeMax: -1
-    cdNextEscouadeMin: 3.25
-    cdNextEscouadeMax: 3
+    cdNextEscouadeMin: 3.5
+    cdNextEscouadeMax: 3.25
     cdNextWave: -1
 --- !u!1001 &5998809306163357541
 PrefabInstance:
