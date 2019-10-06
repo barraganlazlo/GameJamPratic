@@ -96,32 +96,32 @@ PrefabInstance:
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.28090185
+      value: 0.5188273
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2309734
+      value: 0.7415147
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5143065
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -153,20 +153,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon
       objectReference: {fileID: 0}
-    - target: {fileID: 7451529737212236920, guid: 7f5f1af8584c912438c698fcdf45440e,
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: unitKillId.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: skins.Array.size
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: unitKillId.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -217,7 +212,7 @@ PrefabInstance:
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}

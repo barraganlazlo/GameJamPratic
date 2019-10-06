@@ -96,12 +96,12 @@ PrefabInstance:
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8273475
+      value: -2.572
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15504763
+      value: 0.414
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -158,16 +158,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7451529737212236921, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529737212236921, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236920, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Name
@@ -175,13 +165,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: skins.Array.size
-      value: 2
+      propertyPath: unitKillId.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: unitKillId.Array.size
-      value: 1
+      propertyPath: skins.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -192,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: coolDown
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -203,6 +193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: duree
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: unitKillId.Array.data[0]
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -217,11 +212,6 @@ PrefabInstance:
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: switchSkin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: unitKillId.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
