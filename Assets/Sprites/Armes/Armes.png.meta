@@ -20,6 +20,12 @@ TextureImporter:
   - first:
       213: -6743061397276004141
     second: Armes_7
+  - first:
+      213: -2092199874990311530
+    second: Armes_2
+  - first:
+      213: 3040239211273328281
+    second: Armes_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -78,7 +84,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -90,7 +96,31 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -107,18 +137,18 @@ TextureImporter:
       name: Armes_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 47
-        width: 28
-        height: 17
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91c97ba33e580245839ddac89fc660c
+      spriteID: 729c2badea24fd74a90e155cfae8143f
       internalID: 5295613734372021565
       vertices: []
       indices: 
@@ -128,19 +158,61 @@ TextureImporter:
       name: Armes_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 42
-        width: 26
-        height: 21
-      alignment: 9
-      pivot: {x: 0.40397787, y: 0.46967697}
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01fd3b5914ec7e848a30ae6aad6ae880
+      spriteID: 23a0d9f23a1140f4fa9688f57a2a5813
       internalID: 5427662184602737365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armes_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a02ccdc1d09824aa2f726670a319d6
+      internalID: -2092199874990311530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armes_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c9df6dceef1784d9c007e4a4e0186b
+      internalID: 3040239211273328281
       vertices: []
       indices: 
       edges: []
@@ -149,18 +221,18 @@ TextureImporter:
       name: Armes_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 20
-        width: 20
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 713624f293b6dc9499b4ec0b3e04e805
+      spriteID: 3902f55d886ef1c4f937f48c7b95abae
       internalID: -6509805032357180228
       vertices: []
       indices: 
@@ -170,61 +242,19 @@ TextureImporter:
       name: Armes_5
       rect:
         serializedVersion: 2
-        x: 36
-        y: 8
-        width: 27
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 889a85d86d7852c4b9324a28d6f839c1
-      internalID: -490644081436555730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armes_6
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 320
         y: 0
-        width: 30
-        height: 17
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cc2603fe16ea2447861d842804648f4
-      internalID: -3468425561166449732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armes_7
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 4
-        width: 5
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95a15c64ea08f714cbfed0982d8f5f9b
-      internalID: -6743061397276004141
+      spriteID: 0544c63f6f52bf64182f7593a58048ef
+      internalID: -490644081436555730
       vertices: []
       indices: 
       edges: []
