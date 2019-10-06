@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -8243064958621741751
     second: Fantasin_2
+  - first:
+      213: -4044571334116679852
+    second: Fantasin_3
+  - first:
+      213: 1032467227628053382
+    second: Fantasin_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,18 +140,18 @@ TextureImporter:
       name: Fantasin_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 43
+        y: 7
+        width: 14
+        height: 39
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90de68518b03d844c8d0b9c131713b5a
+      spriteID: e2226bc0b69bff64ca49a0b057e10824
       internalID: -8764344652547260264
       vertices: []
       indices: 
@@ -155,18 +161,18 @@ TextureImporter:
       name: Fantasin_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 107
+        y: 7
+        width: 14
+        height: 39
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91f549dbedcc7c84e9dce423063402c0
+      spriteID: 144adf6c8f5407c4583289bd1dd8176d
       internalID: 4102679997118807346
       vertices: []
       indices: 
@@ -176,19 +182,61 @@ TextureImporter:
       name: Fantasin_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 171
+        y: 7
+        width: 14
+        height: 39
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1086826c0892c3549b71d9c8d6060b44
+      spriteID: 6ad38cf793a487b43938f2acba44dbfa
       internalID: -8243064958621741751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantasin_3
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 7
+        width: 39
+        height: 21
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b2b909de9c6cf4ba88892383174005
+      internalID: -4044571334116679852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantasin_4
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 7
+        width: 39
+        height: 21
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f804688a6c4884ea2d00d0d5cbef0a
+      internalID: 1032467227628053382
       vertices: []
       indices: 
       edges: []

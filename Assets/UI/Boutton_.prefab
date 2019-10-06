@@ -85,9 +85,9 @@ GameObject:
   - component: {fileID: 122855382851109099}
   - component: {fileID: 122855382851108884}
   - component: {fileID: 122855382851108885}
-  - component: {fileID: 122855382851109098}
+  - component: {fileID: 4948101037134545977}
   m_Layer: 5
-  m_Name: Boutton_A
+  m_Name: Boutton_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &122855382851109098
+--- !u!114 &4948101037134545977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,10 +159,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 122855382851109096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ce17777b10de2847afd5ea5d2c57154, type: 3}
+  m_Script: {fileID: 11500000, guid: a7ccf98a391a5dc4ebb3a13992112591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Myinput: Fire
+  isActive: 0
+  _Myinput: InteractButton
   _PlayerID: 1
   Type: A
   buttonImg:
@@ -171,4 +172,3 @@ MonoBehaviour:
   - {fileID: 4472392731940357822, guid: 0805a23759f45884491f46d14d7bf5d0, type: 3}
   - {fileID: -5676687300904480834, guid: 0805a23759f45884491f46d14d7bf5d0, type: 3}
   ValueCharge: 0
-  _Jauge: {fileID: 122855382760261634}

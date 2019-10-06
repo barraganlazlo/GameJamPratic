@@ -63,9 +63,8 @@ public class Unit : MonoBehaviour
     {
         fleeing = true;
         StopAttacking();
-        Vector3 rot = transform.rotation.eulerAngles;
-        rot.z += 180;
-        transform.rotation = Quaternion.Euler(rot);
+        r2d.velocity = (escouade.spawner.transform.position-transform.position).normalized * speed;
+        escouade.RemoveUnit(this);
         SetMoving(true);
     }
     public bool IsFleeing()
@@ -79,5 +78,12 @@ public class Unit : MonoBehaviour
     public void DamageEpouvantail()
     {
         escouade.spawner.epouvantail.Damage(type);
+    }
+    private void OnBecameInvisible()
+    {
+        if (fleeing)
+        {
+            Destroy(gameObject);
+        }
     }
 }

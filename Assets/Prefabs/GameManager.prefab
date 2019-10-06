@@ -217,8 +217,8 @@ MonoBehaviour:
   StartCd: 0
   started: 0
   waves:
-  - nbEscouadeMin: 7
-    nbEscouadeMax: 9
+  - nbEscouadeMin: 2
+    nbEscouadeMax: 3
     cdNextEscouadeMin: 3.75
     cdNextEscouadeMax: 3.25
     cdNextWave: 4
