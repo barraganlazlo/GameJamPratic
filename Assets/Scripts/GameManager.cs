@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool started = false;
     public Wave[] waves;
+    bool lost;
 
     void Awake()
     {
@@ -48,7 +49,10 @@ public class GameManager : MonoBehaviour
     }
     public void Lose()
     {
-        Debug.Log("lost");
+        if (!lost)
+        {
+            Debug.Log("lost");
+        }
     }
     public void StartGame()
     {
