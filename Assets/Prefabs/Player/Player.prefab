@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 658262638}
   m_Layer: 9
   m_Name: colliderEnv
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 1774910084}
   m_Layer: 10
   m_Name: colliderPlyr
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -319,7 +319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3388b9294f3a6a84995e77a1b23e8ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplayerScript: {fileID: 0}
   weaponPos: {fileID: 2884119370300662489}
+  hasFoin: 0
+  foinPrefab: {fileID: 470550170482140322, guid: fbf514d410a854a45b76f1d2f253066f,
+    type: 3}
+  foinInstance: {fileID: 0}
 --- !u!114 &6715619708996333713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +349,7 @@ GameObject:
   - component: {fileID: 5879818951414586324}
   m_Layer: 0
   m_Name: colliders
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
