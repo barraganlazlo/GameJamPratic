@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Wave[] waves;
     bool lost;
 
+    public GameObject uiLose;
+
     void Awake()
     {
         if (instance != null)
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
     {
         if (!lost)
         {
+            lost = true;
+            Instantiate<GameObject>(uiLose);
             Debug.Log("lost");
         }
     }

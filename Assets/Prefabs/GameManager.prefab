@@ -241,6 +241,7 @@ MonoBehaviour:
     cdNextEscouadeMin: 5
     cdNextEscouadeMax: 5.25
     cdNextWave: 100000
+  uiLose: {fileID: 6581276708718398088, guid: 20a41777a121dc44aa62e8813cae4cbb, type: 3}
 --- !u!1001 &5998809306163357541
 PrefabInstance:
   m_ObjectHideFlags: 0

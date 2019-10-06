@@ -27,6 +27,8 @@ public class HandleLevelCochon : MonoBehaviour
     private SpriteRenderer sr;
     [SerializeField] private Sprite[] srs;
 
+    public GameObject winUi;
+
 
     [Header("handleMultiplayer")]
     private int playerFeeding = 0;
@@ -145,6 +147,7 @@ public class HandleLevelCochon : MonoBehaviour
 
     void Win()
     {
+        Instantiate<GameObject>(winUi);
         this.enabled = false;
         buttonScript.isActive = false;
         buttonScript.gameObject.SetActive(false);

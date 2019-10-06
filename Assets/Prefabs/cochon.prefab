@@ -81,6 +81,7 @@ MonoBehaviour:
   - {fileID: 3556830796591849826, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
   - {fileID: -490187859223187958, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
   - {fileID: 2821048905021913596, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
+  winUi: {fileID: 384695567284905090, guid: 8f58c5b6c175ac34a805c719006bcff1, type: 3}
 --- !u!61 &284981527962334463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,7 +145,6 @@ GameObject:
   - component: {fileID: 284981529654592957}
   - component: {fileID: 284981529654592959}
   - component: {fileID: 284981528504660941}
-  - component: {fileID: 3841755842772967257}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -235,19 +235,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3841755842772967257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 284981529654592954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073a8ddbf33507b4984d75d81477c62e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  son: Cochon_miam
 --- !u!1 &8386450775779780774
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +341,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8386450775779780775}
     m_Modifications:
+    - target: {fileID: 122855382851109096, guid: e16a05779ce8e6544ac0c8b5e914d7ba,
+        type: 3}
+      propertyPath: m_Name
+      value: Boutton_
+      objectReference: {fileID: 0}
     - target: {fileID: 122855382851109099, guid: e16a05779ce8e6544ac0c8b5e914d7ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -473,11 +465,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 122855382851109096, guid: e16a05779ce8e6544ac0c8b5e914d7ba,
-        type: 3}
-      propertyPath: m_Name
-      value: Boutton_
       objectReference: {fileID: 0}
     - target: {fileID: 122855382760261634, guid: e16a05779ce8e6544ac0c8b5e914d7ba,
         type: 3}
