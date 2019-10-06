@@ -181,7 +181,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+      spriteID: 
       internalID: 3810609747141767923
+      vertices: []
+      indices: 
+      edges: []
       weights: []
     - serializedVersion: 2
       name: Epouvantail_2
