@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/estebannnn.unity
+    guid: 42e843ba4eed86a4e8432d3febe7c4cb
   m_configObjects: {}

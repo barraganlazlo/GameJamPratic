@@ -142,11 +142,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c20dd06f71eed85438db950a36ef25ff,
         type: 2}
-    - target: {fileID: 2676839269372805357, guid: f1c8778de059f2c49ba1d577c7b9edea,
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
         type: 3}
-      propertyPath: m_Controller
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9325677
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 9100000, guid: fbe08438165b3ad4ab7773442ad96d15, type: 2}
+      objectReference: {fileID: 21300000, guid: b1c96474f34b37a48a4fa714fbf2f144,
+        type: 3}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5055738510638980485, guid: f1c8778de059f2c49ba1d577c7b9edea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,6 +223,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980485, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980485, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2676839269372805357, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fbe08438165b3ad4ab7773442ad96d15, type: 2}
     - target: {fileID: 7289868629079406837, guid: f1c8778de059f2c49ba1d577c7b9edea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,32 +272,6 @@ PrefabInstance:
     - target: {fileID: 2535973186226195540, guid: f1c8778de059f2c49ba1d577c7b9edea,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9325677
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b1c96474f34b37a48a4fa714fbf2f144,
-        type: 3}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -29,6 +29,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(hasFoin);
         //PickDrop
         if (Input.GetButtonDown("PickButton" + multiplayerScript.idPlayer))
         {

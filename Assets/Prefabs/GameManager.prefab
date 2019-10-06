@@ -216,30 +216,30 @@ MonoBehaviour:
   StartCd: 0
   started: 0
   waves:
-  - nbEscouadeMin: 6
-    nbEscouadeMax: 7
-    cdNextEscouadeMin: 5.25
-    cdNextEscouadeMax: 5.5
+  - nbEscouadeMin: 3
+    nbEscouadeMax: 4
+    cdNextEscouadeMin: 7.75
+    cdNextEscouadeMax: 8
     cdNextWave: 10
-  - nbEscouadeMin: 10
-    nbEscouadeMax: 12
-    cdNextEscouadeMin: 5
-    cdNextEscouadeMax: 5.25
+  - nbEscouadeMin: 5
+    nbEscouadeMax: 6
+    cdNextEscouadeMin: 7.75
+    cdNextEscouadeMax: 8
     cdNextWave: 11
-  - nbEscouadeMin: 13
-    nbEscouadeMax: 15
-    cdNextEscouadeMin: 5
-    cdNextEscouadeMax: 5.25
+  - nbEscouadeMin: 7
+    nbEscouadeMax: 8
+    cdNextEscouadeMin: 7.75
+    cdNextEscouadeMax: 8
     cdNextWave: 13
-  - nbEscouadeMin: 16
-    nbEscouadeMax: 18
-    cdNextEscouadeMin: 5
-    cdNextEscouadeMax: 5.25
+  - nbEscouadeMin: 9
+    nbEscouadeMax: 11
+    cdNextEscouadeMin: 7.75
+    cdNextEscouadeMax: 8
     cdNextWave: 12
   - nbEscouadeMin: 1000
     nbEscouadeMax: 1000
-    cdNextEscouadeMin: 5
-    cdNextEscouadeMax: 5.25
+    cdNextEscouadeMin: 7.5
+    cdNextEscouadeMax: 7.25
     cdNextWave: 100000
   uiLose: {fileID: 6581276708718398088, guid: 20a41777a121dc44aa62e8813cae4cbb, type: 3}
 --- !u!1001 &5998809306163357541
