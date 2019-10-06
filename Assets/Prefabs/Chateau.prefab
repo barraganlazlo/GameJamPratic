@@ -226,12 +226,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb49a3e0ca29ae84fbc5654fa63c42ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawning: 1
   nombreDeCote: 6
   ratioX: 0.8
   offSet: {x: 0, y: 0.2}
   ratioY: 0.55
   radius: 0.65
-  spawnDistance: 8
+  spawnDistance: 4
   prefabEpouvantail: {fileID: 5646022127109137646, guid: e3a28a346fbe6db4ba03b81ce9598b6e,
     type: 3}
   prefabSpawner: {fileID: 583525862503101625, guid: 397b534a4f067f247a551357fdf1159b,

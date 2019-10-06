@@ -7,7 +7,7 @@ public class Epouvantail : MonoBehaviour
     public int id;
     public int startLife;
     int life;
-    [HideInInspector]
+    //[HideInInspector]
     public Spawner spawner;
     SpriteRenderer spriteRenderer;
     int spriteId;

@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -8187228085298937467
     second: Cavalier_2
+  - first:
+      213: 7751390932869994559
+    second: Cavalier_3
+  - first:
+      213: -6948370102317255720
+    second: Cavalier_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -138,14 +144,14 @@ TextureImporter:
         y: 0
         width: 32
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51f9fc15363f4ea4e8d40939c7d24836
+      spriteID: 07530054f1edd524c8b4b42a55cda7d3
       internalID: -8864775085466101772
       vertices: []
       indices: 
@@ -159,14 +165,14 @@ TextureImporter:
         y: 0
         width: 32
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ede758054ccfd045a49c3f5c9d16425
+      spriteID: 92085e92d5d8e1942bd7757fc18223d2
       internalID: -5827083692577996400
       vertices: []
       indices: 
@@ -180,15 +186,57 @@ TextureImporter:
         y: 0
         width: 32
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ead0be681abef4e8d6333c79d6a36a
+      spriteID: be1f2d51ce0c72a4991e77636e4db872
       internalID: -8187228085298937467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavalier_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 48
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e104b0b1ee3764f94fe113dd63a9dc
+      internalID: 7751390932869994559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavalier_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 48
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7e8e2b0d110f049b97960f3a68f0a6
+      internalID: -6948370102317255720
       vertices: []
       indices: 
       edges: []

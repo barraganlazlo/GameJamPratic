@@ -68,7 +68,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 3
   m_Sprite: {fileID: -6743061397276004141, guid: d77bf26616c570149bc73e818540e6ac,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,32 +96,32 @@ PrefabInstance:
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.28090185
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.2309734
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.5143065
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -160,10 +160,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
+      propertyPath: unitKillId.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: accessory
+      value: 
+      objectReference: {fileID: 2707403282419600433}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: accessory_defaultOrderLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: accessory_heldOrderLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 7362510732819067313, guid: 5937f12e7d25da541b9e6c05acee4148,
         type: 3}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: coolDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: amplitude
+      value: 0.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: duree
+      value: 0.27
+      objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: skins.Array.data[0]
@@ -174,35 +209,10 @@ PrefabInstance:
       propertyPath: skins.Array.data[1]
       value: 
       objectReference: {fileID: 2707403282419600433}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: accessory
-      value: 
-      objectReference: {fileID: 2707403282419600433}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: accessory_defaultOrderLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: accessory_heldOrderLayer
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: coolDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: amplitude
-      value: 0.025
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: duree
-      value: 0.37
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}

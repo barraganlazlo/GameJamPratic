@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: 9062276604635185850
     second: Belier_2
+  - first:
+      213: -3525838068850969133
+    second: Belier_3
+  - first:
+      213: -7351021666632408242
+    second: Belier_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -138,14 +144,14 @@ TextureImporter:
         y: 0
         width: 80
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2a910b68d0621847a2ec12d73579a84
+      spriteID: 1d64b7397a6fea041a58c947e316a68e
       internalID: 1536765594359574132
       vertices: []
       indices: 
@@ -159,14 +165,14 @@ TextureImporter:
         y: 0
         width: 80
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cff87edbdd9d584091866e0921abca9
+      spriteID: e1a536c0070636d45b2cd377bceaccd0
       internalID: -922118806177745248
       vertices: []
       indices: 
@@ -180,15 +186,57 @@ TextureImporter:
         y: 0
         width: 80
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9cae4c0bea31894f9e525c7c7bee9a9
+      spriteID: 05516b566b78240418df7743568f851e
       internalID: 9062276604635185850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belier_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 48
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3470ac0dd04ec4894b36bd8f25a3ec
+      internalID: -3525838068850969133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belier_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 48
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664df6468ef8c8e47a09598919db936c
+      internalID: -7351021666632408242
       vertices: []
       indices: 
       edges: []

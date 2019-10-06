@@ -5,6 +5,8 @@ using UnityEngine;
 public class Castle : MonoBehaviour
 {
     public static Castle instance;
+
+    public bool spawning = true;
     [Range(0, 10)]
     public int nombreDeCote;
 
@@ -17,7 +19,7 @@ public class Castle : MonoBehaviour
     public GameObject prefabSpawner;
     public int epouvantailFace;
     public int epouvantailDos;
-
+    public int waveId;
     List<Epouvantail> epouvantails;
     List<Spawner> spawners;
 
@@ -31,26 +33,30 @@ public class Castle : MonoBehaviour
             return;
         }
         instance = this;
-    }
-    private void Start()
-    {
-        CreateSides();
+        spawners = new List<Spawner>();
+        epouvantails = new List<Epouvantail>();
     }
 
     public IEnumerator WavesCoroutine()
     {
-        foreach (Wave wave in GameManager.instance.waves)
+        if (spawning)
         {
-            int nbEscouades = Random.Range(wave.nbEscouadeMin, wave.nbEscouadeMax);
-            for (int i = 0; i < nbEscouades; i++)
+            waveId = 1;
+            for ( int j =0; j< GameManager.instance.waves.Length;j++ )
             {
-                Spawner sp = spawners[Random.Range(0, spawners.Count)];
-                sp.SpawnRandomEscouade();
-                float cdNextEscouade = Random.Range(wave.cdNextEscouadeMin,wave.cdNextEscouadeMax);
-                yield return new WaitForSeconds(cdNextEscouade);
+                Wave wave = GameManager.instance.waves[j];
+                Debug.Log("Wave : " + waveId);
+                int nbEscouades = Random.Range(wave.nbEscouadeMin, wave.nbEscouadeMax);
+                for (int i = 1; i < nbEscouades+1; i++)
+                {
+                    Spawner sp = spawners[Random.Range(0, spawners.Count)];
+                    sp.SpawnRandomEscouade();
+                    float cdNextEscouade = Random.Range(wave.cdNextEscouadeMin, wave.cdNextEscouadeMax);
+                    yield return new WaitForSeconds(cdNextEscouade);
+                }
+                waveId += 1;
+                yield return new WaitForSeconds(wave.cdNextWave);
             }
-
-            yield return new WaitForSeconds(wave.cdNextWave);
         }
     }
     public void CreateSides()
@@ -92,9 +98,9 @@ public class Castle : MonoBehaviour
             Spawner spawScript = spaw.GetComponent<Spawner>();
             spawScript.id = i;
             spawners.Add(spawScript);
+
             spawScript.epouvantail = epouScript;
             epouScript.spawner = spawScript;
-
         }
     }
     void ResetSides()
