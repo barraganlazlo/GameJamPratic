@@ -6,7 +6,7 @@ public class BulletScript : MonoBehaviour
 {
     public float speed = 3.0f;
     public float LifeTime = 4;
-    bool begun;
+    protected bool begun;
     [HideInInspector]
     public Vector3 direction;
     // Start is called before the first frame update
@@ -14,6 +14,7 @@ public class BulletScript : MonoBehaviour
     {
         Destroy(gameObject, LifeTime);
         begun = true;
+
     }
 
     // Update is called once per frame
@@ -23,5 +24,10 @@ public class BulletScript : MonoBehaviour
         {
             transform.Translate(direction * Time.deltaTime * speed);
         }
+    }
+    public void SetDirection(Vector3 v)
+    {
+        direction = v;
+
     }
 }

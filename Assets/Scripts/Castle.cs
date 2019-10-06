@@ -74,7 +74,11 @@ public class Castle : MonoBehaviour
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
             epouScript.id = i;
             epouvantails.Add(epouScript);
-            if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)
+            if (i >= nombreDeCote *0.125f && i <= nombreDeCote *0.5f)
+            {
+                epouScript.SetOrder(50);
+            }
+            if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)//devant
             {
                 if (i >= nombreDeCote / 2f + 1)
                 {
@@ -83,7 +87,7 @@ public class Castle : MonoBehaviour
             }
             else
             {
-                if (i >= 1 && i <= nombreDeCote * 0.75f)
+                if (i >= 1 && i <= nombreDeCote * 0.75f)//derrière
                 {
                     epouScript.SetSprite( true);
                 }
