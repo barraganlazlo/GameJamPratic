@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
     public int startLife = 100;
     [HideInInspector]
     public int life;
-    [HideInInspector]
-    public int wave;
     public Image buffBar;
     public float StartCd;
     [HideInInspector]
@@ -27,7 +25,6 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         life = startLife;
-        wave = 1;
     }
     private void Start()
     {
@@ -56,7 +53,8 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        started = true;
+        Castle.instance.CreateSides();
         Castle.instance.StartCoroutine(Castle.instance.WavesCoroutine());
+        started = true;
     }
 }

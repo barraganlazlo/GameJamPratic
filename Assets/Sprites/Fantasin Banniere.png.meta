@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -2277065061774692011
     second: Fantasin Banniere_2
+  - first:
+      213: 7398878829712694334
+    second: Fantasin Banniere_3
+  - first:
+      213: -301192999507077025
+    second: Fantasin Banniere_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,18 +140,18 @@ TextureImporter:
       name: Fantasin Banniere_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 36
+        y: 7
+        width: 21
+        height: 38
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7829a1f2a1c1c4a49bd5654d1ae838b9
+      spriteID: ca31172307e631b40a275d2a6beda65d
       internalID: 1221224456275380599
       vertices: []
       indices: 
@@ -155,18 +161,18 @@ TextureImporter:
       name: Fantasin Banniere_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 100
+        y: 7
+        width: 21
+        height: 38
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3955242b015d4ac418505fab3af7c637
+      spriteID: 7b0c33ba8690a4846a7ecce557eff147
       internalID: 6713908084654688191
       vertices: []
       indices: 
@@ -176,19 +182,61 @@ TextureImporter:
       name: Fantasin Banniere_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 164
+        y: 7
+        width: 21
+        height: 38
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f14a082a039fd641aa8b0956a631654
+      spriteID: 5ed12dff2613c484ebd693a3784b800b
       internalID: -2277065061774692011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantasin Banniere_3
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 7
+        width: 37
+        height: 30
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02ebb3cf93bc4945bdcab1f7a96e974
+      internalID: 7398878829712694334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fantasin Banniere_4
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 7
+        width: 42
+        height: 21
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c845ab7c72e7554583341c239afcc7d
+      internalID: -301192999507077025
       vertices: []
       indices: 
       edges: []

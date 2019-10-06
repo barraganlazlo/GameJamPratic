@@ -175,6 +175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
+      propertyPath: unitKillId.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
       propertyPath: accessory
       value: 
       objectReference: {fileID: 2770952382352253275}
@@ -219,6 +224,16 @@ PrefabInstance:
       propertyPath: skins.Array.data[1]
       value: 
       objectReference: {fileID: 2770952382352253275}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: unitKillId.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: unitKillId.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Sprite

@@ -36,7 +36,7 @@ public class ButtonSprite : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        Debug.Log(isActive);
+        //Debug.Log(isActive);
         if (isActive)
         {
             if (!mySpr.enabled)

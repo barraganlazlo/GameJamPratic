@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
     public void SpawnRandomEscouade()
     {
         EscouadeType[] escouades = UnitManager.instance.GetEscouadeTypesOfCurrentWave();
-        Debug.Log(escouades.Length + " Escouades to spawn");
+        //Debug.Log(escouades.Length + " Escouades to spawn");
         int max = 0;
         foreach (EscouadeType et in escouades)
         {
@@ -49,7 +49,24 @@ public class Spawner : MonoBehaviour
             currentVal += et.tauxApparition;
             id += 1;
         }
-        Debug.Log("id : " + id);
+        //Debug.Log("id : " + id);
         SpawnEscouade(escouades[id]);
+    }
+    public void FleeFirstEscouade(int id)
+    {
+        foreach (Escouade e in escouades)
+        {
+            if (e.Flee(id))
+            {
+                return;
+            }
+        }
+    }
+    public void FleeAllEscouade(int id)
+    {
+        foreach (Escouade e in escouades)
+        {
+            e.Flee(id);
+        }
     }
 }

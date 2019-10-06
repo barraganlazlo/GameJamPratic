@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerHandleWeapon : MonoBehaviour
 {
@@ -33,7 +31,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     {
         if (!canShoot)
         {
-            Debug.Log("YEAAAAAAAAAAAH");
+            //Debug.Log("YEAAAAAAAAAAAH");
         }
         //PickDrop
         if (Input.GetButtonDown("PickButton" + multiplayerScript.idPlayer))
@@ -106,7 +104,6 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     void Shoot()
     {
-
         weaponScript.Shoot();
     }
 
@@ -118,18 +115,34 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!GameManager.instance.started)
+        {
+            return;
+        }
         //pick and drop
         if (collision.tag == "weapon" || collision.tag == "foin")
         {
             canPickWeapon = true;
             pickableWeapon = collision.gameObject;
         }
+        if (collision.gameObject.CompareTag( "shootZone"))
+        {
+            if (currentWeapon != null)
+            {
+                Epouvantail epou = collision.gameObject.GetComponentInParent<Epouvantail>();
+                weaponScript.currentSpawnerAim = epou.spawner;
+            }
+        }
     }
 
     //shoot
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "shootZone")
+        if (!GameManager.instance.started)
+        {
+            return;
+        }
+        if (collision.gameObject.CompareTag("shootZone"))
         {
             if (currentWeapon != null)
             {
@@ -140,15 +153,19 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!GameManager.instance.started)
+        {
+            return;
+        }
         //pick and drop
-        if (collision.tag == "weapon" || collision.tag == "foin")
+        if (collision.CompareTag("weapon") || collision.CompareTag("foin"))
         {
             canPickWeapon = false;
             pickableWeapon = null;
         }
 
         //shoot
-        else if (collision.gameObject.tag == "shootZone")
+        else if (collision.gameObject.CompareTag("shootZone"))
         {
             canShoot = false;
         }
