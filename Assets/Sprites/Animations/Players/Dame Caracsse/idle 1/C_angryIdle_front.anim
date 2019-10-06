@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: angryIdle_front
+  m_Name: C_angryIdle_front
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 7134033048992234417, guid: f09ff686ff259284989d543d7cf2f704,
+      value: {fileID: -4555653003953769046, guid: f6081bcad17309a4ca581340b4453c3a,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,7 +41,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 7134033048992234417, guid: f09ff686ff259284989d543d7cf2f704, type: 3}
+    - {fileID: -4555653003953769046, guid: f6081bcad17309a4ca581340b4453c3a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
