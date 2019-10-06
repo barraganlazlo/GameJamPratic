@@ -46,6 +46,12 @@ public class Unit : MonoBehaviour
         moving = b;
         r2d.simulated = b;
         GetComponent<Collider2D>().enabled = b;
+        if (b)
+        {
+            gameObject.GetComponent<AudioSource>().Play();
+        }
+        else
+            gameObject.GetComponent<AudioSource>().Stop();
     }
     public void StartAttacking()
     {
