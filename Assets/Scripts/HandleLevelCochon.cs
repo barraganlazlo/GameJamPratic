@@ -33,6 +33,10 @@ public class HandleLevelCochon : MonoBehaviour
 
     private Animator animator;
 
+    //onomatopés
+    public GameObject onoma;
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,9 +70,10 @@ public class HandleLevelCochon : MonoBehaviour
         {
             DecreaseJauge();
         }
+
     }
 
-    void DecreaseJauge()
+            void DecreaseJauge()
     {
         if (jauge.fillAmount == 0)
         {
@@ -82,6 +87,8 @@ public class HandleLevelCochon : MonoBehaviour
                 buttonScript.isActive = false;
             }
         }
+
+        onoma.SetActive(false);
     }
 
     void ResetFillAmount()
@@ -99,6 +106,9 @@ public class HandleLevelCochon : MonoBehaviour
         {
             playerScript.DestroyFoin();
             PassStep();
+
+            onoma.SetActive(true);
+
         }
     }
 
