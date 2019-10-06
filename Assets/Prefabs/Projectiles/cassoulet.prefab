@@ -4829,6 +4829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   LifeTime: 8
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1 &5322282319482799923
 GameObject:
   m_ObjectHideFlags: 0

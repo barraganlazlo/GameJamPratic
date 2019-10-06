@@ -16,7 +16,10 @@ public class Epouvantail : MonoBehaviour
         life = startLife;
         spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
     }
-
+    public void SetOrder(int i)
+    {
+        spriteRenderer.sortingOrder = i;
+    }
     public void SetSprite(bool flipX )
     {
         spriteRenderer.flipX = flipX;
