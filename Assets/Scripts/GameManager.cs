@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     }
     public void Damage(int val)
     {
-        Debug.Log("DamageCastle " + val);
         if (life > val)
         {
             life -= val;

@@ -45,7 +45,7 @@ public class UnitManager : MonoBehaviour
         List<EscouadeType> list = new List<EscouadeType>();
         foreach (EscouadeType etype in escouadeTypes)
         {
-            if (etype.waveBegin<GameManager.instance.wave && (GameManager.instance.wave < etype.waveEnd || etype.waveEnd<1))
+            if (etype.waveBegin<=GameManager.instance.wave && (GameManager.instance.wave < etype.waveEnd || etype.waveEnd<1))
             {
                 list.Add(etype);
             }

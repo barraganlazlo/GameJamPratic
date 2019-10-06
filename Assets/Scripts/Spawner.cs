@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -19,8 +18,8 @@ public class Spawner : MonoBehaviour
     }
     public void SpawnEscouade(EscouadeType escouadeType)
     {
-        GameObject escouadeGO = Instantiate<GameObject>(escouadePrefab,transform.position,Quaternion.identity);
-        Escouade escouade =escouadeGO.GetComponent<Escouade>();
+        GameObject escouadeGO = Instantiate<GameObject>(escouadePrefab, transform.position, Quaternion.identity);
+        Escouade escouade = escouadeGO.GetComponent<Escouade>();
         escouade.SetType(escouadeType);
         escouade.Instantiate(this);
         escouades.Add(escouade);
@@ -32,25 +31,25 @@ public class Spawner : MonoBehaviour
     public void SpawnRandomEscouade()
     {
         EscouadeType[] escouades = UnitManager.instance.GetEscouadeTypesOfCurrentWave();
+        Debug.Log(escouades.Length + " Escouades to spawn");
         int max = 0;
-        foreach(EscouadeType et in escouades)
-        {
-            max += et.tauxApparition;            
-        }
-        int val = Random.Range(1, max);
-        max = 0;
-        int id = -1;
         foreach (EscouadeType et in escouades)
         {
-            if (max<val) {
-                max += et.tauxApparition;
-                id += 1;
-            }
-            else
+            max += et.tauxApparition;
+        }
+        int val = Random.Range(1, max);
+        int currentVal = 0;
+        int id = 0;
+        foreach (EscouadeType et in escouades)
+        {
+            if (currentVal < val && val <= currentVal + et.tauxApparition)
             {
                 break;
             }
+            currentVal += et.tauxApparition;
+            id += 1;
         }
+        Debug.Log("id : " + id);
         SpawnEscouade(escouades[id]);
     }
 }

@@ -37,7 +37,6 @@ public class Epouvantail : MonoBehaviour
                 life = 0;
                 GameManager.instance.Damage(type.damagesOnEpouDie);
             }
-            Debug.Log("DamageEpou " + type.damagesToEpou);
         }
         else
         {
