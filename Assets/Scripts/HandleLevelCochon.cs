@@ -9,7 +9,7 @@ public class HandleLevelCochon : MonoBehaviour
     [SerializeField] private float valueCharge = 0.0025f;
     //[SerializeField] private float valueCharge = 0.01f;
     [SerializeField] private ButtonSprite buttonScript;
-    private string buttonToPress; 
+    private string buttonToPress;
     [SerializeField] private Image jauge;
 
     [Header("HandleProgression")]
@@ -29,6 +29,8 @@ public class HandleLevelCochon : MonoBehaviour
 
 
     private bool playerIsClose = false;
+    private PlayerHandleWeapon playerScript;
+
     private Animator animator;
 
     // Start is called before the first frame update
@@ -44,7 +46,8 @@ public class HandleLevelCochon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerIsClose){
+        if (playerScript != null && playerIsClose && playerScript.hasFoin)
+        {
             if (Input.GetButton(buttonToPress + "1"))
             {
                 if (!buttonScript.isActive)
@@ -93,6 +96,7 @@ public class HandleLevelCochon : MonoBehaviour
         jauge.fillAmount += valueCharge;
         if (jauge.fillAmount >= 1)
         {
+            playerScript.DestroyFoin();
             PassStep();
         }
     }
@@ -136,7 +140,6 @@ public class HandleLevelCochon : MonoBehaviour
 
     void Win()
     {
-        Debug.Log("WIN");
         this.enabled = false;
         buttonScript.isActive = false;
         buttonScript.gameObject.SetActive(false);
@@ -148,12 +151,15 @@ public class HandleLevelCochon : MonoBehaviour
         {
             buttonScript.isActive = true;
             playerIsClose = true;
+            playerScript = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<PlayerHandleWeapon>();
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         playerIsClose = false;
+        playerScript = null;
         if (jauge.fillAmount <= 0)
         {
             buttonScript.isActive = false;
