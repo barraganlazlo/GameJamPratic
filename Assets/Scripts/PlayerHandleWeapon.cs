@@ -46,10 +46,13 @@ public class PlayerHandleWeapon : MonoBehaviour
         if (holdingWeapon)
         {
             UpdateWeapon(null);
+            if(pickableWeapon == null)
+                FindObjectOfType<AudioManager>().Play("DropWeapon");
         }
         if (pickableWeapon != null)
         {
             UpdateWeapon(pickableWeapon);
+            FindObjectOfType<AudioManager>().Play("PickWeapon");
         }
     }
 
@@ -57,7 +60,6 @@ public class PlayerHandleWeapon : MonoBehaviour
     {
         if (newWeapon != null)
         {
-            
             weaponScript = newWeapon.GetComponent<Weapon>();
             holdingWeapon = true;
             weaponScript.isHeld = true;
@@ -65,6 +67,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             newWeapon.transform.parent = this.transform;
             newWeapon.transform.position = weaponPos.transform.position;
             pickableWeapon = null;
+            
         }
         else
         {
@@ -73,6 +76,10 @@ public class PlayerHandleWeapon : MonoBehaviour
                 currentWeapon.transform.parent = null;
                 weaponScript.isHeld = false;
                 holdingWeapon = false;
+            }
+            else
+            {
+                
             }
         }
 
