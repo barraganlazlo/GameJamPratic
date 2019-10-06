@@ -1,5 +1,101 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!82 &-3836928377705152904
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359509256478462711}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 99ead96a74d67f8459e19536033ea6b9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 87
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 4
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &885337922238615412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38,11 +134,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: cfbf8f7f2d6f85a4e90e212a06f78bc6,
         type: 2}
-    - target: {fileID: 2676839269372805357, guid: f1c8778de059f2c49ba1d577c7b9edea,
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
         type: 3}
-      propertyPath: m_Controller
+      propertyPath: m_Color.r
+      value: 0.7754297
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 9100000, guid: 6984ff6f148f7f04c884e8ab8c93991c, type: 2}
+      objectReference: {fileID: 21300000, guid: 805a7e9956d18dd479a4cdb0c44f4cf6,
+        type: 3}
+    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5055738510638980485, guid: f1c8778de059f2c49ba1d577c7b9edea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -98,6 +215,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2676839269372805357, guid: f1c8778de059f2c49ba1d577c7b9edea,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6984ff6f148f7f04c884e8ab8c93991c, type: 2}
     - target: {fileID: 7289868629079406837, guid: f1c8778de059f2c49ba1d577c7b9edea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -129,31 +251,11 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.7754297
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 805a7e9956d18dd479a4cdb0c44f4cf6,
-        type: 3}
-    - target: {fileID: 5055738510638980484, guid: f1c8778de059f2c49ba1d577c7b9edea,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1c8778de059f2c49ba1d577c7b9edea, type: 3}
+--- !u!1 &5359509256478462711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5055738510638980483, guid: f1c8778de059f2c49ba1d577c7b9edea,
+    type: 3}
+  m_PrefabInstance: {fileID: 885337922238615412}
+  m_PrefabAsset: {fileID: 0}

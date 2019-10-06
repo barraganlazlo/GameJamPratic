@@ -5439,6 +5439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cochon
       objectReference: {fileID: 0}
+    - target: {fileID: 8512548684349887386, guid: 76b9918d1177f184f8e819b40763b9c5,
+        type: 3}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8617318738775023724, guid: 76b9918d1177f184f8e819b40763b9c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5597,5 +5602,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2032972096}
+    - target: {fileID: 8512548684349887333, guid: 76b9918d1177f184f8e819b40763b9c5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b9918d1177f184f8e819b40763b9c5, type: 3}
