@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 0}
-  speed: 1.5
+  speed: 1.3
   escouade: {fileID: 0}
   r2d: {fileID: 0}
   attackSpeed: 2
