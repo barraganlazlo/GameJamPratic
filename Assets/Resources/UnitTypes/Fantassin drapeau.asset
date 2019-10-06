@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 227e8261692d6844f8f4471e3fdeef78, type: 3}
-  m_Name: Fantassin
+  m_Name: Fantassin drapeau
   m_EditorClassIdentifier: 
-  id: 2
+  id: 3
   damagesToEpou: 3
-  damagesOnEpouDie: 3
+  damagesOnEpouDie: 6
   damagesToBluff: 3
-  prefab: {fileID: 6290859848175330606, guid: 024c02faabdd4e24299288948954cba0, type: 3}
+  prefab: {fileID: 3361394176959143569, guid: ba777795095718a40a7ba01ce1cfbae2, type: 3}

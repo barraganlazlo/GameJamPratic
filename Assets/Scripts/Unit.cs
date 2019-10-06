@@ -28,7 +28,7 @@ public class Unit : MonoBehaviour
         {
             if (attackTimer < 0)
             {
-                attackTimer = 1f / attackSpeed;
+                attackTimer = attackSpeed;
                 Attack();
             }
             else
