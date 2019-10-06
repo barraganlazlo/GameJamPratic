@@ -73,7 +73,7 @@ MonoBehaviour:
   buttonScript: {fileID: 5764326419411720786}
   jauge: {fileID: 162144297357294154}
   totalNumberOfLevels: 5
-  stepsAdder: 2
+  stepsAdder: 1
   decreaseRatio: 0.3
   srs:
   - {fileID: 4987720951155222239, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
