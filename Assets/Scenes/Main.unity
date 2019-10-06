@@ -155,12 +155,21 @@ MonoBehaviour:
     loop: 0
     volume: 0.1
     pitch: 1
+    spatialBlend: 0
     source: {fileID: 0}
   - name: DropWeapon
     clip: {fileID: 8300000, guid: bc992777ac67ed74e8afc818fc604a2b, type: 3}
     loop: 0
     volume: 0.1
     pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Sound
+    clip: {fileID: 8300000, guid: 8fc92a0e80a677c499b84f32de3a4525, type: 3}
+    loop: 1
+    volume: 0.1
+    pitch: 1
+    spatialBlend: 0.5
     source: {fileID: 0}
 --- !u!4 &614007910
 Transform:

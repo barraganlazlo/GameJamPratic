@@ -16,11 +16,14 @@ public class Unit : MonoBehaviour
     float attackTimer;
     void Start()
     {
+        AudioManager.instance.PlayOnEntity("Sound", gameObject);
+
         if (r2d == null)
         {
             r2d=GetComponent<Rigidbody2D>();
         }
         r2d.velocity = speed * -escouade.transform.position.normalized ;
+
     }
     void Update()
     {
