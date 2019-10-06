@@ -96,32 +96,32 @@ PrefabInstance:
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.21042174
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.02953279
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.5143065
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -148,6 +148,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236921, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -165,35 +175,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 5790146205034993690, guid: f97b4f505af76784c9b023d0b6ce8f78,
-        type: 3}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: skins.Array.data[0]
-      value: 
-      objectReference: {fileID: 557453754910557957}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: skins.Array.data[1]
-      value: 
-      objectReference: {fileID: 2770952382352253275}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
       propertyPath: accessory
       value: 
       objectReference: {fileID: 2770952382352253275}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
-      propertyPath: accessory_heldOrderLayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
       propertyPath: accessory_defaultOrderLayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: accessory_heldOrderLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5790146205034993690, guid: f97b4f505af76784c9b023d0b6ce8f78,
+        type: 3}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: coolDown
@@ -209,6 +209,16 @@ PrefabInstance:
       propertyPath: duree
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: skins.Array.data[0]
+      value: 
+      objectReference: {fileID: 557453754910557957}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: skins.Array.data[1]
+      value: 
+      objectReference: {fileID: 2770952382352253275}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Sprite
