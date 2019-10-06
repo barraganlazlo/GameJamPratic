@@ -45,9 +45,7 @@ public class Castle : MonoBehaviour
             for (int i = 0; i < nbEscouades; i++)
             {
                 Spawner sp = spawners[Random.Range(0, spawners.Count)];
-                EscouadeType[] esList = UnitManager.instance.GetEscouadeTypesOfCurrentWave();
-                EscouadeType e = esList[Random.Range(0,esList.Length)];
-                sp.SpawnEscouade(e);
+                sp.SpawnRandomEscouade();
                 float cdNextEscouade = Random.Range(wave.cdNextEscouadeMin,wave.cdNextEscouadeMax);
                 yield return new WaitForSeconds(cdNextEscouade);
             }
