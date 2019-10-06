@@ -8,7 +8,7 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     private Animator animator;
 
-    [Header("Pick and Drop")]
+    [Header ("Pick and Drop")]
     private GameObject currentWeapon = null;
     private bool holdingWeapon = false;
     private GameObject pickableWeapon;
@@ -19,11 +19,6 @@ public class PlayerHandleWeapon : MonoBehaviour
     [Header("Shoot")]
     private bool canShoot;
 
-    [Header("Foin")]
-    [HideInInspector] public bool hasFoin = false;
-    [SerializeField] private GameObject foinPrefab;
-    [HideInInspector] public GameObject foinInstance;
-
     private void Start()
     {
         multiplayerScript = GetComponent<WhichPlayer>();
@@ -31,21 +26,17 @@ public class PlayerHandleWeapon : MonoBehaviour
     }
     private void Update()
     {
-        if (!canShoot)
-        {
-            Debug.Log("YEAAAAAAAAAAAH");
-        }
         //PickDrop
-        if (Input.GetButtonDown("PickButton" + multiplayerScript.idPlayer))
-        {
+        if (Input.GetButtonDown("PickButton"+multiplayerScript.idPlayer)){
             PickUp();
         }
         //Shoot
-        else if (!hasFoin && canShoot && Input.GetButtonDown("InteractButton" + multiplayerScript.idPlayer))
+        else if (canShoot && Input.GetButtonDown("InteractButton"+multiplayerScript.idPlayer))
         {
             animator.SetTrigger("angry");
             Shoot();
         }
+        
     }
 
     #region pickAndDrop
@@ -66,35 +57,20 @@ public class PlayerHandleWeapon : MonoBehaviour
     {
         if (newWeapon != null)
         {
+            
             weaponScript = newWeapon.GetComponent<Weapon>();
             holdingWeapon = true;
             weaponScript.isHeld = true;
             canPickWeapon = false;
-            if (newWeapon.transform.tag == "foin")
-            {
-                hasFoin = true;
-                foinInstance = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, this.transform);
-            }
-            else
-            {
-                newWeapon.transform.parent = this.transform;
-                newWeapon.transform.position = weaponPos.transform.position;
-                pickableWeapon = null;
-            }
+            newWeapon.transform.parent = this.transform;
+            newWeapon.transform.position = weaponPos.transform.position;
+            pickableWeapon = null;
         }
         else
         {
             if (currentWeapon != null)
             {
-                if (hasFoin)
-                {
-                    hasFoin = false;
-                    DestroyFoin();
-                }
-                if (currentWeapon != null)
-                {
-                    currentWeapon.transform.parent = null;
-                }
+                currentWeapon.transform.parent = null;
                 weaponScript.isHeld = false;
                 holdingWeapon = false;
             }
@@ -110,16 +86,10 @@ public class PlayerHandleWeapon : MonoBehaviour
         weaponScript.Shoot();
     }
 
-    public void DestroyFoin()
-    {
-        Destroy(foinInstance);
-        hasFoin = false;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //pick and drop
-        if (collision.tag == "weapon" || collision.tag == "foin")
+        if (collision.tag == "weapon")
         {
             canPickWeapon = true;
             pickableWeapon = collision.gameObject;
@@ -141,7 +111,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //pick and drop
-        if (collision.tag == "weapon" || collision.tag == "foin")
+        if (collision.tag == "weapon")
         {
             canPickWeapon = false;
             pickableWeapon = null;
@@ -153,4 +123,5 @@ public class PlayerHandleWeapon : MonoBehaviour
             canShoot = false;
         }
     }
+
 }

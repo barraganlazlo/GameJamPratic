@@ -70,11 +70,13 @@ public class PlayerController : MonoBehaviour
     void HandleDirection()
     {
         if (movement.y < 0) {
+            Debug.Log("bas");
             animator.SetTrigger("front");
             walking = true;
         }
         else if (movement.y > 0)
         {
+            Debug.Log("haut");
             animator.SetTrigger("back");
             walking = true;
         }
@@ -84,6 +86,7 @@ public class PlayerController : MonoBehaviour
             if (movement.x < 0 || movement.x > 0)
             {
                 flipPlayer();
+                Debug.Log("side");
                 animator.SetTrigger("side");
                 walking = true;
             }

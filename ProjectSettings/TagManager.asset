@@ -7,7 +7,6 @@ TagManager:
   - weapon
   - shootZone
   - Castle
-  - foin
   layers:
   - Default
   - TransparentFX
