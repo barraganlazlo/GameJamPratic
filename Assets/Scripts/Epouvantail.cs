@@ -7,7 +7,7 @@ public class Epouvantail : MonoBehaviour
     public int id;
     public int startLife;
     int life;
-    [HideInInspector]
+    //[HideInInspector]
     public Spawner spawner;
     SpriteRenderer spriteRenderer;
     int spriteId;
@@ -21,7 +21,7 @@ public class Epouvantail : MonoBehaviour
     public void SetSprite(int id, bool flipX = false)
     {
         spriteId = id;
-        spriteRenderer.sprite = UnitManager.instance.EpouvantailsSprites[id];
+        spriteRenderer.sprite = UnitManager.instance.epouvantailsSprites[id];
         spriteRenderer.flipX = flipX;
     }
     public void Damage(UnitType type)
@@ -37,7 +37,6 @@ public class Epouvantail : MonoBehaviour
                 life = 0;
                 GameManager.instance.Damage(type.damagesOnEpouDie);
             }
-            Debug.Log("DamageEpou " + type.damagesToEpou);
         }
         else
         {

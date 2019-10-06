@@ -1,22 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Escouade : MonoBehaviour
 {
     EscouadeType type;
     [HideInInspector]
     public Spawner spawner;
-    Unit[,] units;
-
+    List<Unit> units;
+    List<Unit> toRemove;
     public float horizontalMargin;
     public float verticalMargin;
+
     public void SetType(EscouadeType type)
     {
         this.type = type;
     }
     public void Instantiate(Spawner spawner)
     {
+        toRemove = new List<Unit>();
         this.spawner = spawner;
-        units = new Unit[type.height, type.width];
+        units = new List<Unit>();
         for (int i = 0; i < type.height; i++)
         {
             for (int j = 0; j < type.width; j++)
@@ -34,16 +37,40 @@ public class Escouade : MonoBehaviour
                     pos.x += j * hSpace;
                     pos.y += i * vSpace;
                     unitGO.transform.position = pos;
-                    units[i, j] = unitGO.GetComponent<Unit>();
-                    units[i, j].escouade = this;
+                    Unit u = unitGO.GetComponent<Unit>();
+                    units.Add(u);
+                    u.escouade = this;
+                    u.type = unitType;
                 }
                
             }
         }
         transform.rotation = spawner.transform.rotation;
     }
-    public void Flee(UnitType type)
+    public bool Flee(int id)
     {
-
+        bool b = false;
+        foreach(Unit u in units)
+        {
+            if (u.type.id==id)
+            {
+                u.StartFleeing();
+                b = true;
+            }
+        }
+        RemoveUnits();
+        return b;
+    }
+    public void RemoveUnit(Unit u)
+    {
+        toRemove.Add(u);
+    }
+    void RemoveUnits()
+    {
+        while (toRemove.Count > 0)
+        {
+            units.Remove(toRemove[0]);
+            toRemove.RemoveAt(0);
+        }
     }
 }

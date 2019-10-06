@@ -14,6 +14,12 @@ public class EscouadeTypeEditor : Editor
         SerializedProperty serializedWidth = serializedObject.FindProperty("width");
         SerializedProperty serializedWaveBegin = serializedObject.FindProperty("waveBegin");
         SerializedProperty serializedWaveEnd = serializedObject.FindProperty("waveEnd");
+        SerializedProperty serializedTauxApparition = serializedObject.FindProperty("tauxApparition");
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Taux Apparition :", GUILayout.Width(80));
+        serializedTauxApparition.intValue = EditorGUILayout.IntField(serializedTauxApparition.intValue, GUILayout.Width(60));
+        GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("WaveBegin :", GUILayout.Width(70));
@@ -21,12 +27,14 @@ public class EscouadeTypeEditor : Editor
         GUILayout.Label("WaveEnd :", GUILayout.Width(70));
         serializedWaveEnd.intValue = EditorGUILayout.IntField(serializedWaveEnd.intValue, GUILayout.Width(60));
         GUILayout.EndHorizontal();
+
         GUILayout.BeginHorizontal();
         GUILayout.Label("Height :", GUILayout.Width(60));
         int height = EditorGUILayout.IntField(serializedHeight.intValue, GUILayout.Width(60));
         GUILayout.Label("Width :", GUILayout.Width(60));
         int width= EditorGUILayout.IntField(serializedWidth.intValue, GUILayout.Width(60));
         GUILayout.EndHorizontal();
+
         serializedHeight.intValue = height;
         serializedWidth.intValue = width;
         serializedUnits.arraySize =height * width ;

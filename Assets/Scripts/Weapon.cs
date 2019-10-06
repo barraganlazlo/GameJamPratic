@@ -5,7 +5,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [HideInInspector] public bool isHeld;
- 
+
+
     private Collider2D trigger;
     private SpriteRenderer sr;
     private SpriteRenderer asr;
@@ -27,6 +28,11 @@ public class Weapon : MonoBehaviour
     private bool coolingDown = false;
     [SerializeField] private float amplitude;
     [SerializeField] private float duree;
+
+    //UNIT KILL AIM
+    public int[] unitKillId;
+    [HideInInspector]
+    public Spawner currentSpawnerAim;
 
     //apparence 
     public GameObject[] skins;
@@ -93,7 +99,13 @@ public class Weapon : MonoBehaviour
                     break;
             }
 
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            BulletScript proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<BulletScript>();
+            proj.direction = (currentSpawnerAim.transform.position - transform.parent.position).normalized;
+            proj.Begin();
+            foreach(int i in unitKillId)
+            {
+                currentSpawnerAim.FleeAllEscouade(i);
+            }
             ShakeCamera.instance.ShakeCam(duree, amplitude);
             coolingDown = true;
 
@@ -113,8 +125,6 @@ public class Weapon : MonoBehaviour
     {
         if (coolingDown)
         {
-
-            Debug.Log(currentTime);
             currentTime -= Time.deltaTime;
             if (currentTime <= 0)
             {

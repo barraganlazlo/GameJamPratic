@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51013ff003693fd4b958c28c16e101bd, type: 3}
   m_Name: Escouade7
   m_EditorClassIdentifier: 
+  id: 0
   height: 3
   width: 3
   waveBegin: 3
   waveEnd: 5
+  tauxApparition: 3
   units: 02000000030000000200000001000000ffffffff01000000ffffffff00000000ffffffff

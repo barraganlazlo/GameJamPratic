@@ -160,6 +160,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
+      propertyPath: unitKillId.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
       propertyPath: accessory
       value: 
       objectReference: {fileID: 2707403282419600433}

@@ -8,38 +8,53 @@ public class GameManager : MonoBehaviour
     public int startLife = 100;
     [HideInInspector]
     public int life;
-
     public Image buffBar;
+    public float StartCd;
+    [HideInInspector]
+    public bool started = false;
+    public Wave[] waves;
+    bool lost;
+
     void Awake()
     {
         if (instance != null)
         {
             Debug.LogError("There are Multiples GameManager in the scene but it can only be one ");
+            return;
         }
         instance = this;
 
         life = startLife;
     }
-
+    private void Start()
+    {
+        StartGame();
+    }
     public void Damage(int val)
     {
-        Debug.Log("DamageCastle " + val);
         if (life > val)
         {
             life -= val;
-            buffBar.rectTransform.localScale = new Vector2((float) life / (float) startLife, 1);
+            buffBar.fillAmount =((float) life )/ ((float) startLife);
         }
         else
         {
             life = 0;
             Lose();
-            buffBar.rectTransform.localScale = new Vector2(0, 1);
-
+            buffBar.fillAmount = 0;
         }
     }
     public void Lose()
     {
-        Debug.Log("lost");
+        if (!lost)
+        {
+            Debug.Log("lost");
+        }
     }
-
+    public void StartGame()
+    {
+        Castle.instance.CreateSides();
+        Castle.instance.StartCoroutine(Castle.instance.WavesCoroutine());
+        started = true;
+    }
 }
