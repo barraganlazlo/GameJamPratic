@@ -125,7 +125,6 @@ public class Weapon : MonoBehaviour
                 if (switchSkin == false) //changer skin une fois le timer finis
                 {
                     skins[1].SetActive(true);
-
                 }
                 else
                 {
