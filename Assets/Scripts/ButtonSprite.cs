@@ -9,7 +9,7 @@ public class ButtonSprite : MonoBehaviour
     /// Change l'image du boutton quand la touche voulut est enfoncée.
     /// Incrémente la jauge quand celle-ci est utilisée.
     /// </summary>
-    [HideInInspector] public bool isActive = true;
+    public bool isActive = false;
     public string _Myinput = "InteractButton";
     public int _PlayerID = 1;
     public string Type = "A"; // A ou B
@@ -22,7 +22,7 @@ public class ButtonSprite : MonoBehaviour
     void Start()
     {
         mySpr = GetComponent<Image>();
-        if(Type == "A")
+        if (Type == "A")
         {
             mySpr.sprite = buttonImg[0];
         }
@@ -30,12 +30,13 @@ public class ButtonSprite : MonoBehaviour
         {
             mySpr.sprite = buttonImg[2];
         }
-     
+        mySpr.enabled = false;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
+        Debug.Log(isActive);
         if (isActive)
         {
             if (!mySpr.enabled)

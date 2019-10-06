@@ -52,6 +52,7 @@ public class HandleLevelCochon : MonoBehaviour
             {
                 if (!buttonScript.isActive)
                 {
+                    Debug.Log("22");
                     buttonScript.isActive = true;
                 }
                 IncreaseJauge();
@@ -149,6 +150,7 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("11");
             buttonScript.isActive = true;
             playerIsClose = true;
             playerScript = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<PlayerHandleWeapon>();
