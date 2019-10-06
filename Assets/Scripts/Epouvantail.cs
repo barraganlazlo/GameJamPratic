@@ -39,7 +39,7 @@ public class Epouvantail : MonoBehaviour
             }
         }
         else
-        {
+        {            
             GameManager.instance.Damage(type.damagesToBluff);
         }
     }

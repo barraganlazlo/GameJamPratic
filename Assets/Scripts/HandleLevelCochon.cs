@@ -54,6 +54,7 @@ public class HandleLevelCochon : MonoBehaviour
             {
                 if (!buttonScript.isActive)
                 {
+                    Debug.Log("22");
                     buttonScript.isActive = true;
                 }
                 IncreaseJauge();

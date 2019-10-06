@@ -50,16 +50,19 @@ public class PlayerHandleWeapon : MonoBehaviour
         if (holdingWeapon)
         {
             UpdateWeapon(null);
+            if(pickableWeapon == null)
+                AudioManager.instance.PlayOnEntity("DropWeapon", gameObject);
         }
         if (pickableWeapon != null)
         {
             UpdateWeapon(pickableWeapon);
+            AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
         }
     }
 
     void UpdateWeapon(GameObject newWeapon)
     {
-        if (newWeapon != null)
+        if (newWeapon != null)  
         {
             weaponScript = newWeapon.GetComponent<Weapon>();
             holdingWeapon = true;
@@ -93,6 +96,10 @@ public class PlayerHandleWeapon : MonoBehaviour
                 }
                 weaponScript.isHeld = false;
                 holdingWeapon = false;
+            }
+            else
+            {
+                
             }
         }
 

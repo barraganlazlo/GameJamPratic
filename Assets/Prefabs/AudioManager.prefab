@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8920520168144947761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8920520168144947763}
+  - component: {fileID: 8920520168144947760}
+  - component: {fileID: 8920520168144947762}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8920520168144947763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8920520168144947761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8920520168144947760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8920520168144947761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0ffbf1ac6ab44408a828e4cebe501e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PickWeapon
+    clip: {fileID: 8300000, guid: cc46ff6b1c0730846a968c7ecb45f402, type: 3}
+    loop: 0
+    volume: 0.03
+    pitch: 1
+    spatialBlend: 0.1
+    source: {fileID: 0}
+  - name: DropWeapon
+    clip: {fileID: 8300000, guid: bc992777ac67ed74e8afc818fc604a2b, type: 3}
+    loop: 0
+    volume: 0.03
+    pitch: 1
+    spatialBlend: 0.1
+    source: {fileID: 0}
+  - name: Arbaliste_fire
+    clip: {fileID: 8300000, guid: 722cb224b1bddfc4c88cacea038704ed, type: 3}
+    loop: 0
+    volume: 0.1
+    pitch: 1
+    spatialBlend: 0.3
+    source: {fileID: 0}
+  - name: Canon_fire
+    clip: {fileID: 8300000, guid: 7b0fd6e5fd08a424b9a576f4aafb426e, type: 3}
+    loop: 0
+    volume: 0.4
+    pitch: 1
+    spatialBlend: 0.3
+    source: {fileID: 0}
+  - name: Cassoulet_fire
+    clip: {fileID: 8300000, guid: 19e7ca53dbc90fb4b9020484063f9e7e, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.3
+    source: {fileID: 0}
+  - name: Cochon_miam
+    clip: {fileID: 8300000, guid: be9e01b4f19c15d4a8e1647efd9122d8, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.3
+    source: {fileID: 0}
+  - name: fantassin_hit
+    clip: {fileID: 8300000, guid: a4424dd6a1c72784abec2823297e2420, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.8
+    source: {fileID: 0}
+  - name: belier_hit
+    clip: {fileID: 8300000, guid: 1a674cc6592afda4d887e1f4a0836467, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.8
+    source: {fileID: 0}
+--- !u!81 &8920520168144947762
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8920520168144947761}
+  m_Enabled: 1
