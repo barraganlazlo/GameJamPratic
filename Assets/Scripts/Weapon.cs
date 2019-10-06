@@ -77,6 +77,22 @@ public class Weapon : MonoBehaviour
     {
         if (!coolingDown)
         {
+            switch(gameObject.name)
+            {
+                case "arbaliste":
+                    AudioManager.instance.PlayOnEntity("Arbaliste_fire", gameObject);
+                    break;
+                case "cassouletGun":
+                    AudioManager.instance.PlayOnEntity("Cassoulet_fire", gameObject);
+                    break;
+                case "canonGun":
+                    AudioManager.instance.PlayOnEntity("Canon_fire", gameObject);
+                    break;
+                default:
+                    AudioManager.instance.PlayOnEntity("Arbaliste_fire", gameObject);
+                    break;
+            }
+
             Instantiate(projectile, transform.position, Quaternion.identity);
             ShakeCamera.instance.ShakeCam(duree, amplitude);
             coolingDown = true;

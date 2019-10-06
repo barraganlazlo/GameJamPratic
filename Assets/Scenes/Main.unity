@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 614007910}
   - component: {fileID: 614007909}
+  - component: {fileID: 614007911}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -155,19 +156,33 @@ MonoBehaviour:
     loop: 0
     volume: 0.1
     pitch: 1
-    spatialBlend: 0
+    spatialBlend: 0.1
     source: {fileID: 0}
   - name: DropWeapon
     clip: {fileID: 8300000, guid: bc992777ac67ed74e8afc818fc604a2b, type: 3}
     loop: 0
     volume: 0.1
     pitch: 1
-    spatialBlend: 0
+    spatialBlend: 0.1
     source: {fileID: 0}
-  - name: Sound
-    clip: {fileID: 8300000, guid: 8fc92a0e80a677c499b84f32de3a4525, type: 3}
-    loop: 1
-    volume: 0.1
+  - name: Arbaliste_fire
+    clip: {fileID: 8300000, guid: 722cb224b1bddfc4c88cacea038704ed, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.5
+    source: {fileID: 0}
+  - name: Canon_fire
+    clip: {fileID: 8300000, guid: 7b0fd6e5fd08a424b9a576f4aafb426e, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.5
+    source: {fileID: 0}
+  - name: Cassoulet_fire
+    clip: {fileID: 8300000, guid: 0ce145773501ef342bf81c6a283787ac, type: 3}
+    loop: 0
+    volume: 0.3
     pitch: 1
     spatialBlend: 0.5
     source: {fileID: 0}
@@ -179,12 +194,20 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614007908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31477344, y: -0.3354175, z: -1.9454129}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &614007911
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614007908}
+  m_Enabled: 1
 --- !u!4 &990942624 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 557453755402136164, guid: bb4f3888d182ce54690a7e1e5ea26062,
@@ -414,20 +437,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f45c98712fc66e14f8e253424333f3cd, type: 3}
---- !u!1 &1418759717 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4086580232559884116, guid: 05fbedba63c89f74e89ea01663f62994,
-    type: 3}
-  m_PrefabInstance: {fileID: 1085024490}
-  m_PrefabAsset: {fileID: 0}
---- !u!81 &1418759723
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418759717}
-  m_Enabled: 1
 --- !u!1001 &1554148424
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,24 +24,32 @@ public class AudioManager : MonoBehaviour
         //Génération de AudioSource sur le AudioManager en parcourant l'intégralité la liste des sons présents dans le tableau sounds
         foreach (Sound s in sounds)
         {
-            InitializeAudioSource(s, gameObject);
+            AudioSource a = InitializeAudioSource(s, gameObject);
+            print(a);
         }
         
     }
 
-    private Sound InitializeAudioSource(Sound s, GameObject go)
+    private AudioSource InitializeAudioSource(Sound s, GameObject go)
     {
-        Sound newSound = new Sound();
+        AudioSource[] sources = go.GetComponents<AudioSource>();
+        AudioSource source = Array.Find(sources, sourceComp => sourceComp.clip == s.clip);
+        if (source == null)
+        {
+            Sound newSound = new Sound();
 
-        newSound.source = go.AddComponent<AudioSource>();
-        newSound.source.clip = s.clip;
+            newSound.source = go.AddComponent<AudioSource>();
+            newSound.source.clip = s.clip;
 
-        newSound.source.volume = s.volume;
-        newSound.source.pitch = s.pitch;
-        newSound.source.loop = s.loop;
-        newSound.source.spatialBlend = s.spatialBlend;
+            newSound.source.volume = s.volume;
+            newSound.source.pitch = s.pitch;
+            newSound.source.loop = s.loop;
+            newSound.source.spatialBlend = s.spatialBlend;
 
-        return newSound;
+            return newSound.source;
+        }
+        else
+            return source;
     }
 
     //Utiliser cette méthode pour jouer un son non spatial (interface, etc)
@@ -51,7 +59,10 @@ public class AudioManager : MonoBehaviour
         if(s == null)
         {
             Debug.LogWarning("Le son " + name + " n'a pas été trouvé.");
+            return;
         }
+        print(s.name);
+        print(s.source);
         s.source.Play();
     }
 
@@ -62,11 +73,10 @@ public class AudioManager : MonoBehaviour
         if (s == null)
         {
             Debug.LogWarning("Le son " + name + " n'a pas été trouvé.");
+            return;
         }
 
-        Sound newSound = initializeAudioSource(s, go);
-
-        newSound.source.Play();
+        InitializeAudioSource(s, go).Play();
     }
 
 }

@@ -16,7 +16,6 @@ public class Unit : MonoBehaviour
     float attackTimer;
     void Start()
     {
-        AudioManager.instance.PlayOnEntity("Sound", gameObject);
 
         if (r2d == null)
         {
