@@ -355,6 +355,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6147876184492308268, guid: 05fbedba63c89f74e89ea01663f62994,
+        type: 3}
+      propertyPath: foinPrefab
+      value: 
+      objectReference: {fileID: 470550170482140322, guid: fbf514d410a854a45b76f1d2f253066f,
+        type: 3}
     - target: {fileID: 4529411527970945575, guid: 05fbedba63c89f74e89ea01663f62994,
         type: 3}
       propertyPath: m_TagString
@@ -368,12 +374,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6147876184492308268, guid: 05fbedba63c89f74e89ea01663f62994,
-        type: 3}
-      propertyPath: foinPrefab
-      value: 
-      objectReference: {fileID: 470550170482140322, guid: fbf514d410a854a45b76f1d2f253066f,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05fbedba63c89f74e89ea01663f62994, type: 3}
 --- !u!4 &1223862784 stripped
@@ -1165,6 +1165,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cochon
       objectReference: {fileID: 0}
+    - target: {fileID: 8512548684349887386, guid: 76b9918d1177f184f8e819b40763b9c5,
+        type: 3}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8617318738775023724, guid: 76b9918d1177f184f8e819b40763b9c5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1323,5 +1328,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2032972096}
+    - target: {fileID: 8512548684349887333, guid: 76b9918d1177f184f8e819b40763b9c5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b9918d1177f184f8e819b40763b9c5, type: 3}
