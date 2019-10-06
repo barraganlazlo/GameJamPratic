@@ -145,7 +145,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.7219335, y: -0.23725688}
+  - {x: -0.85536504, y: -0.18483743}
   - {x: -1.0331466, y: -0.12337485}
   - {x: -0.94409263, y: -0.30910844}
   - {x: -0.65830016, y: -0.5204569}
@@ -156,7 +156,7 @@ EdgeCollider2D:
   - {x: 0.83666253, y: -0.43048668}
   - {x: 0.95557684, y: -0.3147786}
   - {x: 1.0750512, y: -0.128528}
-  - {x: 0.7439531, y: -0.24070072}
+  - {x: 0.9012116, y: -0.18351583}
 --- !u!68 &2194289305204784841
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.6982476, y: 0.0089681}
+  - {x: -0.8555063, y: 0.06615304}
   - {x: -0.9605472, y: 0.112308934}
   - {x: -0.81191343, y: 0.2677704}
   - {x: -0.5899879, y: 0.39403105}
@@ -213,7 +213,7 @@ EdgeCollider2D:
   - {x: 0.26270646, y: 0.49690452}
   - {x: 0.6818247, y: 0.3892238}
   - {x: 1.0008469, y: 0.09717292}
-  - {x: 0.7236643, y: 0.0112412125}
+  - {x: 0.8904537, y: 0.058895327}
 --- !u!114 &2194289305204784839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawning: 1
   nombreDeCote: 6
+  Decallage: 0
   ratioX: 0.8
   offSet: {x: 0, y: 0.2}
   ratioY: 0.55
@@ -239,6 +240,7 @@ MonoBehaviour:
     type: 3}
   epouvantailFace: 0
   epouvantailDos: 4
+  waveId: 0
 --- !u!1 &6964879460278388695
 GameObject:
   m_ObjectHideFlags: 0
