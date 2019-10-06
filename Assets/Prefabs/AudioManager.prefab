@@ -87,6 +87,20 @@ MonoBehaviour:
     pitch: 1
     spatialBlend: 0.3
     source: {fileID: 0}
+  - name: fantassin_hit
+    clip: {fileID: 8300000, guid: a4424dd6a1c72784abec2823297e2420, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.8
+    source: {fileID: 0}
+  - name: belier_hit
+    clip: {fileID: 8300000, guid: 1a674cc6592afda4d887e1f4a0836467, type: 3}
+    loop: 0
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0.8
+    source: {fileID: 0}
 --- !u!81 &8920520168144947762
 AudioListener:
   m_ObjectHideFlags: 0

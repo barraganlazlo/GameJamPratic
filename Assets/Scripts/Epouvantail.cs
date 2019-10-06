@@ -39,8 +39,7 @@ public class Epouvantail : MonoBehaviour
             }
         }
         else
-        {
-            AudioManager.instance.PlayOnEntity("Epouvantail_destroy", gameObject);
+        {            
             GameManager.instance.Damage(type.damagesToBluff);
         }
     }
