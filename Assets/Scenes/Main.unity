@@ -180,7 +180,7 @@ MonoBehaviour:
     spatialBlend: 0.5
     source: {fileID: 0}
   - name: Cassoulet_fire
-    clip: {fileID: 8300000, guid: 0ce145773501ef342bf81c6a283787ac, type: 3}
+    clip: {fileID: 8300000, guid: 19e7ca53dbc90fb4b9020484063f9e7e, type: 3}
     loop: 0
     volume: 0.3
     pitch: 1
