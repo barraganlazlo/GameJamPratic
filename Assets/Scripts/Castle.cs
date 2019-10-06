@@ -70,7 +70,7 @@ public class Castle : MonoBehaviour
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
             epouScript.id = i;
             epouvantails.Add(epouScript);
-            if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)
+            /*if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)
             {
                 epouScript.SetSprite(epouvantailFace);
                 if (i >= nombreDeCote / 2f + 1)
@@ -85,7 +85,7 @@ public class Castle : MonoBehaviour
                 {
                     epouScript.SetSprite(epouvantailDos, true);
                 }
-            }
+            }*/
 
             GameObject spaw = Instantiate<GameObject>(prefabSpawner);
             spaw.transform.position = PlaceInCircle(i * ang, spawnDistance);

@@ -9,7 +9,7 @@ public class EscouadeType : ScriptableObject
     public int width;
     public int waveBegin;
     public int waveEnd;
-    public float tauxApparition;//Plus élévé = plus de chance d'apparaitre
+    public int tauxApparition;//Plus élévé = plus de chance d'apparaitre
     public int[] units;
 
   

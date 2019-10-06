@@ -18,7 +18,7 @@ public class EscouadeTypeEditor : Editor
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Taux Apparition :", GUILayout.Width(80));
-        serializedWaveEnd.intValue = EditorGUILayout.IntField(serializedWaveEnd.intValue, GUILayout.Width(60));
+        serializedTauxApparition.intValue = EditorGUILayout.IntField(serializedTauxApparition.intValue, GUILayout.Width(60));
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();

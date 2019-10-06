@@ -13,6 +13,7 @@ public class Unit : MonoBehaviour
     bool attacked=false;
     bool fleeing = false;
     public float attackSpeed = 1f;
+    public float attackSpeedStart = 1f;
     float attackTimer;
     void Start()
     {
@@ -51,6 +52,7 @@ public class Unit : MonoBehaviour
             return;
         }
         attacking = true;
+        attackTimer = attackSpeedStart;
         SetMoving(false);
     }
     void StopAttacking()

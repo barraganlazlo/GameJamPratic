@@ -38,6 +38,7 @@ public class Escouade : MonoBehaviour
                     Unit u = unitGO.GetComponent<Unit>();
                     units.Add(u);
                     u.escouade = this;
+                    u.type = unitType;
                 }
                
             }

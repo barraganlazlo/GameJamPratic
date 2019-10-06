@@ -27,10 +27,30 @@ public class Spawner : MonoBehaviour
     }
     public void SpawnEscouade(int i)
     {
-        SpawnEscouade(UnitManager.instance.GetEscouadeTypesOfCurrentWave()[i]);
+        SpawnEscouade(UnitManager.instance.escouadeTypes[i]);
     }
     public void SpawnRandomEscouade()
     {
-        SpawnEscouade(Random.Range(0, UnitManager.instance.GetEscouadeTypesOfCurrentWave().Length));
+        EscouadeType[] escouades = UnitManager.instance.GetEscouadeTypesOfCurrentWave();
+        int max = 0;
+        foreach(EscouadeType et in escouades)
+        {
+            max += et.tauxApparition;            
+        }
+        int val = Random.Range(1, max);
+        max = 0;
+        int id = -1;
+        foreach (EscouadeType et in escouades)
+        {
+            if (max<val) {
+                max += et.tauxApparition;
+                id += 1;
+            }
+            else
+            {
+                break;
+            }
+        }
+        SpawnEscouade(escouades[id]);
     }
 }
