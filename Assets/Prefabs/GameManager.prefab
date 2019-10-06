@@ -212,36 +212,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 150
   life: 0
-  wave: 0
   buffBar: {fileID: 3142542991561497285}
   StartCd: 0
   started: 0
   waves:
-  - nbEscouadeMin: 2
-    nbEscouadeMax: 3
-    cdNextEscouadeMin: 3.75
-    cdNextEscouadeMax: 3.25
-    cdNextWave: 4
+  - nbEscouadeMin: 6
+    nbEscouadeMax: 7
+    cdNextEscouadeMin: 5.25
+    cdNextEscouadeMax: 5.5
+    cdNextWave: 10
   - nbEscouadeMin: 10
     nbEscouadeMax: 12
-    cdNextEscouadeMin: 3.5
-    cdNextEscouadeMax: 3
-    cdNextWave: 4
+    cdNextEscouadeMin: 5
+    cdNextEscouadeMax: 5.25
+    cdNextWave: 11
   - nbEscouadeMin: 13
     nbEscouadeMax: 15
-    cdNextEscouadeMin: 3.5
-    cdNextEscouadeMax: 3
-    cdNextWave: 4
+    cdNextEscouadeMin: 5
+    cdNextEscouadeMax: 5.25
+    cdNextWave: 13
   - nbEscouadeMin: 16
     nbEscouadeMax: 18
-    cdNextEscouadeMin: 3.5
-    cdNextEscouadeMax: 3
-    cdNextWave: 4
-  - nbEscouadeMin: -1
-    nbEscouadeMax: -1
-    cdNextEscouadeMin: 3.25
-    cdNextEscouadeMax: 3
-    cdNextWave: -1
+    cdNextEscouadeMin: 5
+    cdNextEscouadeMax: 5.25
+    cdNextWave: 12
+  - nbEscouadeMin: 1000
+    nbEscouadeMax: 1000
+    cdNextEscouadeMin: 5
+    cdNextEscouadeMax: 5.25
+    cdNextWave: 100000
 --- !u!1001 &5998809306163357541
 PrefabInstance:
   m_ObjectHideFlags: 0

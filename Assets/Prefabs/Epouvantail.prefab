@@ -184,5 +184,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  startLife: 6
+  startLife: 0
   spawner: {fileID: 0}

@@ -147,11 +147,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 0}
-  speed: 0.5
+  speed: 0.7
   escouade: {fileID: 0}
   r2d: {fileID: 0}
-  attackSpeed: 2
-  attackSpeedStart: 0.75
+  attackSpeed: 3
+  attackSpeedStart: 3
 --- !u!61 &1183392893124985709
 BoxCollider2D:
   m_ObjectHideFlags: 0

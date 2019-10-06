@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fantassin drapeau
   m_EditorClassIdentifier: 
   id: 3
-  damagesToEpou: 3
-  damagesOnEpouDie: 6
-  damagesToBluff: 3
+  damagesToEpou: 0
+  damagesOnEpouDie: 0
+  damagesToBluff: 2
   prefab: {fileID: 3361394176959143569, guid: ba777795095718a40a7ba01ce1cfbae2, type: 3}

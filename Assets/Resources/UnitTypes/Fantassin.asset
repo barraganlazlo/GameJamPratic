@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fantassin
   m_EditorClassIdentifier: 
   id: 2
-  damagesToEpou: 3
-  damagesOnEpouDie: 3
-  damagesToBluff: 3
+  damagesToEpou: 0
+  damagesOnEpouDie: 0
+  damagesToBluff: 2
   prefab: {fileID: 6290859848175330606, guid: 024c02faabdd4e24299288948954cba0, type: 3}

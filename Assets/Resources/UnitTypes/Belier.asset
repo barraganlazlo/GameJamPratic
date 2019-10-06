@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Belier
   m_EditorClassIdentifier: 
   id: 0
-  damagesToEpou: 1
-  damagesOnEpouDie: 1
-  damagesToBluff: 9
+  damagesToEpou: 0
+  damagesOnEpouDie: 0
+  damagesToBluff: 6
   prefab: {fileID: 5359509256478462711, guid: 696a20c865325784583382fd82fc4011, type: 3}
