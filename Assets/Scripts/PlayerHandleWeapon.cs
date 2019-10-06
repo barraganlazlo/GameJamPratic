@@ -47,12 +47,12 @@ public class PlayerHandleWeapon : MonoBehaviour
         {
             UpdateWeapon(null);
             if(pickableWeapon == null)
-                FindObjectOfType<AudioManager>().Play("DropWeapon");
+                AudioManager.instance.Play("DropWeapon");
         }
         if (pickableWeapon != null)
         {
             UpdateWeapon(pickableWeapon);
-            FindObjectOfType<AudioManager>().Play("PickWeapon");
+            AudioManager.instance.Play("PickWeapon");
         }
     }
 
