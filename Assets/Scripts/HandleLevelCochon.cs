@@ -28,6 +28,9 @@ public class HandleLevelCochon : MonoBehaviour
     [SerializeField] private Sprite[] srs;
 
 
+    [Header("handleMultiplayer")]
+    private int playerFeeding = 0;
+
     private bool playerIsClose = false;
     private PlayerHandleWeapon playerScript;
 
@@ -40,7 +43,6 @@ public class HandleLevelCochon : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         valueDecharge = valueCharge * 0.7f;
         sr = GetComponentInChildren<SpriteRenderer>();
-
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (playerScript != null && playerIsClose && playerScript.hasFoin)
         {
-            if (Input.GetButton(buttonToPress + "1"))
+            if (Input.GetButton(buttonToPress+buttonScript._PlayerID))
             {
                 if (!buttonScript.isActive)
                 {
@@ -67,20 +69,21 @@ public class HandleLevelCochon : MonoBehaviour
         }
     }
 
-    void DecreaseJauge()
+    void DecreaseJauge()  
     {
-        if (jauge.fillAmount == 0)
-        {
-            ResetFillAmount();
-        }
-        else
-        {
-            jauge.fillAmount -= valueDecharge;
-            if (jauge.fillAmount <= 0 && !playerIsClose)
+            if (jauge.fillAmount == 0)
             {
-                buttonScript.isActive = false;
+                ResetFillAmount();
             }
-        }
+            else
+            {
+                Debug.Log("Decrease");
+                jauge.fillAmount -= valueDecharge;
+                if (jauge.fillAmount <= 0 && !playerIsClose)
+                {
+                    buttonScript.isActive = false;
+                }
+            }
     }
 
     void ResetFillAmount()
@@ -94,6 +97,7 @@ public class HandleLevelCochon : MonoBehaviour
     void IncreaseJauge()
     {
         jauge.fillAmount += valueCharge;
+        Debug.Log("Increase");
         if (jauge.fillAmount >= 1)
         {
             playerScript.DestroyFoin();
@@ -149,6 +153,8 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("Player2Entered");
+            buttonScript._PlayerID = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<WhichPlayer>().idPlayer;
             buttonScript.isActive = true;
             playerIsClose = true;
             playerScript = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<PlayerHandleWeapon>();
