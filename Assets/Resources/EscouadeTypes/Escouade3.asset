@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Escouade3
   m_EditorClassIdentifier: 
   id: 0
-  height: 1
-  width: 2
-  waveBegin: 0
-  waveEnd: 15
-  tauxApparition: 0
+  height: 2
+  width: 1
+  waveBegin: 1
+  waveEnd: 3
+  tauxApparition: 5
   units: 0000000000000000

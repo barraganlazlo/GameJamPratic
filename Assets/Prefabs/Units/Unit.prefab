@@ -151,6 +151,7 @@ MonoBehaviour:
   escouade: {fileID: 0}
   r2d: {fileID: 0}
   attackSpeed: 2
+  attackSpeedStart: 0.75
 --- !u!61 &1183392893124985709
 BoxCollider2D:
   m_ObjectHideFlags: 0

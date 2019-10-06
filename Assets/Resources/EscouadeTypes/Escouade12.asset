@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Escouade12
   m_EditorClassIdentifier: 
   id: 0
-  height: 3
-  width: 5
-  waveBegin: 45
-  waveEnd: 0
-  tauxApparition: 0
-  units: 0200000002000000030000000200000002000000ffffffff010000000200000001000000ffffffffffffffff00000000ffffffff00000000ffffffff
+  height: 5
+  width: 3
+  waveBegin: 5
+  waveEnd: -1
+  tauxApparition: 2
+  units: ffffffff03000000ffffffff010000000100000001000000020000000000000002000000020000000200000002000000ffffffff00000000ffffffff

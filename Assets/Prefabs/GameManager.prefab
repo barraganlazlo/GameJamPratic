@@ -210,18 +210,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6a6c43eaea420e4ba4b2eb47539079f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startLife: 100
+  startLife: 150
   life: 0
   wave: 0
   buffBar: {fileID: 3142542991561497285}
   StartCd: 0
+  started: 0
   waves:
-  - nbEscouade: 15
-    cdNextEscouade: 3
-    cdNextWave: 5
-  - nbEscouade: 15
-    cdNextEscouade: 3
-    cdNextWave: 5
+  - nbEscouadeMin: 7
+    nbEscouadeMax: 9
+    cdNextEscouadeMin: 3.75
+    cdNextEscouadeMax: 3.25
+    cdNextWave: 4
+  - nbEscouadeMin: 10
+    nbEscouadeMax: 12
+    cdNextEscouadeMin: 3.5
+    cdNextEscouadeMax: 3
+    cdNextWave: 4
+  - nbEscouadeMin: 13
+    nbEscouadeMax: 15
+    cdNextEscouadeMin: 3.5
+    cdNextEscouadeMax: 3
+    cdNextWave: 4
+  - nbEscouadeMin: 16
+    nbEscouadeMax: 18
+    cdNextEscouadeMin: 3.5
+    cdNextEscouadeMax: 3
+    cdNextWave: 4
+  - nbEscouadeMin: -1
+    nbEscouadeMax: -1
+    cdNextEscouadeMin: 3.25
+    cdNextEscouadeMax: 3
+    cdNextWave: -1
 --- !u!1001 &5998809306163357541
 PrefabInstance:
   m_ObjectHideFlags: 0
