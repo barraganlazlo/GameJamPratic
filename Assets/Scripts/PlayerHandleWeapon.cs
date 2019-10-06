@@ -2,7 +2,7 @@
 
 public class PlayerHandleWeapon : MonoBehaviour
 {
-    private WhichPlayer multiplayerScript;
+    [HideInInspector] public WhichPlayer multiplayerScript;
 
     private Animator animator;
 
@@ -29,10 +29,6 @@ public class PlayerHandleWeapon : MonoBehaviour
     }
     private void Update()
     {
-        if (!canShoot)
-        {
-            //Debug.Log("YEAAAAAAAAAAAH");
-        }
         //PickDrop
         if (Input.GetButtonDown("PickButton" + multiplayerScript.idPlayer))
         {
@@ -71,6 +67,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             if (newWeapon.transform.tag == "foin")
             {
                 hasFoin = true;
+                Debug.Log("oui");
                 foinInstance = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, this.transform);
             }
             else
@@ -158,10 +155,15 @@ public class PlayerHandleWeapon : MonoBehaviour
             return;
         }
         //pick and drop
-        if (collision.CompareTag("weapon") || collision.CompareTag("foin"))
+        if (collision.CompareTag("weapon"))
         {
             canPickWeapon = false;
             pickableWeapon = null;
+        }
+        else if (collision.CompareTag("foin"))
+        {
+            pickableWeapon = null;
+            canPickWeapon = false;
         }
 
         //shoot

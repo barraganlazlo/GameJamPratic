@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     [HideInInspector] public bool isHeld;
 
+    [SerializeField] private bool isFoin = false;
 
     private Collider2D trigger;
     private SpriteRenderer sr;
@@ -56,24 +57,35 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isHeld && trigger.enabled)
+        if (!isFoin)
+        {
+            if (isHeld && trigger.enabled)
+            {
+                trigger.enabled = false;
+                sr.sortingOrder = heldOrderLayer;
+                if (accessory != null)
+                {
+                    asr.sortingOrder = accessory_heldOrderLayer;
+                }
+            }
+            else if (!isHeld && !trigger.enabled)
+            {
+                trigger.enabled = true;
+                sr.sortingOrder = defaultOrderLayer;
+                if (accessory != null)
+                {
+                    asr.sortingOrder = accessory_defaultOrderLayer;
+                }
+                currentTime = coolDown;
+            }
+        }
+        else if (isHeld && trigger.enabled)
         {
             trigger.enabled = false;
-            sr.sortingOrder = heldOrderLayer;
-            if (accessory != null)
-            {
-                asr.sortingOrder = accessory_heldOrderLayer;
-            }
         }
         else if (!isHeld && !trigger.enabled)
         {
             trigger.enabled = true;
-            sr.sortingOrder = defaultOrderLayer;
-            if (accessory != null)
-            {
-                asr.sortingOrder = accessory_defaultOrderLayer;
-            }
-            currentTime = coolDown;
         }
 
         timer();
