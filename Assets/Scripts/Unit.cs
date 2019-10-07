@@ -9,8 +9,8 @@ public class Unit : MonoBehaviour
     public Escouade escouade;
     public Rigidbody2D r2d;
     bool moving = true;
-    bool attacking =false;
-    bool attacked=false;
+    bool attacking = false;
+    bool attacked = false;
     bool fleeing = false;
     public float attackSpeed = 1f;
     public float attackSpeedStart = 1f;
@@ -19,13 +19,12 @@ public class Unit : MonoBehaviour
     Animator animator;
     void Awake()
     {
-        r2d=GetComponent<Rigidbody2D>();
+        r2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
     }
-    private void Start()
+    public void Begin()
     {
-        r2d.velocity = speed * -escouade.transform.position.normalized;
+        r2d.velocity = (escouade.spawner.epouvantail.transform.position - transform.position).normalized * speed;
     }
     void Update()
     {
@@ -48,7 +47,7 @@ public class Unit : MonoBehaviour
         moving = b;
         r2d.simulated = b;
         GetComponent<Collider2D>().enabled = b;
-        animator.SetBool("moving", b);
+        animator.SetBool("walking", b);
 
         if (b)
         {
@@ -75,7 +74,7 @@ public class Unit : MonoBehaviour
     {
         fleeing = true;
         StopAttacking();
-        r2d.velocity = (escouade.spawner.transform.position-transform.position).normalized * speed;
+        r2d.velocity = (escouade.spawner.transform.position - transform.position).normalized * speed;
         escouade.RemoveUnit(this);
         SetMoving(true);
     }
@@ -100,6 +99,6 @@ public class Unit : MonoBehaviour
     }
     public void Flip()
     {
-        GetComponentInChildren<SpriteRenderer>().flipX = true;
+        transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 }
