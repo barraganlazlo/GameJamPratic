@@ -37,8 +37,10 @@ public class PlayerHandleWeapon : MonoBehaviour
         //Shoot
         else if (!hasFoin && canShoot && Input.GetButtonDown("InteractButton" + multiplayerScript.idPlayer))
         {
-            animator.SetTrigger("angry");
-            Shoot();
+            if (!weaponScript.coolingDown) {
+                animator.SetTrigger("angry");
+                Shoot();
+            }
         }
     }
 

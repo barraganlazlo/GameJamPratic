@@ -26,7 +26,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private float coolDown;
     private float currentTime;
-    private bool coolingDown = false;
+    [HideInInspector]
+    public bool coolingDown = false;
     [SerializeField] private float amplitude;
     [SerializeField] private float duree;
 
@@ -93,8 +94,6 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        if (!coolingDown)
-        {
             switch(gameObject.name)
             {
                 case "arbaliste":
@@ -112,10 +111,6 @@ public class Weapon : MonoBehaviour
             }
 
             BulletScript proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<BulletScript>();
-            //if (proj == null)
-            //{
-            //    proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<BulletScriptArb>();
-            //}
             proj.direction = (currentSpawnerAim.transform.position - transform.parent.position).normalized;
             proj.Begin();
             foreach(int i in unitKillId)
@@ -134,7 +129,6 @@ public class Weapon : MonoBehaviour
                 skins[0].SetActive(false);
                 skins[1].SetActive(true);
             }
-        }
     }
 
     private void timer()
