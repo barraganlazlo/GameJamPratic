@@ -34,7 +34,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             PickUp();
         }
         //Shoot
-        else if (!hasFoin && canShoot && Input.GetButtonDown("InteractButton" + multiplayerScript.idPlayer))
+        else if (canShoot && Input.GetButtonDown("InteractButton" + multiplayerScript.idPlayer))
         {
             if (!weapon.coolingDown)
             {

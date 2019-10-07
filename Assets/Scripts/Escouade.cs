@@ -28,7 +28,7 @@ public class Escouade : MonoBehaviour
                 if (type.units[uId]>-1)
                 {
                     UnitType unitType = UnitManager.instance.unitTypes[type.units[uId]];
-                    GameObject unitGO = Instantiate<GameObject>(unitType.prefab, transform.position, transform.rotation, transform);
+                    GameObject unitGO = Instantiate(unitType.prefab, transform.position, transform.rotation, transform);
                     Vector3 pos = transform.position;
                     float hSpace = verticalMargin ;
                     float vSpace = horizontalMargin ;

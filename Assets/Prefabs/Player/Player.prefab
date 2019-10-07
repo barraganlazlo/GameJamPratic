@@ -322,9 +322,9 @@ MonoBehaviour:
   multiplayerScript: {fileID: 0}
   weaponPos: {fileID: 2884119370300662489}
   hasFoin: 0
-  foinPrefab: {fileID: 470550170482140322, guid: fbf514d410a854a45b76f1d2f253066f,
+  foinPrefab: {fileID: 787891006450986237, guid: 90fe0944362be71488bc5d158595e292,
     type: 3}
-  foinInstance: {fileID: 0}
+  foin: {fileID: 0}
 --- !u!114 &6715619708996333713
 MonoBehaviour:
   m_ObjectHideFlags: 0
