@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHeld: 0
+  isFoin: 0
   defaultOrderLayer: 4
   heldOrderLayer: 4
   accessory: {fileID: 0}
@@ -55,6 +56,10 @@ MonoBehaviour:
   distance: 3
   projectile: {fileID: 0}
   coolDown: 0.5
+  amplitude: 0
+  duree: 0
+  unitKillId: 
+  currentSpawnerAim: {fileID: 0}
   skins: []
   switchSkin: 0
 --- !u!61 &7451529736856992030
@@ -81,7 +86,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21, y: 0.22}
+  m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
 --- !u!1 &7451529737212236920
 GameObject:
