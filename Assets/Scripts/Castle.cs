@@ -10,8 +10,8 @@ public class Castle : MonoBehaviour
     [Range(0, 10)]
     public int nombreDeCote;
     public float Decallage;
-    public float ratioX;
     public Vector2 offSet;
+    public float ratioX;
     public float ratioY;
     public float radius;
     public float spawnDistance;

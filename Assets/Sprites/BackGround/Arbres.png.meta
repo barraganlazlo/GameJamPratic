@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 855886bf276f4e84e9fdb2c239cb2154
+guid: 6d36cd8012df1734297fa7dcb76b3a08
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: 6172133185364292751
     second: Arbres_1
+  - first:
+      213: -6514447206871509935
+    second: Arbres_2
+  - first:
+      213: 23963911010441828
+    second: Arbres_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -53,7 +59,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -66,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -78,10 +84,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3814700f322697f4ea7737eac4896008
+      spriteID: 1c2be19c285b52a4494c5a7d9bbcf816
       internalID: -1103175884670580682
       vertices: []
       indices: 
@@ -127,8 +133,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9adbdb93d0ded774bb92b4110ebdc9ff
+      spriteID: 38c32c10128bc7a40b5999c23d60519b
       internalID: 6172133185364292751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arbres_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4382927195da4214daa29a167c56e4e3
+      internalID: -6514447206871509935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arbres_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df69b8a92c2e2b84c98a81021d243788
+      internalID: 23963911010441828
       vertices: []
       indices: 
       edges: []
