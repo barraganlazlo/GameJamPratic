@@ -228,8 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawning: 1
   nombreDeCote: 6
-  Decallage: 0
-  ratioX: 0.8
+  Decallage: 90
+  ratioX: 0.825
   offSet: {x: 0, y: 0.2}
   ratioY: 0.55
   radius: 0.65
