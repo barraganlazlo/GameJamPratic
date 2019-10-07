@@ -6,7 +6,7 @@ public class BulletScriptArb : BulletScript
 {
     BulletScript[] childs;
 
-    void Awake()
+    void OnIntantiate()
     {
         childs = transform.GetComponentsInChildren<BulletScript>();
     }
