@@ -50,6 +50,10 @@ public class HandleLevelCochon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerScript != null)
+        {
+            Debug.Log(playerScript.hasFoin);
+        }
         if (playerScript != null && playerIsClose && playerScript.hasFoin)
         {
             if (Input.GetButton(buttonToPress+buttonScript._PlayerID))
@@ -103,6 +107,7 @@ public class HandleLevelCochon : MonoBehaviour
         Debug.Log("Increase");
         if (jauge.fillAmount >= 1)
         {
+            //playerScript.hasFoin = false;
             playerScript.DestroyFoin();
             PassStep();
         }
