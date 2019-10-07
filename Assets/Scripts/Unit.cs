@@ -91,7 +91,7 @@ public class Unit : MonoBehaviour
     {
         escouade.spawner.epouvantail.Damage(type);
     }
-    private void OnBecameInvisible()
+    public void OnOutOfBounds()
     {
         if (fleeing)
         {
