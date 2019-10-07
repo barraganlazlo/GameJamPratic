@@ -12,24 +12,18 @@ public class Weapon : MonoBehaviour
     private SpriteRenderer sr;
     private SpriteRenderer asr;
 
-    [Header ("Set sorting orders")]
-    [SerializeField] private int defaultOrderLayer;
-    [SerializeField] private int heldOrderLayer;
-    [SerializeField] private GameObject accessory;
-    [SerializeField] private int accessory_defaultOrderLayer;
-    [SerializeField] private int accessory_heldOrderLayer;
-
-    [SerializeField] private GameObject secondSpriteObject;
-
     [Header ("Shoot")]
-    [SerializeField] private float distance = 3.0f;
-    [SerializeField] private GameObject projectile;
+    [SerializeField]
+    private GameObject projectile;
     [SerializeField] private float coolDown;
     private float currentTime;
+
+    [SerializeField]
+    private float amplitude;
+    [SerializeField] private float duree;
+
     [HideInInspector]
     public bool coolingDown = false;
-    [SerializeField] private float amplitude;
-    [SerializeField] private float duree;
 
     //UNIT KILL AIM
     public int[] unitKillId;
@@ -37,25 +31,20 @@ public class Weapon : MonoBehaviour
     public Spawner currentSpawnerAim;
 
     //apparence 
-    public GameObject[] skins;
-    public bool switchSkin = false;
+    public Sprite defaultSprite;
+    public Sprite emptySprite;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         trigger = GetComponent<Collider2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
-        sr.sortingOrder = defaultOrderLayer;
-        if (accessory != null)
-        {
-            asr = accessory.GetComponent<SpriteRenderer>();
-            asr.sortingOrder = accessory_defaultOrderLayer;
-        }
+    }
 
+    void Start()
+    {
         currentTime = coolDown;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!isFoin)
@@ -63,20 +52,10 @@ public class Weapon : MonoBehaviour
             if (isHeld && trigger.enabled)
             {
                 trigger.enabled = false;
-                sr.sortingOrder = heldOrderLayer;
-                if (accessory != null)
-                {
-                    asr.sortingOrder = accessory_heldOrderLayer;
-                }
             }
             else if (!isHeld && !trigger.enabled)
             {
                 trigger.enabled = true;
-                sr.sortingOrder = defaultOrderLayer;
-                if (accessory != null)
-                {
-                    asr.sortingOrder = accessory_defaultOrderLayer;
-                }
                 currentTime = coolDown;
             }
         }
@@ -96,9 +75,6 @@ public class Weapon : MonoBehaviour
     {
             switch(gameObject.name)
             {
-                case "arbaliste":
-                    AudioManager.instance.PlayOnEntity("Arbaliste_fire", gameObject);
-                    break;
                 case "cassouletGun":
                     AudioManager.instance.PlayOnEntity("Cassoulet_fire", gameObject);
                     break;
@@ -120,18 +96,12 @@ public class Weapon : MonoBehaviour
             ShakeCamera.instance.ShakeCam(duree, amplitude);
             coolingDown = true;
 
-            if(switchSkin == false) //changer skin
-            {
-                skins[1].SetActive(false);
-            }
-            else
-            {
-                skins[0].SetActive(false);
-                skins[1].SetActive(true);
-            }
+        //changer skin
+        sr.sprite = emptySprite;
+         
     }
 
-    private void timer()
+    void timer()
     {
         if (coolingDown)
         {
@@ -142,15 +112,7 @@ public class Weapon : MonoBehaviour
                 currentTime = coolDown;
                 coolingDown = false;
 
-                if (switchSkin == false) //changer skin une fois le timer finis
-                {
-                    skins[1].SetActive(true);
-                }
-                else
-                {
-                    skins[0].SetActive(true);
-                    skins[1].SetActive(false);
-                }
+                sr.sprite = defaultSprite;
             }
         }
     }

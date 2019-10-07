@@ -7,20 +7,19 @@ public class PlayerHandleWeapon : MonoBehaviour
     private Animator animator;
 
     [Header("Pick and Drop")]
-    private GameObject currentWeapon = null;
-    private bool holdingWeapon = false;
-    private GameObject pickableWeapon;
-    private Weapon weaponScript;
-    private bool canPickWeapon;
+    private Weapon weapon;
+    private Weapon pickableWeapon;
     [SerializeField] private GameObject weaponPos;
-
-    [Header("Shoot")]
-    private bool canShoot;
 
     [Header("Foin")]
     [HideInInspector] public bool hasFoin = false;
+    bool canPickFoin = false;
     [SerializeField] private GameObject foinPrefab;
-    [HideInInspector] public GameObject foinInstance;
+    [HideInInspector] public GameObject foin;
+
+    private bool canShoot;
+
+
 
     private void Start()
     {
@@ -37,7 +36,8 @@ public class PlayerHandleWeapon : MonoBehaviour
         //Shoot
         else if (!hasFoin && canShoot && Input.GetButtonDown("InteractButton" + multiplayerScript.idPlayer))
         {
-            if (!weaponScript.coolingDown) {
+            if (!weapon.coolingDown)
+            {
                 animator.SetTrigger("angry");
                 Shoot();
             }
@@ -48,116 +48,65 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     void PickUp()
     {
-        if (holdingWeapon)
-        {
-            UpdateWeapon(null);
-            if(pickableWeapon == null)
-                AudioManager.instance.PlayOnEntity("DropWeapon", gameObject);
-        }
+        Drop();
         if (pickableWeapon != null)
         {
-            UpdateWeapon(pickableWeapon);
-            AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
+            Equip(pickableWeapon);
+        }
+        else if (canPickFoin)
+        {
+            EquipFoin();
         }
     }
-
-    void UpdateWeapon(GameObject newWeapon)
+    void Drop()
     {
-        if (newWeapon != null)  
+        if (weapon != null)
         {
-            weaponScript = newWeapon.GetComponent<Weapon>();
-            holdingWeapon = true;
-            weaponScript.isHeld = true;
-            canPickWeapon = false;
-            if (newWeapon.transform.tag == "foin")
-            {
-                hasFoin = true;
-                Debug.Log("oui");
-                foinInstance = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, this.transform);
-            }
-            else
-            {
-                newWeapon.transform.parent = this.transform;
-                newWeapon.transform.position = weaponPos.transform.position;
-                pickableWeapon = null;
-            }
+            weapon.transform.parent = null;
+            weapon.isHeld = false;
+            weapon = null;
+            AudioManager.instance.PlayOnEntity("DropWeapon", gameObject);
         }
-        else
+        if (hasFoin)
         {
-            if (currentWeapon != null)
-            {
-                if (hasFoin)
-                {
-                    hasFoin = false;
-                    DestroyFoin();
-                }
-                if (currentWeapon != null)
-                {
-                    currentWeapon.transform.parent = null;
-                }
-                weaponScript.isHeld = false;
-                holdingWeapon = false;
-            }
-            else
-            {
-                
-            }
+            DestroyFoin();
+            AudioManager.instance.PlayOnEntity("DropWeapon", gameObject);
         }
-
-        currentWeapon = newWeapon;
+    }
+    void Equip(Weapon newWeapon)
+    {
+        weapon = newWeapon;
+        weapon.isHeld = true;
+        if (Mathf.Sign(weapon.transform.localScale.x) != Mathf.Sign(transform.localScale.x))
+        {
+            weapon.transform.localScale = new Vector3(weapon.transform.localScale.x * -1, weapon.transform.localScale.y, weapon.transform.localScale.z);
+        }
+        weapon.transform.parent = transform;
+        weapon.transform.position = weaponPos.transform.position;
+    
+        pickableWeapon = null;
+        AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
+    }
+    void EquipFoin()
+    {
+        hasFoin = true;
+        Debug.Log("foin");
+        foin = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, transform);
+        AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
+    }
+    public void DestroyFoin()
+    {
+        hasFoin = false;
+        Destroy(foin);
     }
     #endregion
 
     void Shoot()
     {
-        weaponScript.Shoot();
+        weapon.Shoot();
     }
 
-    public void DestroyFoin()
-    {
-        Destroy(foinInstance);
-        hasFoin = false;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!GameManager.instance.started)
-        {
-            return;
-        }
-        //pick and drop
-        if (collision.tag == "weapon" || collision.tag == "foin")
-        {
-            canPickWeapon = true;
-            pickableWeapon = collision.gameObject;
-        }
-        if (collision.gameObject.CompareTag( "shootZone"))
-        {
-            if (currentWeapon != null)
-            {
-                Epouvantail epou = collision.gameObject.GetComponentInParent<Epouvantail>();
-                weaponScript.currentSpawnerAim = epou.spawner;
-            }
-        }
-    }
-
-    //shoot
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (!GameManager.instance.started)
-        {
-            return;
-        }
-        if (collision.gameObject.CompareTag("shootZone"))
-        {
-            if (currentWeapon != null)
-            {
-                canShoot = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (!GameManager.instance.started)
         {
@@ -166,17 +115,41 @@ public class PlayerHandleWeapon : MonoBehaviour
         //pick and drop
         if (collision.CompareTag("weapon"))
         {
-            canPickWeapon = false;
+            pickableWeapon = collision.gameObject.GetComponent<Weapon>();
+        }
+        else if (collision.CompareTag("foin"))
+        {
+            canPickFoin = true;
+        }
+        //shoot
+        else if (collision.CompareTag("shootZone"))
+        {
+            if (weapon != null)
+            {
+                Epouvantail epou = collision.gameObject.GetComponentInParent<Epouvantail>();
+                weapon.currentSpawnerAim = epou.spawner;
+                canShoot = true;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!GameManager.instance.started)
+        {
+            return;
+        }
+        //pick and drop
+        if (collision.CompareTag("weapon"))
+        {
             pickableWeapon = null;
         }
         else if (collision.CompareTag("foin"))
         {
-            pickableWeapon = null;
-            canPickWeapon = false;
+            canPickFoin = false;
         }
-
         //shoot
-        else if (collision.gameObject.CompareTag("shootZone"))
+        else if (collision.CompareTag("shootZone"))
         {
             canShoot = false;
         }
