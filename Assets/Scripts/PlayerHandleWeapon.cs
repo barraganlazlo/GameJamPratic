@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerHandleWeapon : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     [Header("Pick and Drop")]
     private Weapon weapon;
-    private Weapon pickableWeapon;
+    private List<Weapon> pickableWeapons;
     [SerializeField] private GameObject weaponPos;
 
     [Header("Foin")]
@@ -19,12 +20,11 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     private bool canShoot;
 
-
-
-    private void Start()
+    void Awake()
     {
         multiplayerScript = GetComponent<WhichPlayer>();
         animator = GetComponentInChildren<Animator>();
+        pickableWeapons = new List<Weapon>();
     }
     private void Update()
     {
@@ -49,11 +49,22 @@ public class PlayerHandleWeapon : MonoBehaviour
     void PickUp()
     {
         Drop();
-        if (pickableWeapon != null)
+        if (pickableWeapons.Count>0)
         {
-            Equip(pickableWeapon);
+            Weapon w = null;
+            float maxd = -1;
+            float d = -1;
+            for (int i=0; i<pickableWeapons.Count;i++)
+            {
+                d = Vector2.Distance(transform.position,pickableWeapons[i].transform.position);
+                if (maxd>d || maxd==-1)
+                {
+                    w = pickableWeapons[i];
+                }
+            }
+            Equip(w);
         }
-        else if (canPickFoin)
+        else if (canPickFoin && !hasFoin)
         {
             EquipFoin();
         }
@@ -83,8 +94,8 @@ public class PlayerHandleWeapon : MonoBehaviour
         }
         weapon.transform.parent = transform;
         weapon.transform.position = weaponPos.transform.position;
-    
-        pickableWeapon = null;
+
+        pickableWeapons.Remove(weapon);
         AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
     }
     void EquipFoin()
@@ -115,7 +126,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         //pick and drop
         if (collision.CompareTag("weapon"))
         {
-            pickableWeapon = collision.gameObject.GetComponent<Weapon>();
+            pickableWeapons.Add(collision.GetComponent<Weapon>());
         }
         else if (collision.CompareTag("foin"))
         {
@@ -126,22 +137,10 @@ public class PlayerHandleWeapon : MonoBehaviour
         {
             if (weapon != null)
             {
-                Epouvantail epou = collision.gameObject.GetComponentInParent<Epouvantail>();
+                Epouvantail epou = collision.GetComponentInParent<Epouvantail>();
                 weapon.currentSpawnerAim = epou.spawner;
                 canShoot = true;
             }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("weapon"))
-        {
-            pickableWeapon = collision.gameObject.GetComponent<Weapon>();
-        }
-        else if (collision.CompareTag("foin"))
-        {
-            canPickFoin = true;
         }
     }
 
@@ -154,7 +153,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         //pick and drop
         if (collision.CompareTag("weapon"))
         {
-            pickableWeapon = null;
+            pickableWeapons.Remove(collision.GetComponent<Weapon>());
         }
         else if (collision.CompareTag("foin"))
         {
