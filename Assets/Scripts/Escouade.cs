@@ -41,9 +41,12 @@ public class Escouade : MonoBehaviour
                     units.Add(u);
                     u.escouade = this;
                     u.type = unitType;
-                }
-               
+                }               
             }
+        }
+        foreach(Unit u in units)
+        {
+            u.Begin();
         }
     }
     public bool Flee(int id)
