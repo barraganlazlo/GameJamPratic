@@ -64,7 +64,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             }
             Equip(w);
         }
-        else if (canPickFoin)
+        else if (canPickFoin && !hasFoin)
         {
             EquipFoin();
         }
@@ -141,18 +141,6 @@ public class PlayerHandleWeapon : MonoBehaviour
                 weapon.currentSpawnerAim = epou.spawner;
                 canShoot = true;
             }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("weapon"))
-        {
-            pickableWeapon = collision.gameObject.GetComponent<Weapon>();
-        }
-        else if (collision.CompareTag("foin"))
-        {
-            canPickFoin = true;
         }
     }
 
