@@ -144,6 +144,18 @@ public class PlayerHandleWeapon : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("weapon"))
+        {
+            pickableWeapon = collision.gameObject.GetComponent<Weapon>();
+        }
+        else if (collision.CompareTag("foin"))
+        {
+            canPickFoin = true;
+        }
+    }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (!GameManager.instance.started)
