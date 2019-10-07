@@ -7,14 +7,16 @@ public class Epouvantail : MonoBehaviour
     public int id;
     public int startLife;
     int life;
-    //[HideInInspector]
+
     public Spawner spawner;
     SpriteRenderer spriteRenderer;
+    Animator animator;
     bool broken;
     void Awake()
     {
         life = startLife;
-        spriteRenderer = transform.GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
     }
     public void SetOrder(int i)
     {
@@ -42,5 +44,6 @@ public class Epouvantail : MonoBehaviour
         {            
             GameManager.instance.Damage(type.damagesToBluff);
         }
+        animator.SetTrigger("attack");
     }
 }
