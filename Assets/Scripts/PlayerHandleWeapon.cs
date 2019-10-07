@@ -75,6 +75,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         {
             weapon.transform.parent = null;
             weapon.isHeld = false;
+            weapon.sr.sortingOrder -= 1;
             weapon = null;
             AudioManager.instance.PlayOnEntity("DropWeapon", gameObject);
         }
@@ -88,6 +89,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     {
         weapon = newWeapon;
         weapon.isHeld = true;
+        weapon.sr.sortingOrder += 1;
         if (Mathf.Sign(weapon.transform.localScale.x) != Mathf.Sign(transform.localScale.x))
         {
             weapon.transform.localScale = new Vector3(weapon.transform.localScale.x * -1, weapon.transform.localScale.y, weapon.transform.localScale.z);

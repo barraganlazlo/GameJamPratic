@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7451529736856992024, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: m_Name
-      value: canonGun
-      objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992025, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,6 +61,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451529736856992024, guid: 7f5f1af8584c912438c698fcdf45440e,
+        type: 3}
+      propertyPath: m_Name
+      value: canonGun
       objectReference: {fileID: 0}
     - target: {fileID: 7451529736856992031, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
@@ -135,11 +135,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2092199874990311530, guid: d77bf26616c570149bc73e818540e6ac,
         type: 3}
-    - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7451529737212236926, guid: 7f5f1af8584c912438c698fcdf45440e,
         type: 3}
       propertyPath: m_Sprite
