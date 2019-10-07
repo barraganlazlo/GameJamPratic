@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c69511e4c49b1d4a8d883e7d0d91666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalMargin: 0.1
-  verticalMargin: 0.1
+  spawner: {fileID: 0}
+  horizontalMargin: 0.3
+  verticalMargin: 0.3
