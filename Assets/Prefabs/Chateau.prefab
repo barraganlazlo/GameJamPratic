@@ -238,8 +238,6 @@ MonoBehaviour:
     type: 3}
   prefabSpawner: {fileID: 583525862503101625, guid: 397b534a4f067f247a551357fdf1159b,
     type: 3}
-  epouvantailFace: 0
-  epouvantailDos: 4
   waveId: 0
 --- !u!1 &6964879460278388695
 GameObject:
@@ -286,8 +284,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0041026827, y: -0.21043366}
-  m_Size: {x: 2.7735918, y: 2.0030365}
+  m_Offset: {x: 0.0041026897, y: -0.14967468}
+  m_Size: {x: 2.7735925, y: 1.8815243}
   m_Direction: 1
 --- !u!114 &4346462142723485642
 MonoBehaviour:

@@ -7,7 +7,8 @@ public class Unit : MonoBehaviour
     public float speed;
     [HideInInspector]
     public Escouade escouade;
-    public Rigidbody2D r2d;
+    Rigidbody2D r2d;
+    SpriteRenderer spriteRenderer;
     bool moving = true;
     bool attacking = false;
     bool attacked = false;
@@ -15,16 +16,17 @@ public class Unit : MonoBehaviour
     public float attackSpeed = 1f;
     public float attackSpeedStart = 1f;
     float attackTimer;
-
+    int order;
     Animator animator;
-    void Awake()
+    public void Begin()
     {
         r2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-    public void Begin()
-    {
-        r2d.velocity = (escouade.spawner.epouvantail.transform.position - transform.position).normalized * speed;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.sortingOrder = order;
+        //r2d.velocity = (escouade.spawner.epouvantail.posToAim.transform.position - transform.position).normalized * speed;
+        r2d.velocity = (escouade.spawner.epouvantail.posToAim.transform.position - escouade.transform.position).normalized * speed;
+
     }
     void Update()
     {
@@ -100,5 +102,9 @@ public class Unit : MonoBehaviour
     public void Flip()
     {
         transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+    public void SetOrder(int i)
+    {
+        order = i;
     }
 }

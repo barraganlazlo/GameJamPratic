@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        Castle.instance.Begin();
         StartGame();
     }
     public void Damage(int val)
@@ -57,8 +58,7 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        Castle.instance.CreateSides();
-        Castle.instance.StartCoroutine(Castle.instance.WavesCoroutine());
         started = true;
+        Castle.instance.StartWaves();
     }
 }

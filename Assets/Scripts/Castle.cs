@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Castle : MonoBehaviour
@@ -17,14 +16,16 @@ public class Castle : MonoBehaviour
     public float spawnDistance;
     public GameObject prefabEpouvantail;
     public GameObject prefabSpawner;
-    public int epouvantailFace;
-    public int epouvantailDos;
-    public int waveId;
-    List<Epouvantail> epouvantails;
-    List<Spawner> spawners;
+
+    Epouvantail[] epouvantails;
+    Spawner[] spawners;
 
     GameObject epouvantailsParent;
     GameObject spawnersParent;
+
+
+    public int waveId;
+
     private void Awake()
     {
         if (instance != null)
@@ -33,23 +34,32 @@ public class Castle : MonoBehaviour
             return;
         }
         instance = this;
-        spawners = new List<Spawner>();
-        epouvantails = new List<Epouvantail>();
     }
-
-    public IEnumerator WavesCoroutine()
+    public void Begin()
+    {
+        CreateSides();
+        foreach (Epouvantail e in epouvantails)
+        {
+            e.Begin();
+        }
+    }
+    public void StartWaves()
+    {
+        StartCoroutine(WavesCoroutine());
+    }
+    IEnumerator WavesCoroutine()
     {
         if (spawning)
         {
             waveId = 1;
-            for ( int j =0; j< GameManager.instance.waves.Length;j++ )
+            for (int j = 0; j < GameManager.instance.waves.Length; j++)
             {
                 Wave wave = GameManager.instance.waves[j];
                 Debug.Log("Wave : " + waveId);
                 int nbEscouades = Random.Range(wave.nbEscouadeMin, wave.nbEscouadeMax);
-                for (int i = 1; i < nbEscouades+1; i++)
+                for (int i = 1; i < nbEscouades + 1; i++)
                 {
-                    Spawner sp = spawners[Random.Range(0, spawners.Count)];
+                    Spawner sp = spawners[Random.Range(0, spawners.Length)];
                     sp.SpawnRandomEscouade();
                     float cdNextEscouade = Random.Range(wave.cdNextEscouadeMin, wave.cdNextEscouadeMax);
                     yield return new WaitForSeconds(cdNextEscouade);
@@ -69,76 +79,27 @@ public class Castle : MonoBehaviour
             float ang = 360f / nombreDeCote;
 
             GameObject epou = Instantiate<GameObject>(prefabEpouvantail);
-            epou.transform.position = PlaceInCircle(i * ang +Decallage);
+            epou.transform.position = PlaceInCircle(i * ang + Decallage);
             epou.transform.parent = epouvantailsParent.transform;
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
-            epouScript.id = i;
-            epouvantails.Add(epouScript);
-            if (i >= nombreDeCote *0.125f && i <= nombreDeCote *0.5f)
-            {
-                epouScript.SetOrder(50);
-            }
-            if (i >= nombreDeCote * 0.25f && i < nombreDeCote * 0.75f)//devant
-            {
-                if (i >= nombreDeCote / 2f + 1)
-                {
-                    epouScript.SetSprite(true);
-                }
-            }
-            else
-            {
-                if (i >= 1 && i <= nombreDeCote * 0.75f)//derrière
-                {
-                    epouScript.SetSprite( true);
-                }
-            }
+            epouvantails[i] = epouScript;
 
             GameObject spaw = Instantiate<GameObject>(prefabSpawner);
-            spaw.transform.position = PlaceInCircle(i * ang +Decallage, spawnDistance);
-            spaw.transform.rotation = Quaternion.Euler(0, 0, 180 - i * ang);
+            spaw.transform.position = PlaceInCircle(i * ang + Decallage, spawnDistance);
+            spaw.transform.rotation = Quaternion.Euler(0, 0, 180 - (i * ang+Decallage));
             spaw.transform.parent = spawnersParent.transform;
             Spawner spawScript = spaw.GetComponent<Spawner>();
-            spawScript.id = i;
-            spawners.Add(spawScript);
-            if (i+1>nombreDeCote/2f)
-            {
-                spawScript.flip = true;
-            }
-            else
-            {
-                spawScript.flip = false;
-            }
+            spawners[i] = spawScript;
             spawScript.epouvantail = epouScript;
             epouScript.spawner = spawScript;
         }
     }
     void ResetSides()
     {
-        if (epouvantails == null)
-        {
-            epouvantails = new List<Epouvantail>();
-        }
 
-        if (spawnersParent != null)
-        {
-            Debug.Log("Destroy ep");
-            DestroyImmediate(epouvantailsParent);
-        }
+        epouvantails = new Epouvantail[nombreDeCote];
 
-        epouvantails.Clear();
-
-        if (spawners == null)
-        {
-            spawners = new List<Spawner>();
-        }
-
-        if (spawnersParent != null)
-        {
-            Debug.Log("Destroy sp");
-            DestroyImmediate(spawnersParent);
-        }
-
-        spawners.Clear();
+        spawners = new Spawner[nombreDeCote];
     }
     Vector3 PlaceInCircle(float ang, float distance = 1)
     {

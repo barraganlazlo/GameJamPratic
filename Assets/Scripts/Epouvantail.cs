@@ -7,24 +7,46 @@ public class Epouvantail : MonoBehaviour
     public int id;
     public int startLife;
     int life;
+    public GameObject posToAim;
 
+    [HideInInspector]
     public Spawner spawner;
     SpriteRenderer spriteRenderer;
     Animator animator;
     bool broken;
-    void Awake()
+    int spriteId;
+    public void Begin()
     {
-        life = startLife;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        life = startLife;
+        if (transform.position.y>0)
+        {
+            spriteId = 4;
+            spriteRenderer.sortingOrder = 1;
+            if (transform.position.x>0)
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+        else
+        {
+            spriteId = 0;
+            spriteRenderer.sortingOrder = 51;
+            if (transform.position.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
+        if (transform.position.x < 0)
+        {
+            animator.SetBool("left", true);
+        }
+        spriteRenderer.sprite = UnitManager.instance.epouvantailsSprites[spriteId];
     }
     public void SetOrder(int i)
     {
         spriteRenderer.sortingOrder = i;
-    }
-    public void SetSprite(bool flipX )
-    {
-        spriteRenderer.flipX = flipX;
     }
     public void Damage(UnitType type)
     {

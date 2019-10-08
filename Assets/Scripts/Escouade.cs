@@ -20,6 +20,24 @@ public class Escouade : MonoBehaviour
         toRemove = new List<Unit>();
         this.spawner = spawner;
         units = new List<Unit>();
+        int startOrder;
+        int growingorder;
+        if (transform.position.y>-1)
+        {
+            startOrder = -25;
+        }
+        else
+        {
+            startOrder = 25;
+        }
+        if (transform.position.x > 0)
+        {
+            growingorder = -1;
+        }
+        else
+        {
+            growingorder = 1;
+        }
         for (int i = 0; i < type.height; i++)
         {
             for (int j = 0; j < type.width; j++)
@@ -29,24 +47,29 @@ public class Escouade : MonoBehaviour
                 {
                     UnitType unitType = UnitManager.instance.unitTypes[type.units[uId]];
                     GameObject unitGO = Instantiate(unitType.prefab, transform.position, transform.rotation, transform);
-                    Vector3 pos = transform.position;
+                    Vector3 pos = Vector3.zero;
                     float hSpace = verticalMargin ;
                     float vSpace = horizontalMargin ;
-                    pos.y -= (type.height - 1) * hSpace * 0.5f;
-                    pos.x -= (type.width - 1) * vSpace * 0.5f;
-                    pos.x += j * hSpace;
-                    pos.y += i * vSpace;
-                    unitGO.transform.position = pos;
+                    pos.y += Mathf.Sin(transform.rotation.eulerAngles.z * Mathf.Deg2Rad) * (-(type.height - 1) * hSpace * 0.5f) + i * vSpace;
+                    pos.x += Mathf.Cos(transform.rotation.eulerAngles.z * Mathf.Deg2Rad) * (-(type.width - 1) * vSpace * 0.5f) + j * hSpace;
+                    unitGO.transform.localPosition = pos;
                     Unit u = unitGO.GetComponent<Unit>();
+                    u.transform.rotation = Quaternion.identity;
                     units.Add(u);
                     u.escouade = this;
                     u.type = unitType;
+                    u.SetOrder(startOrder + j * growingorder - i);
                 }               
             }
         }
         foreach(Unit u in units)
         {
             u.Begin();
+        }
+
+        if ( transform.position.x<0)
+        {
+            Flip();
         }
     }
     public bool Flee(int id)

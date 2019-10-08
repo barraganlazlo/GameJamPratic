@@ -18,6 +18,9 @@ public class EscouadeTypeComparer : IComparer<EscouadeType>
 {
     public int Compare(EscouadeType x, EscouadeType y)
     {
-        return x.id.CompareTo(y.id);
+        int l = "Escouade".Length;
+        int xi = int.Parse(x.name.Substring(l, x.name.Length - l));
+        int yi = int.Parse(y.name.Substring(l, y.name.Length - l));
+        return xi.CompareTo(yi);
     }
 }

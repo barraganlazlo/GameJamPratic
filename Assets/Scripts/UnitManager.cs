@@ -22,8 +22,9 @@ public class UnitManager : MonoBehaviour
             return;
         }
         instance = this;
-        LoadEscouadeTypes();
         LoadUnitTypes();
+        LoadEscouadeTypes();
+        LoadEpouvantailSprites();
     }
 
     private void LoadUnitTypes()
@@ -39,7 +40,11 @@ public class UnitManager : MonoBehaviour
         Debug.Log("Loaded " + escouadeTypes.Length + " EscouadeTypes");
         Array.Sort(escouadeTypes,new EscouadeTypeComparer());
     }
-
+    private void LoadEpouvantailSprites()
+    {
+        epouvantailsSprites = Resources.LoadAll<Sprite>("Epouvantail");
+        Debug.Log("Loaded " + epouvantailsSprites.Length + " Epouvantail Sprites");
+    }
     public EscouadeType[] GetEscouadeTypesOfCurrentWave()
     {
         List<EscouadeType> list = new List<EscouadeType>();

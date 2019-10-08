@@ -25,7 +25,6 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             AudioSource a = InitializeAudioSource(s, gameObject);
-            print(a);
         }
         
     }

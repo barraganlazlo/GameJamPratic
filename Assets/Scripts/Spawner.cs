@@ -11,24 +11,18 @@ public class Spawner : MonoBehaviour
 
     List<Escouade> escouades;
 
-    [HideInInspector]
-    public bool flip;
-
-    public int escouadeId;
+    public int escouadeId=7;
     private void Awake()
     {
         escouades = new List<Escouade>();
     }
     public void SpawnEscouade(EscouadeType escouadeType)
     {
-        GameObject escouadeGO = Instantiate<GameObject>(escouadePrefab, transform.position, Quaternion.identity);
+        GameObject escouadeGO = Instantiate<GameObject>(escouadePrefab, transform.position, transform.rotation);
         Escouade escouade = escouadeGO.GetComponent<Escouade>();
         escouade.SetType(escouadeType);
         escouade.Instantiate(this);
-        if (flip)
-        {
-            escouade.Flip();
-        }
+
         escouades.Add(escouade);
     }
     public void SpawnEscouade(int i)
