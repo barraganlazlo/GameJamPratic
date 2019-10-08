@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759959876004627407}
   - component: {fileID: 8959085667012822749}
-  - component: {fileID: 2032873821247889216}
+  - component: {fileID: -1561011034022693575}
   m_Layer: 0
   m_Name: Fleche
   m_TagString: Untagged
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2032873821247889216
+--- !u!114 &-1561011034022693575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,9 +218,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3007598990034543012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710bc8e79277eee44aca8fe26bb5b022, type: 3}
+  m_Script: {fileID: 11500000, guid: a2edc229e8d5e5e429dd2186ff9579d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  LifeTime: 4
-  direction: {x: 0, y: 0, z: 0}
+  speed: 6

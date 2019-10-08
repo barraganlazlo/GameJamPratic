@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5790146205034993691}
   - component: {fileID: 7596364688981139880}
   - component: {fileID: 3772366446544305341}
-  - component: {fileID: -7585715517517084079}
+  - component: {fileID: 4440916030795857057}
   m_Layer: 0
   m_Name: Salve Fleches
   m_TagString: Untagged
@@ -4817,7 +4817,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &-7585715517517084079
+--- !u!114 &4440916030795857057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4826,11 +4826,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5790146205034993690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2edc229e8d5e5e429dd2186ff9579d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 710bc8e79277eee44aca8fe26bb5b022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
   LifeTime: 4
+  begun: 0
+  direction: {x: 0, y: 0, z: 0}
 --- !u!1001 &5790146204011924178
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -86,7 +86,12 @@ public class Weapon : MonoBehaviour
         }
 
         BulletScript proj = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<BulletScript>();
-        proj.direction = (currentSpawnerAim.transform.position - transform.parent.position).normalized;
+        if (!proj)
+        {
+            Debug.Log("null proj");
+            return;
+        }
+        proj.direction=(currentSpawnerAim.transform.position - transform.parent.position).normalized;
         proj.Begin();
         foreach (int i in unitKillId)
         {

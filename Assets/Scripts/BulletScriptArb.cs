@@ -2,39 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScriptArb : BulletScript
+public class BulletScriptArb : MonoBehaviour
 {
-    BulletScript[] childs;
-
-    void OnIntantiate()
+    BulletScript bull;
+    public float speed;
+    void Start()
     {
-        childs = transform.GetComponentsInChildren<BulletScript>();
-    }
-    // Start is called before the first frame update
-    public new void Begin()
-    {
-        Destroy(gameObject, LifeTime);
-        begun = true;
-        foreach (BulletScript b in childs)
-        {
-            b.Begin();
-        }
+        bull = GetComponentInParent<BulletScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (begun)
+        if (bull.begun)
         {
-            transform.Translate(direction * Time.deltaTime * speed);
-        }
-    }
-    public new void SetDirection(Vector3 v)
-    {
-        direction = v;
-        foreach (BulletScript b in childs)
-        {
-            b.SetDirection(v);
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
     }
 }
