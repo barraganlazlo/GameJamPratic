@@ -60,7 +60,6 @@ public class HandleLevelCochon : MonoBehaviour
             {
                 if (!buttonScript.isActive)
                 {
-                    Debug.Log("22");
                     buttonScript.isActive = true;
                 }
                 IncreaseJauge();
@@ -103,10 +102,15 @@ public class HandleLevelCochon : MonoBehaviour
 
     void IncreaseJauge()
     {
+        if (jauge.fillAmount == 0)
+        {
+            AudioManager.instance.PlayOnEntity("Cochon_miam", gameObject);
+        }
         jauge.fillAmount += valueCharge;
         Debug.Log("Increase");
         if (jauge.fillAmount >= 1)
         {
+            AudioManager.instance.PlayOnEntity("Cochon_miam", gameObject);
             //playerScript.hasFoin = false;
             playerScript.DestroyFoin();
             PassStep();
