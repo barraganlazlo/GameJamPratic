@@ -38,6 +38,7 @@ public class HandleLevelCochon : MonoBehaviour
 
     private Animator animator;
 
+    bool playingSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,19 +78,24 @@ public class HandleLevelCochon : MonoBehaviour
 
     void DecreaseJauge()  
     {
-            if (jauge.fillAmount == 0)
+        if (jauge.fillAmount == 0)
+        {
+            ResetFillAmount();
+        }
+        else
+        {
+            Debug.Log("Decrease");
+            jauge.fillAmount -= valueDecharge;
+            if (jauge.fillAmount <= 0 && !playerIsClose)
             {
-                ResetFillAmount();
+                buttonScript.isActive = false;
             }
-            else
-            {
-                Debug.Log("Decrease");
-                jauge.fillAmount -= valueDecharge;
-                if (jauge.fillAmount <= 0 && !playerIsClose)
-                {
-                    buttonScript.isActive = false;
-                }
-            }
+        }
+        if (playingSound)
+        {
+            AudioManager.instance.StopOnEntity("Cochon_miam", gameObject);
+            playingSound = false;
+        }
     }
 
     void ResetFillAmount()
@@ -102,16 +108,20 @@ public class HandleLevelCochon : MonoBehaviour
 
     void IncreaseJauge()
     {
-        if (jauge.fillAmount == 0)
+        if (!playingSound)
         {
             AudioManager.instance.PlayOnEntity("Cochon_miam", gameObject);
+            playingSound = true;
         }
         jauge.fillAmount += valueCharge;
         Debug.Log("Increase");
         if (jauge.fillAmount >= 1)
         {
-            AudioManager.instance.StopOnEntity("Cochon_miam", gameObject);
-            //playerScript.hasFoin = false;
+            if (playingSound)
+            {
+                AudioManager.instance.StopOnEntity("Cochon_miam", gameObject);
+                playingSound = false;
+            }
             playerScript.DestroyFoin();
             PassStep();
         }

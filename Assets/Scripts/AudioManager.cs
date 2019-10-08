@@ -82,6 +82,10 @@ public class AudioManager : MonoBehaviour
         Sound s= Array.Find(sounds, sound => sound.name == name);
         AudioSource[] sources = go.GetComponents<AudioSource>();
         AudioSource source = Array.Find(sources, sourceComp => sourceComp.clip == s.clip);
+        if (source==null)
+        {
+            return;
+        }
         Destroy(source,source.clip.length - source.time);
     }
 
