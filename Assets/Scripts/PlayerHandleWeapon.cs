@@ -132,7 +132,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     public void DestroyFoin()
     {
         hasFoin = false;
-        Destroy(foin);
+        Destroy(foin.gameObject);
     }
     #endregion
 
