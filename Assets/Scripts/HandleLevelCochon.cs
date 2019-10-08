@@ -39,6 +39,10 @@ public class HandleLevelCochon : MonoBehaviour
     private Animator animator;
 
     bool playingSound;
+
+    //public PlayerHandleWeapon[] players;
+    //private bool playersCanFeed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +55,6 @@ public class HandleLevelCochon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerScript != null)
-        {
-            Debug.Log(playerScript.hasFoin);
-        }
         if (playerScript != null && playerIsClose && playerScript.hasFoin)
         {
             if (Input.GetButton(buttonToPress+buttonScript._PlayerID))
@@ -85,7 +85,7 @@ public class HandleLevelCochon : MonoBehaviour
         else
         {
             Debug.Log("Decrease");
-            jauge.fillAmount -= valueDecharge;
+            jauge.fillAmount -= valueDecharge * Time.deltaTime;
             if (jauge.fillAmount <= 0 && !playerIsClose)
             {
                 buttonScript.isActive = false;
@@ -113,7 +113,7 @@ public class HandleLevelCochon : MonoBehaviour
             AudioManager.instance.PlayOnEntity("Cochon_miam", gameObject);
             playingSound = true;
         }
-        jauge.fillAmount += valueCharge;
+        jauge.fillAmount += valueCharge * Time.deltaTime;
         Debug.Log("Increase");
         if (jauge.fillAmount >= 1)
         {
@@ -158,6 +158,27 @@ public class HandleLevelCochon : MonoBehaviour
         }
     }
 
+    //void CheckIfPlayersFoin()
+    //{
+    //    foreach (PlayerHandleWeapon player in players)
+    //    {
+    //        if (player.hasFoin)
+    //        {
+    //            playersCanFeed = true;
+    //            if (!buttonScript.isActive)
+    //            {
+    //                buttonScript.isActive = true;
+    //            }
+    //            return;
+    //        }
+    //    }
+    //    if (buttonScript.isActive)
+    //    {
+    //        buttonScript.isActive = false;
+    //    }
+    //    playersCanFeed = false;
+    //}
+
     void UpdateSr()
     {
         animator.SetTrigger("levelUp");
@@ -176,12 +197,10 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Player2Entered");
             buttonScript._PlayerID = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<WhichPlayer>().idPlayer;
-            buttonScript.isActive = true;
+            //buttonScript.isActive = true;
             playerIsClose = true;
             playerScript = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<PlayerHandleWeapon>();
-
         }
     }
 

@@ -25,6 +25,11 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     private bool canShoot;
 
+    public PlayerHandleWeapon otherPlayer;
+    //check playersHolding
+    public ButtonSprite buttonCochon;
+    public ButtonSprite buttonBotteFoin;
+
     void Awake()
     {
         multiplayerScript = GetComponent<WhichPlayer>();
@@ -87,7 +92,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             }
             Equip(w);
         }
-        else if (canPickFoin && !hasFoin)
+        else if (canPickFoin && !hasFoin && !otherPlayer.hasFoin)
         {
             EquipFoin();
         }
@@ -125,13 +130,22 @@ public class PlayerHandleWeapon : MonoBehaviour
     void EquipFoin()
     {
         hasFoin = true;
-        Debug.Log("foin");
+        if (!buttonCochon.isActive)
+        {
+            buttonCochon.isActive = true;
+            buttonBotteFoin.isActive = false;
+        }
         foin = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, transform).GetComponent<Foin>();
         AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
     }
     public void DestroyFoin()
     {
         hasFoin = false;
+        if (buttonCochon.isActive)
+        {
+            buttonCochon.isActive = false;
+            buttonBotteFoin.isActive = true;
+        }
         Destroy(foin.gameObject);
     }
     #endregion
