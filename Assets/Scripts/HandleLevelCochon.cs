@@ -40,6 +40,8 @@ public class HandleLevelCochon : MonoBehaviour
 
     bool playingSound;
 
+    private bool feeding = false;
+
     //public PlayerHandleWeapon[] players;
     //private bool playersCanFeed = false;
 
@@ -85,6 +87,7 @@ public class HandleLevelCochon : MonoBehaviour
         else
         {
             Debug.Log("Decrease");
+            feeding = false;
             jauge.fillAmount -= valueDecharge * Time.deltaTime;
             if (jauge.fillAmount <= 0 && !playerIsClose)
             {
@@ -103,11 +106,13 @@ public class HandleLevelCochon : MonoBehaviour
         if (jauge.fillAmount > 0)
         {
             jauge.fillAmount = 0;
+            feeding = false;
         }
     }
 
     void IncreaseJauge()
     {
+        feeding = true;
         if (!playingSound)
         {
             AudioManager.instance.PlayOnEntity("Cochon_miam", gameObject);
@@ -131,6 +136,7 @@ public class HandleLevelCochon : MonoBehaviour
     {
         currentLevelStep += 1;
         jauge.fillAmount = 0;
+        feeding = false;
         if (currentLevelStep == totalNumberOfLevelSteps)
         {
             LevelUp();
@@ -195,7 +201,7 @@ public class HandleLevelCochon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !feeding)
         {
             buttonScript._PlayerID = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<WhichPlayer>().idPlayer;
             //buttonScript.isActive = true;
@@ -206,11 +212,11 @@ public class HandleLevelCochon : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        playerIsClose = false;
-        playerScript = null;
-        if (jauge.fillAmount <= 0)
-        {
-            buttonScript.isActive = false;
-        }
+        //playerIsClose = false;
+        //playerScript = null;
+        //if (jauge.fillAmount <= 0)
+        //{
+        //    buttonScript.isActive = false;
+        //}
     }
 }
