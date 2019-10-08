@@ -83,7 +83,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Cochon_miam
     clip: {fileID: 8300000, guid: be9e01b4f19c15d4a8e1647efd9122d8, type: 3}
-    loop: 0
+    loop: 1
     volume: 1
     pitch: 1
     spatialBlend: 0.3
