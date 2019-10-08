@@ -47,7 +47,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         //Shoot
         else if (canShoot && Input.GetButtonDown("InteractButton" + multiplayerScript.idPlayer))
         {
-            if (!weapon.coolingDown)
+            if (weapon != null && !weapon.coolingDown)
             {
                 animator.SetTrigger("angry");
                 Shoot();
@@ -179,6 +179,16 @@ public class PlayerHandleWeapon : MonoBehaviour
                 weapon.currentSpawnerAim = epou.spawner;
                 canShoot = true;
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (weapon != null)
+        {
+            Epouvantail epou = collision.GetComponentInParent<Epouvantail>();
+            weapon.currentSpawnerAim = epou.spawner;
+            canShoot = true;
         }
     }
 
