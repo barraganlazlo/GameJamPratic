@@ -110,7 +110,7 @@ public class HandleLevelCochon : MonoBehaviour
         Debug.Log("Increase");
         if (jauge.fillAmount >= 1)
         {
-            AudioManager.instance.PlayOnEntity("Cochon_miam", gameObject);
+            AudioManager.instance.StopOnEntity("Cochon_miam", gameObject);
             //playerScript.hasFoin = false;
             playerScript.DestroyFoin();
             PassStep();

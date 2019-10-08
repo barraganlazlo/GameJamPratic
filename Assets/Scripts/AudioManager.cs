@@ -77,5 +77,12 @@ public class AudioManager : MonoBehaviour
 
         InitializeAudioSource(s, go).Play();
     }
+    public void StopOnEntity(string name,GameObject go)
+    {
+        Sound s= Array.Find(sounds, sound => sound.name == name);
+        AudioSource[] sources = go.GetComponents<AudioSource>();
+        AudioSource source = Array.Find(sources, sourceComp => sourceComp.clip == s.clip);
+        Destroy(source,source.clip.length - source.time);
+    }
 
 }
