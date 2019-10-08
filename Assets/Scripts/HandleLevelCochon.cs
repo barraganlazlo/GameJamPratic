@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HandleLevelCochon : MonoBehaviour
 {
     [Header("UI Refs")]
-    [SerializeField] private float valueCharge = 0.0025f;
+    [SerializeField] private float valueCharge = 0.25f;
     //[SerializeField] private float valueCharge = 0.01f;
     [SerializeField] private ButtonSprite buttonScript;
     private string buttonToPress;
@@ -41,6 +41,8 @@ public class HandleLevelCochon : MonoBehaviour
     bool playingSound;
 
     private bool feeding = false;
+
+    public GameObject envolCochon;
 
     //public PlayerHandleWeapon[] players;
     //private bool playersCanFeed = false;
@@ -151,6 +153,7 @@ public class HandleLevelCochon : MonoBehaviour
     {
         animator.SetTrigger("levelUp");
         currentLevel += 1;
+        UpdateSr();
         if (currentLevel == totalNumberOfLevels)
         {
             Win();
@@ -159,7 +162,6 @@ public class HandleLevelCochon : MonoBehaviour
         {
             totalNumberOfLevelSteps += stepsAdder;
             currentLevelStep = 0;
-            UpdateSr();
             Debug.Log(totalNumberOfLevelSteps);
         }
     }
@@ -197,6 +199,15 @@ public class HandleLevelCochon : MonoBehaviour
         this.enabled = false;
         buttonScript.isActive = false;
         buttonScript.gameObject.SetActive(false);
+        StartCoroutine(WinFlight());
+    }
+
+    IEnumerator WinFlight()
+    {
+        yield return new WaitForSeconds(5);
+        Instantiate(envolCochon, transform.GetChild(0).position, Quaternion.identity, transform);
+        sr.enabled = false;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -212,7 +223,10 @@ public class HandleLevelCochon : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //playerIsClose = false;
+        if (collision.gameObject.tag == "Player")
+        {
+            playerIsClose = false;
+        }
         //playerScript = null;
         //if (jauge.fillAmount <= 0)
         //{
