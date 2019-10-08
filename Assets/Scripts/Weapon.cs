@@ -68,6 +68,20 @@ public class Weapon : MonoBehaviour
         }
 
         timer();
+        int substractOrder = 2;
+        if (isHeld)
+        {
+            substractOrder -= 1;
+        }
+        if (transform.position.y < PlayerHandleWeapon.botLimit)
+        {
+            
+            sr.sortingOrder = PlayerHandleWeapon.downOrder-substractOrder;
+        }
+        else
+        {
+            sr.sortingOrder = PlayerHandleWeapon.upOrder-substractOrder;
+        }
     }
 
     public void Shoot()

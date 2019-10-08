@@ -19,18 +19,17 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         multiplayerScript = GetComponent<WhichPlayer>();
         rb = GetComponent<Rigidbody2D>();
-
         animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         GetInput();
-        HandleDirection();
+        HandleDirection();      
     }
 
     private void FixedUpdate()

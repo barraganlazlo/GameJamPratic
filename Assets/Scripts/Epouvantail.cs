@@ -68,4 +68,8 @@ public class Epouvantail : MonoBehaviour
         }
         animator.SetTrigger("attack");
     }
+    public void TurnShootZone(Quaternion q)
+    {
+        GetComponentInChildren<Collider2D>().transform.parent.rotation = q;
+    }
 }

@@ -16,7 +16,12 @@ public class PlayerHandleWeapon : MonoBehaviour
     [HideInInspector] public bool hasFoin = false;
     bool canPickFoin = false;
     [SerializeField] private GameObject foinPrefab;
-    [HideInInspector] public GameObject foin;
+    [HideInInspector] public Foin foin;
+
+    private SpriteRenderer spriteRenderer;
+    public static int upOrder = 46;
+    public static int downOrder = 50;
+    public static float botLimit = -0.6f;
 
     private bool canShoot;
 
@@ -25,6 +30,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         multiplayerScript = GetComponent<WhichPlayer>();
         animator = GetComponentInChildren<Animator>();
         pickableWeapons = new List<Weapon>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     private void Update()
     {
@@ -42,6 +48,23 @@ public class PlayerHandleWeapon : MonoBehaviour
                 Shoot();
             }
         }
+        if (transform.position.y < botLimit)
+        {
+            spriteRenderer.sortingOrder = downOrder;
+            if (hasFoin)
+            {
+                foin.spriteRenderer.sortingOrder = downOrder-1;
+            }
+        }
+        else
+        {
+            spriteRenderer.sortingOrder = upOrder;
+            if (hasFoin)
+            {
+                foin.spriteRenderer.sortingOrder = upOrder-1;
+            }
+        }
+        
     }
 
     #region pickAndDrop
@@ -89,7 +112,6 @@ public class PlayerHandleWeapon : MonoBehaviour
     {
         weapon = newWeapon;
         weapon.isHeld = true;
-        weapon.sr.sortingOrder += 1;
         if (Mathf.Sign(weapon.transform.localScale.x) != Mathf.Sign(transform.localScale.x))
         {
             weapon.transform.localScale = new Vector3(weapon.transform.localScale.x * -1, weapon.transform.localScale.y, weapon.transform.localScale.z);
@@ -104,7 +126,7 @@ public class PlayerHandleWeapon : MonoBehaviour
     {
         hasFoin = true;
         Debug.Log("foin");
-        foin = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, transform);
+        foin = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, transform).GetComponent<Foin>();
         AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
     }
     public void DestroyFoin()

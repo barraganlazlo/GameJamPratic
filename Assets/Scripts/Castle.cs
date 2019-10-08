@@ -83,6 +83,7 @@ public class Castle : MonoBehaviour
             epou.transform.parent = epouvantailsParent.transform;
             Epouvantail epouScript = epou.GetComponent<Epouvantail>();
             epouvantails[i] = epouScript;
+            epouScript.TurnShootZone(Quaternion.Euler(0, 0, 180 - (i * ang + Decallage)));
 
             GameObject spaw = Instantiate<GameObject>(prefabSpawner);
             spaw.transform.position = PlaceInCircle(i * ang + Decallage, spawnDistance);
