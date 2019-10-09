@@ -33,10 +33,13 @@ public class Weapon : MonoBehaviour
     public Sprite defaultSprite;
     public Sprite emptySprite;
 
+    ButtonSprite button;
+
     void Awake()
     {
         trigger = GetComponent<Collider2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
+        button = GetComponentInChildren<ButtonSprite>();
     }
 
     void Start()
@@ -133,5 +136,9 @@ public class Weapon : MonoBehaviour
                 sr.sprite = defaultSprite;
             }
         }
+    }
+    public void ActivateButton(bool b)
+    {
+        button.isActive=b;
     }
 }
