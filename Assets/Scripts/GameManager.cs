@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool started = false;
     public Wave[] waves;
-    bool lost;
+    bool lost = false;
+    bool won = false;
 
     public GameObject uiLose;
 
@@ -49,12 +50,37 @@ public class GameManager : MonoBehaviour
     }
     public void Lose()
     {
-        if (!lost)
+        if (!lost && !won)
         {
             lost = true;
             Instantiate<GameObject>(uiLose);
             Debug.Log("lost");
+            buffBar.transform.parent.gameObject.SetActive(false);
+            StartCoroutine(GoToLoseScreen());
         }
+    }
+
+    public void Win()
+    {
+        if (!lost && !won)
+        {
+            won = true;
+            buffBar.transform.parent.gameObject.SetActive(false);
+            StartCoroutine(GotoWinScreen());
+        }
+    }
+
+    IEnumerator GotoWinScreen()
+    {
+        yield return new WaitForSeconds(7.3f);
+        SceneManagerScript.Instance.FadeToLevel("WinScreen");
+    }
+
+    IEnumerator GoToLoseScreen()
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        SceneManagerScript.Instance.FadeToLevel("LoseScreen");
     }
     public void StartGame()
     {

@@ -204,11 +204,13 @@ public class HandleLevelCochon : MonoBehaviour
 
     IEnumerator WinFlight()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         Instantiate(envolCochon, transform.GetChild(0).position, Quaternion.identity, transform);
         sr.enabled = false;
-
+        GameManager.instance.Win();
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
