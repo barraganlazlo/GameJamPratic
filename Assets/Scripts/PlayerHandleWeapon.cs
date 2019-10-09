@@ -182,16 +182,6 @@ public class PlayerHandleWeapon : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (weapon != null)
-        {
-            Epouvantail epou = collision.GetComponentInParent<Epouvantail>();
-            weapon.currentSpawnerAim = epou.spawner;
-            canShoot = true;
-        }
-    }
-
     void OnTriggerExit2D(Collider2D collision)
     {
         if (!GameManager.instance.started)
