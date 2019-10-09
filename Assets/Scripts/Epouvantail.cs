@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Epouvantail : MonoBehaviour
 {
@@ -20,11 +19,11 @@ public class Epouvantail : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         life = startLife;
-        if (transform.position.y>0)
+        if (transform.position.y > 0)
         {
             spriteId = 4;
             spriteRenderer.sortingOrder = 1;
-            if (transform.position.x>0)
+            if (transform.position.x > 0)
             {
                 spriteRenderer.flipX = true;
             }
@@ -52,7 +51,7 @@ public class Epouvantail : MonoBehaviour
     {
         if (type.damagesToEpou > 0)
         {
-            if ( life> type.damagesToEpou)
+            if (life > type.damagesToEpou)
             {
                 life -= type.damagesToEpou;
             }
@@ -63,7 +62,7 @@ public class Epouvantail : MonoBehaviour
             }
         }
         else
-        {            
+        {
             GameManager.instance.Damage(type.damagesToBluff);
         }
         animator.SetTrigger("attack");
@@ -71,5 +70,10 @@ public class Epouvantail : MonoBehaviour
     public void TurnShootZone(Quaternion q)
     {
         GetComponentInChildren<Collider2D>().transform.parent.rotation = q;
+    }
+    public void NextSprite()
+    {
+        spriteId += 1;
+        spriteRenderer.sprite = UnitManager.instance.epouvantailsSprites[spriteId];
     }
 }

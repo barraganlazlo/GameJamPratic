@@ -17,7 +17,8 @@ public class Castle : MonoBehaviour
     public GameObject prefabEpouvantail;
     public GameObject prefabSpawner;
 
-    Epouvantail[] epouvantails;
+    [HideInInspector]
+    public Epouvantail[] epouvantails;
     Spawner[] spawners;
 
     GameObject epouvantailsParent;

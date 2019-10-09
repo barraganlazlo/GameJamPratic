@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Wave[] waves;
     bool lost = false;
     bool won = false;
-
+    float oldLifeRatio;
     public GameObject uiLose;
 
     void Awake()
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         if (life > val)
         {
             life -= val;
-            buffBar.fillAmount =((float) life )/ ((float) startLife);
+            buffBar.fillAmount = life / ((float)startLife);
         }
         else
         {
@@ -47,6 +47,30 @@ public class GameManager : MonoBehaviour
             Lose();
             buffBar.fillAmount = 0;
         }
+        float lratio = life / ((float)startLife);
+        if (oldLifeRatio >= 0.75f && lratio < 0.75f)
+        {
+            foreach (Epouvantail epou in Castle.instance.epouvantails)
+            {
+                epou.NextSprite();
+            }
+        }
+        else if (oldLifeRatio >= 0.5f && lratio < 0.5f)
+        {
+            foreach (Epouvantail epou in Castle.instance.epouvantails)
+            {
+                epou.NextSprite();
+            }
+        }
+        else if (oldLifeRatio >= 0.25f && lratio < 0.25f)
+        {
+            foreach (Epouvantail epou in Castle.instance.epouvantails)
+            {
+                epou.NextSprite();
+            }
+        }
+        oldLifeRatio = lratio;
+
     }
     public void Lose()
     {
