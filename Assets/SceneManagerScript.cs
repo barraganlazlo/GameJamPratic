@@ -31,7 +31,6 @@ public class SceneManagerScript : MonoBehaviour
     {
         newLevel = newLevelName;
         animator.SetTrigger("fadeOut");
-        Debug.Log("ouiouiooui");
     }
 
     public void OnFadeComplete()
