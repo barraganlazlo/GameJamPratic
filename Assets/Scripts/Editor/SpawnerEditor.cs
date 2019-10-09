@@ -1,0 +1,20 @@
+﻿using UnityEngine;
+using UnityEditor;
+
+[CustomEditor(typeof(Spawner))]
+public class SpawnerEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+        Spawner spawner = (Spawner)target;
+        if (GUILayout.Button("Spawn Escouade"))
+        {
+            spawner.SpawnEscouade(spawner.escouadeId);
+        }
+        if (GUILayout.Button("Spawn Random Escouade"))
+        {
+            spawner.SpawnRandomEscouade();
+        }
+    }
+}

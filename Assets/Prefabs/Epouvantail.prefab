@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8214735428899164609}
   - component: {fileID: 7040884407371341591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shootZone
   m_TagString: shootZone
   m_Icon: {fileID: 0}

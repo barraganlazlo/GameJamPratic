@@ -17,13 +17,13 @@ TagManager:
   - UI
   - 
   - 
-  - wall
-  - playerEnv
-  - playerPylr
+  - environment
+  - player-environment
+  - player-player
   - unit
-  - castle
+  - wall
   - PostProcessing
-  - 
+  - interactable
   - 
   - 
   - 
