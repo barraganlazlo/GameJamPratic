@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1376241477339803869}
   - component: {fileID: 284981527962334463}
   - component: {fileID: 284981527962334448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cochon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: -490187859223187958, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
   - {fileID: 2821048905021913596, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
   winUi: {fileID: 384695567284905090, guid: 8f58c5b6c175ac34a805c719006bcff1, type: 3}
+  envolCochon: {fileID: 0}
 --- !u!61 &284981527962334463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -224,6 +225,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062446138837793752, guid: 064bbf0abc7a9514492e8da42a4dce27,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8062446138837793753, guid: 064bbf0abc7a9514492e8da42a4dce27,
         type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7451529736856992025}
   - component: {fileID: 7451529736856992031}
   - component: {fileID: 7451529736856992030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arme_base
   m_TagString: weapon
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7451529736856992024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.866, y: -0.574, z: -0.20234841}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7451529737212236921}
