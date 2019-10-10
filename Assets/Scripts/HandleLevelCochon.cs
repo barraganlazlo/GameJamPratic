@@ -51,7 +51,7 @@ public class HandleLevelCochon : MonoBehaviour
     {
         buttonToPress = buttonScript._Myinput;
         animator = GetComponentInChildren<Animator>();
-        valueDecharge = valueCharge * 0.7f;
+        valueDecharge = decreaseRatio;
         sr = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -216,10 +216,14 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && !feeding)
         {
-            buttonScript._PlayerID = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<WhichPlayer>().idPlayer;
-            //buttonScript.isActive = true;
-            playerIsClose = true;
-            playerScript = collision.gameObject.transform.parent.transform.parent.gameObject.GetComponent<PlayerHandleWeapon>();
+            playerScript = collision.gameObject.transform.parent.parent.GetComponent<PlayerHandleWeapon>();
+            if (playerScript.hasFoin)
+            {
+                buttonScript._PlayerID = collision.gameObject.transform.parent.parent.GetComponent<WhichPlayer>().idPlayer;
+                //buttonScript.isActive = true;
+                playerIsClose = true;
+            }
+           
         }
     }
 
@@ -227,7 +231,10 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerIsClose = false;
+            if (buttonScript._PlayerID== collision.gameObject.transform.parent.parent.GetComponent<WhichPlayer>().idPlayer)
+            {
+                playerIsClose = false;
+            }
         }
         //playerScript = null;
         //if (jauge.fillAmount <= 0)

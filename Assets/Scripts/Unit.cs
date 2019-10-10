@@ -18,6 +18,7 @@ public class Unit : MonoBehaviour
     float attackTimer;
     int order;
     Animator animator;
+    PreviewTrigger pt;
     public void Begin()
     {
         r2d = GetComponent<Rigidbody2D>();
@@ -77,8 +78,13 @@ public class Unit : MonoBehaviour
         fleeing = true;
         StopAttacking();
         r2d.velocity = (escouade.spawner.transform.position - transform.position).normalized * speed;
+        transform.localScale = new Vector3(transform.localScale.x *-1, transform.localScale.y, transform.localScale.z);
         escouade.RemoveUnit(this);
         SetMoving(true);
+        if (pt != null)
+        {
+            pt.DecreaseUnit(type.id);
+        }
     }
     public bool IsFleeing()
     {
@@ -106,5 +112,21 @@ public class Unit : MonoBehaviour
     public void SetOrder(int i)
     {
         order = i;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        PreviewTrigger p = collision.GetComponent<PreviewTrigger>();
+        if (p!=null)
+        {
+            pt = p;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        PreviewTrigger p = collision.GetComponent<PreviewTrigger>();
+        if (p != null)
+        {
+            pt = null;
+        }
     }
 }

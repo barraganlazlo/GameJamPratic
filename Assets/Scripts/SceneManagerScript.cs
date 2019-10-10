@@ -33,7 +33,7 @@ public class SceneManagerScript : MonoBehaviour
 
         if (inMenu)
         {
-            if (Input.GetButtonDown("InteractButton1"))
+            if (Input.GetButtonDown("InteractButton1") || Input.GetButtonDown("InteractButton2"))
             {
                 if (newLevel == null)
                 {
@@ -44,7 +44,7 @@ public class SceneManagerScript : MonoBehaviour
                     FadeToLevel(newLevel);
                 }
             }
-            else if (Input.GetButtonDown("PickButton1"))
+            else if (Input.GetButtonDown("PickButton1") || Input.GetButtonDown("PickButton2"))
             {
                 Quit();
             }

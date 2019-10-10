@@ -16,7 +16,7 @@ public class Castle : MonoBehaviour
     public float spawnDistance;
     public GameObject prefabEpouvantail;
     public GameObject prefabSpawner;
-
+    public GameObject prefabPreviewCanvas;
     [HideInInspector]
     public Epouvantail[] epouvantails;
     Spawner[] spawners;
@@ -87,7 +87,7 @@ public class Castle : MonoBehaviour
             epouScript.TurnShootZone(Quaternion.Euler(0, 0, 180 - (i * ang + Decallage)));
 
             GameObject spaw = Instantiate<GameObject>(prefabSpawner);
-            spaw.transform.position = PlaceInCircle(i * ang + Decallage, spawnDistance);
+            spaw.transform.position = epou.transform.position.normalized * spawnDistance;
             spaw.transform.rotation = Quaternion.Euler(0, 0, 180 - (i * ang+Decallage));
             spaw.transform.parent = spawnersParent.transform;
             Spawner spawScript = spaw.GetComponent<Spawner>();

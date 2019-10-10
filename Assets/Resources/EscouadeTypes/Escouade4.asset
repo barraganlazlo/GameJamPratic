@@ -17,5 +17,5 @@ MonoBehaviour:
   width: 3
   waveBegin: 2
   waveEnd: 3
-  tauxApparition: 4
+  tauxApparition: 3
   units: 02000000030000000200000001000000ffffffff01000000

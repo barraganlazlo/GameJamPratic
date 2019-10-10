@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 3e863b2b02c5b8042b94e5dd7b691d39
+guid: 7b64a643f69202a4d88aab3e3ce84006
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -931438125895349867
-    second: Boutons_0
+      213: -2954626930323263216
+    second: Bulles_0
   - first:
-      213: -7873830058495667158
-    second: Boutons_1
+      213: 3881151204270524614
+    second: Bulles_1
   - first:
-      213: -7718620061449553440
-    second: Boutons_2
+      213: 7346334483955320116
+    second: Bulles_2
   - first:
-      213: -1819052349266426106
-    second: Boutons_3
-  - first:
-      213: -2967508018990134882
-    second: Boutons_4
-  - first:
-      213: -4360122513647651841
-    second: Boutons_5
+      213: 7132323448503860743
+    second: Bulles_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -104,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boutons_0
+      name: Bulles_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
-        width: 146
-        height: 50
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91a221d0b49d8634e8a8b4a9175adf7d
-      internalID: -931438125895349867
+      spriteID: 09dbaba8abba39e429cfd7f1f488c793
+      internalID: -2954626930323263216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boutons_1
+      name: Bulles_1
       rect:
         serializedVersion: 2
-        x: 146
-        y: 100
-        width: 146
-        height: 50
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,62 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ad91d506d6176f4db3d3a07a64a7b1a
-      internalID: -7873830058495667158
+      spriteID: de1832c6e54c57645a7668d0116f06f0
+      internalID: 3881151204270524614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boutons_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 50
-        width: 146
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06cf3fb529809d14a921b9b57ee11a18
-      internalID: -7718620061449553440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boutons_3
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 50
-        width: 146
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74bd7610e819734459ae9c36759196d6
-      internalID: -1819052349266426106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boutons_4
+      name: Bulles_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 146
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5562b4e74a5581549b6350e20c21ce2f
-      internalID: -2967508018990134882
+      spriteID: 83534289c16acd5479e5263c2b7a025b
+      internalID: 7346334483955320116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boutons_5
+      name: Bulles_3
       rect:
         serializedVersion: 2
-        x: 146
+        x: 64
         y: 0
-        width: 146
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e831a09cbf455147896f22dbda4f62c
-      internalID: -4360122513647651841
+      spriteID: c0650bcd09e56164f867215b0953f791
+      internalID: 7132323448503860743
       vertices: []
       indices: 
       edges: []

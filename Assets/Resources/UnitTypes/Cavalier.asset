@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 1
   damagesToEpou: 0
   damagesOnEpouDie: 0
-  damagesToBluff: 4
+  damagesToBluff: 6
   prefab: {fileID: 5318487154560606895, guid: ec272c8628f8a4b409d8eb6c664b238d, type: 3}
