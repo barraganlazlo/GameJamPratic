@@ -93,7 +93,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Le son " + name + " n'a pas été trouvé.");
             return;
         }
-        InitializeAudioSource(s, go).Play();
+        AudioSource audioSource = InitializeAudioSource(s, go);
+        if(!audioSource.isPlaying)
+            audioSource.Play();
     }
     public void StopLoopOnEntity(AudioSource source)
     {

@@ -98,7 +98,7 @@ MonoBehaviour:
   - name: belier_hit
     clip: {fileID: 8300000, guid: 1a674cc6592afda4d887e1f4a0836467, type: 3}
     loop: 0
-    volume: 0.2
+    volume: 0.3
     pitch: 1
     spatialBlend: 0.8
     source: {fileID: 0}
@@ -113,6 +113,27 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 069a657b7ecf8b04d9c3ee99bb5865a6, type: 3}
     loop: 0
     volume: 0.1
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: ui_confirm
+    clip: {fileID: 8300000, guid: 89b889f4c0d80994c87c7e3cef1ebd25, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: ui_cancel
+    clip: {fileID: 8300000, guid: 069a657b7ecf8b04d9c3ee99bb5865a6, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: ui_select
+    clip: {fileID: 8300000, guid: 3550fe66a8c118d42bbbfcc69b3838d9, type: 3}
+    loop: 0
+    volume: 1
     pitch: 1
     spatialBlend: 0
     source: {fileID: 0}
