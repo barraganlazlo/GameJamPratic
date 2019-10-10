@@ -192,12 +192,13 @@ public class HandleLevelCochon : MonoBehaviour
         sr.sprite = srs[currentLevel - 1];
     }
 
-    void Win()
+    public void Win()
     {
         Instantiate<GameObject>(winUi);
         this.enabled = false;
         buttonScript.isActive = false;
         buttonScript.gameObject.SetActive(false);
+        AudioManager.instance.PlayOnEntity("cochon_flight", gameObject);
         StartCoroutine(WinFlight());
     }
 

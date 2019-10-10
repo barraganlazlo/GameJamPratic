@@ -102,6 +102,13 @@ MonoBehaviour:
     pitch: 1
     spatialBlend: 0.8
     source: {fileID: 0}
+  - name: cochon_flight
+    clip: {fileID: 8300000, guid: 50ee432a722dd504588c1cd6d9f1f9be, type: 3}
+    loop: 0
+    volume: 0.4
+    pitch: 1
+    spatialBlend: 0.8
+    source: {fileID: 0}
 --- !u!81 &8920520168144947762
 AudioListener:
   m_ObjectHideFlags: 0
