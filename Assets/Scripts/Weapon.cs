@@ -34,12 +34,14 @@ public class Weapon : MonoBehaviour
     public Sprite emptySprite;
 
     ButtonSprite button;
+    int playerCount;
 
     void Awake()
     {
         trigger = GetComponent<Collider2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         button = GetComponentInChildren<ButtonSprite>();
+        playerCount = 0;
     }
 
     void Start()
@@ -139,6 +141,21 @@ public class Weapon : MonoBehaviour
     }
     public void ActivateButton(bool b)
     {
-        button.isActive=b;
+        if (b)
+        {
+            playerCount += 1;
+        }
+        else
+        {
+            playerCount -= 1;
+        }
+        if (playerCount<1)
+        {
+            button.isActive = false;
+        }
+        else
+        {
+            button.isActive = true;
+        }
     }
 }

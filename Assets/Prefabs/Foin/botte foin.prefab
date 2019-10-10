@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 848060590}
   - component: {fileID: 848060591}
+  - component: {fileID: 9131182881696226985}
   m_Layer: 8
   m_Name: trigger
   m_TagString: foin
@@ -57,6 +58,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &9131182881696226985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848060589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b2b07c76e05fc44a63b5ff6f19faa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 5234170061140551683}
 --- !u!1 &1476586848008556367
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 6691893961870173455, guid: 064bbf0abc7a9514492e8da42a4dce27,
         type: 3}
       propertyPath: isActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 064bbf0abc7a9514492e8da42a4dce27, type: 3}
@@ -312,3 +326,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1476586847875239180}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5234170061140551683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6691893961870173455, guid: 064bbf0abc7a9514492e8da42a4dce27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476586847875239180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ccf98a391a5dc4ebb3a13992112591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -28,7 +28,6 @@ public class PlayerHandleWeapon : MonoBehaviour
     public PlayerHandleWeapon otherPlayer;
     //check playersHolding
     public ButtonSprite buttonCochon;
-    public ButtonSprite buttonBotteFoin;
 
     void Awake()
     {
@@ -133,7 +132,8 @@ public class PlayerHandleWeapon : MonoBehaviour
         if (!buttonCochon.isActive)
         {
             buttonCochon.isActive = true;
-            buttonBotteFoin.isActive = false;
+            BotteFoin.instance.taken = true;
+            BotteFoin.instance.ActivateButton();
         }
         foin = Instantiate(foinPrefab, weaponPos.transform.position, Quaternion.identity, transform).GetComponent<Foin>();
         AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
@@ -144,7 +144,8 @@ public class PlayerHandleWeapon : MonoBehaviour
         if (buttonCochon.isActive)
         {
             buttonCochon.isActive = false;
-            buttonBotteFoin.isActive = true;
+            BotteFoin.instance.taken = false;
+            BotteFoin.instance.ActivateButton();
         }
         Destroy(foin.gameObject);
     }
@@ -179,6 +180,7 @@ public class PlayerHandleWeapon : MonoBehaviour
             {
                 Epouvantail epou = collision.GetComponentInParent<Epouvantail>();
                 weapon.currentSpawnerAim = epou.spawner;
+                epou.ActivateButton(true,this);
                 canShoot = true;
             }
         }
@@ -204,7 +206,9 @@ public class PlayerHandleWeapon : MonoBehaviour
         //shoot
         else if (collision.CompareTag("shootZone"))
         {
+            Epouvantail epou = collision.GetComponentInParent<Epouvantail>();
             canShoot = false;
+            epou.ActivateButton(false, this);
         }
     }
 }

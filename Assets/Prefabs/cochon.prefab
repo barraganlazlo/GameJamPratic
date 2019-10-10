@@ -47,11 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080c25aeb23c4924c933c0cb4e3bef20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueCharge: 0.25
+  valueCharge: 0.9
   buttonScript: {fileID: 5142928932275238513}
   jauge: {fileID: 162144297357294154}
   totalNumberOfLevels: 5
-  stepsAdder: 1
+  stepsAdder: 0
   decreaseRatio: 0.2
   srs:
   - {fileID: 4987720951155222239, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
@@ -60,7 +60,8 @@ MonoBehaviour:
   - {fileID: -490187859223187958, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
   - {fileID: 2821048905021913596, guid: 8df652b8006f13b40a11bf058dacc20d, type: 3}
   winUi: {fileID: 384695567284905090, guid: 8f58c5b6c175ac34a805c719006bcff1, type: 3}
-  envolCochon: {fileID: 0}
+  envolCochon: {fileID: 3952952266952636745, guid: c7b087b86600bd94384d6d146c9f8710,
+    type: 3}
 --- !u!61 &284981527962334463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -96,11 +97,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 284981528957288789}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7086ffe17534a994dab32ce2980b130c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013554409, y: -0.08580026}
+  m_Offset: {x: -0.0034311116, y: -0.011561543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -111,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96765304, y: 0.49748093}
+  m_Size: {x: 0.44659197, y: 0.41678685}
   m_EdgeRadius: 0
 --- !u!1 &284981529654592954
 GameObject:
@@ -225,11 +226,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062446138837793752, guid: 064bbf0abc7a9514492e8da42a4dce27,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8062446138837793753, guid: 064bbf0abc7a9514492e8da42a4dce27,
         type: 3}

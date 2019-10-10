@@ -91,9 +91,9 @@ public class HandleLevelCochon : MonoBehaviour
             Debug.Log("Decrease");
             feeding = false;
             jauge.fillAmount -= valueDecharge * Time.deltaTime;
-            if (jauge.fillAmount <= 0 && !playerIsClose)
+            if (jauge.fillAmount <= 0)
             {
-                buttonScript.isActive = false;
+                jauge.fillAmount = 0;
             }
         }
         if (playingSound)

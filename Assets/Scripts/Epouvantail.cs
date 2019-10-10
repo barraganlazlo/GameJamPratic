@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 public class Epouvantail : MonoBehaviour
 {
     [HideInInspector]
@@ -14,10 +14,14 @@ public class Epouvantail : MonoBehaviour
     Animator animator;
     bool broken;
     int spriteId;
+    ButtonSprite button;
+    List<PlayerHandleWeapon> players;
     public void Begin()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+        button = GetComponentInChildren<ButtonSprite>();
+        players = new List<PlayerHandleWeapon>();
         life = startLife;
         if (transform.position.y > 0)
         {
@@ -75,5 +79,30 @@ public class Epouvantail : MonoBehaviour
     {
         spriteId += 1;
         spriteRenderer.sprite = UnitManager.instance.epouvantailsSprites[spriteId];
+    }
+    public void ActivateButton(bool b, PlayerHandleWeapon player)
+    {
+        if (b)
+        {
+            if (!players.Contains(player))
+            {
+                players.Add(player);
+            }
+        }
+        else
+        {
+            if (players.Contains(player))
+            {
+                players.Remove(player);
+            }
+        }
+        if (players.Count>0)
+        {
+            button.isActive = true;
+        }
+        else
+        {
+            button.isActive = false;
+        }
     }
 }
