@@ -315,12 +315,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5616065981275209140, guid: 70bc1290a5136854e9d9f3f98e7cb340,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 14444a9e0927f7e4ea1b9f68564351db,
-        type: 3}
     - target: {fileID: 5616065980346810153, guid: 70bc1290a5136854e9d9f3f98e7cb340,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -381,6 +375,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Quit
       objectReference: {fileID: 0}
+    - target: {fileID: 5616065981275209140, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14444a9e0927f7e4ea1b9f68564351db,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bc1290a5136854e9d9f3f98e7cb340, type: 3}
 --- !u!1 &700774623
@@ -393,7 +393,6 @@ GameObject:
   m_Component:
   - component: {fileID: 700774626}
   - component: {fileID: 700774625}
-  - component: {fileID: 700774624}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -401,14 +400,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &700774624
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700774623}
-  m_Enabled: 1
 --- !u!20 &700774625
 Camera:
   m_ObjectHideFlags: 0
