@@ -1,5 +1,5 @@
-﻿using UnityEngine.Audio;
-using System;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -47,8 +47,15 @@ public class AudioManager : MonoBehaviour
 
             return newSound.source;
         }
-        else
+        else { 
+            source.clip = s.clip;
+
+            source.volume = s.volume;
+            source.pitch = s.pitch;
+            source.loop = s.loop;
+            source.spatialBlend = s.spatialBlend;
             return source;
+        }
     }
 
     //Utiliser cette méthode pour jouer un son non spatial (interface, etc)
@@ -64,9 +71,21 @@ public class AudioManager : MonoBehaviour
         print(s.source);
         s.source.Play();
     }
+    public AudioSource PlayNewOnEntity(string name, GameObject go)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Le son " + name + " n'a pas été trouvé.");
+            return null;
+        }
+        AudioSource src = InitializeAudioSource(s, go);
+        src.Play();
+        return src;
+    }
 
     //Utiliser cette méthode pour jouer un son sur une entité
-    public void PlayOnEntity (string name, GameObject go)
+    public void PlayOnEntity(string name, GameObject go)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -74,19 +93,14 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Le son " + name + " n'a pas été trouvé.");
             return;
         }
-
         InitializeAudioSource(s, go).Play();
     }
-    public void StopOnEntity(string name,GameObject go)
+    public void StopLoopOnEntity(AudioSource source)
     {
-        Sound s= Array.Find(sounds, sound => sound.name == name);
-        AudioSource[] sources = go.GetComponents<AudioSource>();
-        AudioSource source = Array.Find(sources, sourceComp => sourceComp.clip == s.clip);
         if (source==null)
         {
             return;
         }
-        Destroy(source,source.clip.length - source.time);
+        source.loop = false;
     }
-
 }

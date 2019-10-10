@@ -44,8 +44,7 @@ public class HandleLevelCochon : MonoBehaviour
 
     public GameObject envolCochon;
 
-    //public PlayerHandleWeapon[] players;
-    //private bool playersCanFeed = false;
+    AudioSource audiosource;
 
     // Start is called before the first frame update
     void Start()
@@ -98,7 +97,7 @@ public class HandleLevelCochon : MonoBehaviour
         }
         if (playingSound)
         {
-            AudioManager.instance.StopOnEntity("Cochon_miam", gameObject);
+            AudioManager.instance.StopLoopOnEntity(audiosource);
             playingSound = false;
         }
     }
@@ -117,7 +116,7 @@ public class HandleLevelCochon : MonoBehaviour
         feeding = true;
         if (!playingSound)
         {
-            AudioManager.instance.PlayOnEntity("Cochon_miam", gameObject);
+            audiosource=AudioManager.instance.PlayNewOnEntity("Cochon_miam", gameObject);
             playingSound = true;
         }
         jauge.fillAmount += valueCharge * Time.deltaTime;
@@ -126,7 +125,7 @@ public class HandleLevelCochon : MonoBehaviour
         {
             if (playingSound)
             {
-                AudioManager.instance.StopOnEntity("Cochon_miam", gameObject);
+                AudioManager.instance.StopLoopOnEntity(audiosource);
                 playingSound = false;
             }
             playerScript.DestroyFoin();
