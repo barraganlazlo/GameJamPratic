@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+    public bool inMenu = false;
+    public string defaultNextScene;
     private Animator animator;
     private string newLevel;
 
@@ -24,10 +26,32 @@ public class SceneManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Quit();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+
+        if (inMenu)
+        {
+            if (Input.GetButtonDown("InteractButton1"))
+            {
+                if (newLevel == null)
+                {
+                    FadeToLevel(defaultNextScene);
+                }
+                else
+                {
+                    FadeToLevel(newLevel);
+                }
+            }
+            else if (Input.GetButtonDown("PickButton1"))
+            {
+                Quit();
+            }
+        }
     }
 
-    public void FadeToLevel (string newLevelName)
+    public void FadeToLevel(string newLevelName)
     {
         newLevel = newLevelName;
         animator.SetTrigger("fadeOut");
@@ -37,11 +61,10 @@ public class SceneManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(newLevel);
     }
+
     public void Quit()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }
