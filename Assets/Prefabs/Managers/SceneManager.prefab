@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a992c3d672b373342a93ddb03e53609d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inMenu: 1
+  defaultNextScene: Main Scene
 --- !u!95 &4336433810959529202
 Animator:
   serializedVersion: 3
