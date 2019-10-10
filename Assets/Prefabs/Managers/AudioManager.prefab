@@ -109,6 +109,13 @@ MonoBehaviour:
     pitch: 1
     spatialBlend: 0.8
     source: {fileID: 0}
+  - name: musique
+    clip: {fileID: 8300000, guid: 069a657b7ecf8b04d9c3ee99bb5865a6, type: 3}
+    loop: 0
+    volume: 0.1
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
 --- !u!81 &8920520168144947762
 AudioListener:
   m_ObjectHideFlags: 0

@@ -110,5 +110,6 @@ public class GameManager : MonoBehaviour
     {
         started = true;
         Castle.instance.StartWaves();
+        AudioManager.instance.PlayOnEntity("musique", AudioManager.instance.gameObject);
     }
 }

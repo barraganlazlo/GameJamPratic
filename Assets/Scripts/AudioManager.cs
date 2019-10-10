@@ -103,4 +103,27 @@ public class AudioManager : MonoBehaviour
         }
         source.loop = false;
     }
+
+    public void FadeOutOnEntity(string name, GameObject go)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Le son " + name + " n'a pas été trouvé.");
+            return;
+        }
+        StartCoroutine(AudioManager.FadeOut(InitializeAudioSource(s, go), 1f)); 
+    }
+
+    public static IEnumerator FadeOut(AudioSource audioSource, float fadeTime)
+    {
+        float startVolume = audioSource.volume;
+        while(audioSource.volume > 0 )
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / fadeTime;
+            yield return null;
+        }
+
+        audioSource.Stop();        
+    }
 }
