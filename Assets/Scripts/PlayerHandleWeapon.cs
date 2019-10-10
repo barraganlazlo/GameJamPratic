@@ -122,7 +122,6 @@ public class PlayerHandleWeapon : MonoBehaviour
         }
         weapon.transform.parent = transform;
         weapon.transform.position = weaponPos.transform.position;
-        weapon.ActivateButton(false);
         pickableWeapons.Remove(weapon);
         AudioManager.instance.PlayOnEntity("PickWeapon", gameObject);
     }
@@ -167,7 +166,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         {
             Weapon w = collision.GetComponent<Weapon>();
             pickableWeapons.Add(w);
-            w.ActivateButton(true);
+            w.ActivateButton(true,this);
         }
         else if (collision.CompareTag("foin"))
         {
@@ -197,7 +196,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         {
             Weapon w = collision.GetComponent<Weapon>();
             pickableWeapons.Remove(w);
-            w.ActivateButton(false);
+            w.ActivateButton(false,this);
         }
         else if (collision.CompareTag("foin"))
         {

@@ -34,14 +34,14 @@ public class Weapon : MonoBehaviour
     public Sprite emptySprite;
 
     ButtonSprite button;
-    int playerCount;
+    List<PlayerHandleWeapon> players;
 
     void Awake()
     {
         trigger = GetComponent<Collider2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         button = GetComponentInChildren<ButtonSprite>();
-        playerCount = 0;
+        players = new List<PlayerHandleWeapon>();
     }
 
     void Start()
@@ -139,23 +139,29 @@ public class Weapon : MonoBehaviour
             }
         }
     }
-    public void ActivateButton(bool b)
+    public void ActivateButton(bool b, PlayerHandleWeapon player)
     {
         if (b)
         {
-            playerCount += 1;
+            if (!players.Contains(player))
+            {
+                players.Add(player);
+            }
         }
         else
         {
-            playerCount -= 1;
+            if (players.Contains(player))
+            {
+                players.Remove(player);
+            }
         }
-        if (playerCount<1)
-        {
-            button.isActive = false;
-        }
-        else
+        if (players.Count > 0 && !isHeld)
         {
             button.isActive = true;
+        }
+        else
+        {
+            button.isActive = false;
         }
     }
 }
