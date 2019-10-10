@@ -192,7 +192,7 @@ public class HandleLevelCochon : MonoBehaviour
         sr.sprite = srs[currentLevel - 1];
     }
 
-    public void Win()
+    void Win()
     {
         Instantiate<GameObject>(winUi);
         this.enabled = false;
