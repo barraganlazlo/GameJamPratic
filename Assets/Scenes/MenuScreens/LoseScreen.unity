@@ -150,10 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  m_HorizontalAxis: Horizontal1
+  m_VerticalAxis: Vertical1
+  m_SubmitButton: InteractButton1
+  m_CancelButton: PickButton1
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
@@ -381,6 +381,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 14444a9e0927f7e4ea1b9f68564351db,
         type: 3}
+    - target: {fileID: 5616065981936227820, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bc1290a5136854e9d9f3f98e7cb340, type: 3}
 --- !u!1 &700774623
