@@ -28,9 +28,6 @@ public class AudioManager : MonoBehaviour
         }
         Play("musique");
     }
-    void Start()
-    {
-    }
     private AudioSource InitializeAudioSource(Sound s, GameObject go)
     {
         AudioSource[] sources = go.GetComponents<AudioSource>();
