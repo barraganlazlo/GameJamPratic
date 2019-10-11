@@ -200,6 +200,7 @@ public class HandleLevelCochon : MonoBehaviour
         buttonScript.gameObject.SetActive(false);
         AudioManager.instance.PlayOnEntity("cochon_flight", gameObject);
         StartCoroutine(WinFlight());
+        Debug.Log("win");
         AudioManager.instance.FadeOutOnEntity("musique", AudioManager.instance.gameObject);
     }
 

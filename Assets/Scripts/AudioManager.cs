@@ -20,42 +20,39 @@ public class AudioManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
         //Génération de AudioSource sur le AudioManager en parcourant l'intégralité la liste des sons présents dans le tableau sounds
         foreach (Sound s in sounds)
         {
             AudioSource a = InitializeAudioSource(s, gameObject);
+            s.source = a;
         }
-        
+        Play("musique");
     }
-
+    void Start()
+    {
+    }
     private AudioSource InitializeAudioSource(Sound s, GameObject go)
     {
         AudioSource[] sources = go.GetComponents<AudioSource>();
         AudioSource source = Array.Find(sources, sourceComp => sourceComp.clip == s.clip);
         if (source == null)
         {
-            Sound newSound = new Sound();
-
-            newSound.source = go.AddComponent<AudioSource>();
-            newSound.source.clip = s.clip;
-
-            newSound.source.volume = s.volume;
-            newSound.source.pitch = s.pitch;
-            newSound.source.loop = s.loop;
-            newSound.source.spatialBlend = s.spatialBlend;
-
-            return newSound.source;
-        }
-        else { 
+            source = go.AddComponent<AudioSource>();
             source.clip = s.clip;
 
             source.volume = s.volume;
             source.pitch = s.pitch;
             source.loop = s.loop;
             source.spatialBlend = s.spatialBlend;
-            return source;
         }
+        else { 
+            source.clip = s.clip;
+            source.volume = s.volume;
+            source.pitch = s.pitch;
+            source.loop = s.loop;
+            source.spatialBlend = s.spatialBlend;
+        }
+        return source;
     }
 
     //Utiliser cette méthode pour jouer un son non spatial (interface, etc)
