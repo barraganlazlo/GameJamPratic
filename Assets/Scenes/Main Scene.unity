@@ -2993,6 +2993,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cochon
       objectReference: {fileID: 0}
+    - target: {fileID: 1376241477339803869, guid: 76b9918d1177f184f8e819b40763b9c5,
+        type: 3}
+      propertyPath: valueCharge
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376241477339803869, guid: 76b9918d1177f184f8e819b40763b9c5,
+        type: 3}
+      propertyPath: stepsAdder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 284981528957288788, guid: 76b9918d1177f184f8e819b40763b9c5,
         type: 3}
       propertyPath: m_LocalPosition.x

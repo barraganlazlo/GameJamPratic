@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
         if (!lost && !won)
         {
             lost = true;
+            AudioManager.instance.FadeOutOnEntity("musique", AudioManager.instance.gameObject);
             Instantiate<GameObject>(uiLose);
             Debug.Log("lost");
             buffBar.transform.parent.gameObject.SetActive(false);
@@ -110,5 +111,6 @@ public class GameManager : MonoBehaviour
     {
         started = true;
         Castle.instance.StartWaves();
+        AudioManager.instance.PlayOnEntity("musique", AudioManager.instance.gameObject);
     }
 }

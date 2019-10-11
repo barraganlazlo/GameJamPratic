@@ -37,6 +37,7 @@ public class SceneManagerScript : MonoBehaviour
             {
                 if (newLevel == null)
                 {
+                    
                     FadeToLevel(defaultNextScene);
                 }
                 else
@@ -66,5 +67,15 @@ public class SceneManagerScript : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void PlayConfirmSound()
+    {
+        AudioManager.instance.PlayOnEntity("ui_confirm", AudioManager.instance.gameObject);
+    }
+
+    public void PlayCancelSound()
+    {
+        AudioManager.instance.PlayOnEntity("ui_cancel", AudioManager.instance.gameObject);
     }
 }

@@ -192,7 +192,7 @@ public class HandleLevelCochon : MonoBehaviour
         sr.sprite = srs[currentLevel - 1];
     }
 
-    public void Win()
+    void Win()
     {
         Instantiate<GameObject>(winUi);
         this.enabled = false;
@@ -200,6 +200,7 @@ public class HandleLevelCochon : MonoBehaviour
         buttonScript.gameObject.SetActive(false);
         AudioManager.instance.PlayOnEntity("cochon_flight", gameObject);
         StartCoroutine(WinFlight());
+        AudioManager.instance.FadeOutOnEntity("musique", AudioManager.instance.gameObject);
     }
 
     IEnumerator WinFlight()
