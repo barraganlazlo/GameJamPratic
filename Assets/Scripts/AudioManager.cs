@@ -61,6 +61,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Le son " + name + " n'a pas été trouvé.");
             return;
         }
+        s.source.clip = s.clip;
+        s.source.volume = s.volume;
+        s.source.pitch = s.pitch;
+        s.source.loop = s.loop;
+        s.source.spatialBlend = s.spatialBlend;
         print(s.name);
         print(s.source);
         s.source.Play();
