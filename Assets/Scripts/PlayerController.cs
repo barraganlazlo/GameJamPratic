@@ -28,8 +28,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        GetInput();
-        HandleDirection();      
+        if (!SceneManagerScript.Instance.isPaused)
+        {
+            GetInput();
+            HandleDirection();
+        }
     }
 
     private void FixedUpdate()

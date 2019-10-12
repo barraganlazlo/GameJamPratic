@@ -9,6 +9,7 @@ public class SceneManagerScript : MonoBehaviour
     public string defaultNextScene;
     private Animator animator;
     private string newLevel;
+    [HideInInspector] public bool isPaused;
 
     public static SceneManagerScript Instance;
 
@@ -28,8 +29,25 @@ public class SceneManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Quit();
+            if (inMenu)
+            {
+                Quit();
+            }
+            else
+            {
+                PauseGame();
+            }
         }
+        else if (Input.GetButtonDown("PauseButton"))
+        {
+            if (!inMenu)
+            {
+                Debug.Log("Pause !!!");
+                PauseGame();
+            }
+        }
+
+
 
         if (inMenu)
         {
@@ -49,6 +67,20 @@ public class SceneManagerScript : MonoBehaviour
             {
                 Quit();
             }
+        }
+    }
+
+    public void PauseGame()
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            isPaused = true;
         }
     }
 
