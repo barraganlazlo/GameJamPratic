@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScreens/StartMenu.unity
     guid: 9a31c9070cda6944aa01b1e6be087fb1
   - enabled: 1
+    path: Assets/Scenes/MenuScreens/InputSelect.unity
+    guid: 6efac9859d5ff16439a70113e8143d07
+  - enabled: 1
     path: Assets/Scenes/MenuScreens/SkipScreens/TutoImg.unity
     guid: af95170c2f9583f46a818090b0c0b531
   - enabled: 1

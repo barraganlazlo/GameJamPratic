@@ -1194,6 +1194,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3053089214802909437, guid: d0edc76477ef8b945a29b27026d638b4,
+        type: 3}
+      propertyPath: _Myinput
+      value: Interact
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0edc76477ef8b945a29b27026d638b4, type: 3}
 --- !u!1001 &1312252649
@@ -1262,6 +1267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921514125411237506, guid: f45c98712fc66e14f8e253424333f3cd,
+        type: 3}
+      propertyPath: _Myinput
+      value: Interact
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f45c98712fc66e14f8e253424333f3cd, type: 3}
@@ -1816,6 +1826,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8824012641765961875, guid: bb4f3888d182ce54690a7e1e5ea26062,
+        type: 3}
+      propertyPath: _Myinput
+      value: Pick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb4f3888d182ce54690a7e1e5ea26062, type: 3}
 --- !u!1 &1723589290
@@ -1922,10 +1937,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal1
-  m_VerticalAxis: Vertical1
-  m_SubmitButton: InteractButton1
-  m_CancelButton: PickButton1
+  m_HorizontalAxis: K_Axis_Horizontal1
+  m_VerticalAxis: K_Axis_Vertical1
+  m_SubmitButton: C_Btn_Interact1
+  m_CancelButton: C_Btn_Pick2
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
@@ -2628,6 +2643,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: botte foin finale
       objectReference: {fileID: 0}
+    - target: {fileID: 5234170061140551683, guid: 58b7a83f5bf615644ac1b338668b536e,
+        type: 3}
+      propertyPath: _Myinput
+      value: Pick
+      objectReference: {fileID: 0}
     - target: {fileID: 1476586848008556355, guid: 58b7a83f5bf615644ac1b338668b536e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2909,6 +2929,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4336433810959529200, guid: adb511dd94fa3a845b6e51dae0309a04,
+        type: 3}
+      propertyPath: inMenu
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336433809630172390, guid: adb511dd94fa3a845b6e51dae0309a04,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4336433809630172391, guid: adb511dd94fa3a845b6e51dae0309a04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4336433810959529203, guid: adb511dd94fa3a845b6e51dae0309a04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2962,21 +2997,6 @@ PrefabInstance:
     - target: {fileID: 4336433810959529203, guid: adb511dd94fa3a845b6e51dae0309a04,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4336433809630172391, guid: adb511dd94fa3a845b6e51dae0309a04,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4336433809630172390, guid: adb511dd94fa3a845b6e51dae0309a04,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4336433810959529200, guid: adb511dd94fa3a845b6e51dae0309a04,
-        type: 3}
-      propertyPath: inMenu
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3061,6 +3081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cochon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142928932275238513, guid: 76b9918d1177f184f8e819b40763b9c5,
+        type: 3}
+      propertyPath: _Myinput
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 284981528957288788, guid: 76b9918d1177f184f8e819b40763b9c5,
         type: 3}

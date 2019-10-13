@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerHandleWeapon : MonoBehaviour
 {
-    [HideInInspector] public WhichPlayer multiplayerScript;
+    [HideInInspector] public PlayerInputs playerInputScript;
 
     private Animator animator;
 
@@ -31,7 +31,7 @@ public class PlayerHandleWeapon : MonoBehaviour
 
     void Awake()
     {
-        multiplayerScript = GetComponent<WhichPlayer>();
+        playerInputScript = GetComponent<PlayerInputs>();
         animator = GetComponentInChildren<Animator>();
         pickableWeapons = new List<Weapon>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -39,12 +39,13 @@ public class PlayerHandleWeapon : MonoBehaviour
     private void Update()
     {
         //PickDrop
-        if (Input.GetButtonDown("PickButton" + multiplayerScript.idPlayer))
+        if (Input.GetButtonDown(playerInputScript.pick))
         {
+            Debug.Log("PICK"+gameObject.name);
             PickUp();
         }
         //Shoot
-        else if (canShoot && Input.GetButtonDown("InteractButton" + multiplayerScript.idPlayer))
+        else if (canShoot && Input.GetButtonDown(playerInputScript.interact))
         {
             if (weapon != null && !weapon.coolingDown)
             {

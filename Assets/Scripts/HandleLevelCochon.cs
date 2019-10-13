@@ -49,7 +49,7 @@ public class HandleLevelCochon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttonToPress = buttonScript._Myinput;
+        buttonToPress = buttonScript.realInput;
         animator = GetComponentInChildren<Animator>();
         valueDecharge = decreaseRatio;
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -60,7 +60,7 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (playerScript != null && playerIsClose && playerScript.hasFoin)
         {
-            if (Input.GetButton(buttonToPress+buttonScript._PlayerID))
+            if (Input.GetButton(buttonToPress))
             {
                 if (!buttonScript.isActive)
                 {
@@ -221,7 +221,7 @@ public class HandleLevelCochon : MonoBehaviour
             playerScript = collision.gameObject.transform.parent.parent.GetComponent<PlayerHandleWeapon>();
             if (playerScript.hasFoin)
             {
-                buttonScript._PlayerID = collision.gameObject.transform.parent.parent.GetComponent<WhichPlayer>().idPlayer;
+                buttonScript._PlayerID = collision.gameObject.transform.parent.parent.GetComponent<PlayerInputs>().idPlayer;
                 //buttonScript.isActive = true;
                 playerIsClose = true;
             }
@@ -233,7 +233,7 @@ public class HandleLevelCochon : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (buttonScript._PlayerID== collision.gameObject.transform.parent.parent.GetComponent<WhichPlayer>().idPlayer)
+            if (buttonScript._PlayerID== collision.gameObject.transform.parent.parent.GetComponent<PlayerInputs>().idPlayer)
             {
                 playerIsClose = false;
             }

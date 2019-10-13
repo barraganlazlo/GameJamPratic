@@ -10,7 +10,8 @@ public class ButtonSprite : MonoBehaviour
     /// Incrémente la jauge quand celle-ci est utilisée.
     /// </summary>
     public bool isActive = false;
-    public string _Myinput = "InteractButton";
+    [SerializeField] private string _Myinput = "Interact";
+    [HideInInspector]public string realInput;
     public int _PlayerID = 1;
     public string Type = "A"; // A ou B
 
@@ -31,6 +32,15 @@ public class ButtonSprite : MonoBehaviour
             mySpr.sprite = buttonImg[2];
         }
         mySpr.enabled = false;
+
+        if (_PlayerID == 1)
+        {
+            realInput = InputManager.Instance.p1_Inputs[_Myinput];
+        }
+        else if (_PlayerID == 2)
+        {
+            realInput = InputManager.Instance.p2_Inputs[_Myinput];
+        }
     }
 
     // Update is called once per frame
@@ -44,7 +54,7 @@ public class ButtonSprite : MonoBehaviour
                 mySpr.enabled = true;
             }
             mySpr.enabled = true;
-            if (Input.GetButton(_Myinput + _PlayerID))
+            if (Input.GetButton(realInput))
             {
                 if (Type == "A")
                 {

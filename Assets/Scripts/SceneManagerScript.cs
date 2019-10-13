@@ -38,7 +38,7 @@ public class SceneManagerScript : MonoBehaviour
                 PauseGame();
             }
         }
-        else if (Input.GetButtonDown("PauseButton"))
+        else if (Input.GetButtonDown("C_Btn_Start"))
         {
             if (!inMenu)
             {
@@ -51,8 +51,9 @@ public class SceneManagerScript : MonoBehaviour
 
         if (inMenu)
         {
-            if (Input.GetButtonDown("InteractButton1") || Input.GetButtonDown("InteractButton2"))
+            if (Input.GetButtonDown("C_Btn_Interact1") || Input.GetButtonDown("C_Btn_Interact2"))
             {
+                Debug.Log("AAAAAAAAAAAAAh");
                 if (newLevel == null)
                 {
                     
@@ -63,7 +64,7 @@ public class SceneManagerScript : MonoBehaviour
                     FadeToLevel(newLevel);
                 }
             }
-            else if (Input.GetButtonDown("PickButton1") || Input.GetButtonDown("PickButton2"))
+            else if (Input.GetButtonDown("C_Btn_Pick1") || Input.GetButtonDown("C_Btn_Pick2"))
             {
                 Quit();
             }

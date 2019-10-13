@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private WhichPlayer multiplayerScript;
+    private PlayerInputs playerInputScript;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 1.2f;
@@ -18,10 +18,13 @@ public class PlayerController : MonoBehaviour
 
     private Animator animator;
 
+    private string horizontalAxis;
+    private string verticalAxis;
+
     // Start is called before the first frame update
     void Awake()
     {
-        multiplayerScript = GetComponent<WhichPlayer>();
+        playerInputScript = GetComponent<PlayerInputs>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -47,8 +50,8 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        float x = Input.GetAxis("Horizontal" + multiplayerScript.idPlayer);
-        float y = Input.GetAxis("Vertical" + multiplayerScript.idPlayer);
+        float x = Input.GetAxisRaw(playerInputScript.horizontal);
+        float y = Input.GetAxisRaw(playerInputScript.vertical);
 
         if (x + margin < 0 || (x - margin > 0))
         {
