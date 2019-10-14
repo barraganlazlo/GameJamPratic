@@ -7,8 +7,8 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance;
 
-    [HideInInspector] public enum InputIndex { I1, I2}
-    [HideInInspector] public enum PlayerIndex { P1, P2}
+    [HideInInspector] public enum InputIndex { I1, I2 }
+    [HideInInspector] public enum PlayerIndex { P1, P2 }
     [HideInInspector] public enum InputType { Controller, Keyboard };
     private InputType P1type = InputType.Controller;
     private InputType P2type = InputType.Controller;
@@ -28,12 +28,14 @@ public class InputManager : MonoBehaviour
     public Dictionary<string, string> p1_Inputs;
     public Dictionary<string, string> p2_Inputs;
 
-    [Header ("DropDowns References")]
+    [Header("DropDowns References")]
     [SerializeField] private GameObject Player1Select;
     [SerializeField] private GameObject Player2Select;
     private Dropdown DP_Player1;
     private Dropdown DP_Player2;
 
+    [SerializeField] private Animator inputTypeImg1;
+    [SerializeField] private Animator inputTypeImg2;
     public GameObject continueButton;
 
     private void Awake()
@@ -68,50 +70,75 @@ public class InputManager : MonoBehaviour
         p2_Inputs["Pick"] = "";
 
         //Init
+        InitDropDowns();
         SetInputTypes();
         SetAllPlayerInputs();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Player1Select != null && Player2Select != null)
         {
-            PrintP1Inputs();
-        }
-        else if (Input.GetKeyDown(KeyCode.N))
-        {
-            PrintP2Inputs();
-        }
-
-        if (continueButton != null)
-        {
-            if (CheckControllersConnected() && !continueButton.activeSelf)
+            Animate();
+            if (continueButton != null)
             {
-                continueButton.SetActive(true);
-            }
-            else if (!CheckControllersConnected() && continueButton.activeSelf)
-            {
-                continueButton.SetActive(false);
+                if (CheckControllersConnected() && !continueButton.activeSelf)
+                {
+                    continueButton.SetActive(true);
+                }
+                else if (!CheckControllersConnected() && continueButton.activeSelf)
+                {
+                    continueButton.SetActive(false);
+                }
             }
         }
     }
 
-    private void PrintP1Inputs()
+    //if (Input.GetKeyDown(KeyCode.B))
+    //{
+    //    PrintP1Inputs();
+    //}
+    //else if (Input.GetKeyDown(KeyCode.N))
+    //{
+    //    PrintP2Inputs();
+    //}
+    //private void PrintP1Inputs()
+    //{
+    //    foreach(var key in p1_Inputs.Values)
+    //    {
+    //        Debug.Log(key);
+    //    }
+    //}
+
+    //private void PrintP2Inputs()
+    //{
+    //    foreach (var key in p2_Inputs.Values)
+    //    {
+    //        Debug.Log(key);
+    //    }
+    //}
+
+    private void InitDropDowns()
     {
-        foreach(var key in p1_Inputs.Values)
+        int controllersConnected = GetControllersConnected();
+        if (controllersConnected > 0)
         {
-            Debug.Log(key);
+            DP_Player1.value = 0;
+            if (controllersConnected > 1)
+            {
+                DP_Player2.value = 0;
+            }
+            else if (controllersConnected == 1)
+            {
+                DP_Player2.value = 1;
+            }
+        }
+        else
+        {
+            DP_Player1.value = 1;
+            DP_Player2.value = 1;
         }
     }
-
-    private void PrintP2Inputs()
-    {
-        foreach (var key in p2_Inputs.Values)
-        {
-            Debug.Log(key);
-        }
-    }
-
 
     public void SetInputTypes()
     {
@@ -131,6 +158,45 @@ public class InputManager : MonoBehaviour
         else if (DP_Player2.value == 1)
         {
             P2type = InputType.Keyboard;
+        }
+    }
+
+    void Animate()
+    {
+        if (P1type == InputType.Controller)
+        {
+            inputTypeImg1.SetBool("keyboard", false);
+            if (GetControllersInUse() <= GetControllersConnected())
+            {
+                inputTypeImg1.SetBool("controllerEnabled", true);
+            }
+            else
+            {
+                inputTypeImg1.SetBool("controllerEnabled", false);
+            }
+        }
+        else
+        {
+            inputTypeImg1.SetBool("keyboard", true);
+            inputTypeImg1.SetBool("controllerEnabled", false);
+        }
+
+        if (P2type == InputType.Controller)
+        {
+            inputTypeImg2.SetBool("keyboard", false);
+            if (GetControllersInUse() <= GetControllersConnected())
+            {
+                inputTypeImg2.SetBool("controllerEnabled", true);
+            }
+            else
+            {
+                inputTypeImg2.SetBool("controllerEnabled", false);
+            }
+        }
+        else
+        {
+            inputTypeImg2.SetBool("keyboard", true);
+            inputTypeImg2.SetBool("controllerEnabled", false);
         }
     }
 
@@ -248,20 +314,20 @@ public class InputManager : MonoBehaviour
 
     private bool CheckControllersConnected()
     {
-        int size = Input.GetJoystickNames().Length;
+        int size = GetControllersConnected();
         if (P1type == InputType.Controller && P2type == InputType.Controller)
         {
             if (size == 0)
             {
-                Debug.LogError("no controllers detected");
+                Debug.LogWarning("no controllers detected");
                 return false;
             }
             else if (size == 1)
             {
-                Debug.LogError("only one controller is connected");
+                Debug.LogWarning("only one controller is connected");
                 return false;
             }
-            else
+            else 
             {
                 return true;
             }
@@ -270,10 +336,10 @@ public class InputManager : MonoBehaviour
         {
             if (size == 0)
             {
-                Debug.LogError("no controllers detected");
+                Debug.LogWarning("no controllers detected");
                 return false;
             }
-            else
+            else 
             {
                 return true;
             }
@@ -281,6 +347,36 @@ public class InputManager : MonoBehaviour
         else
         {
             return true;
+        }
+    }
+
+    private int GetControllersConnected()
+    {
+        string[] tab = Input.GetJoystickNames();
+        int toRet = 0;
+        foreach (string joystick in tab)
+        {
+            if (joystick != "")
+            {
+                toRet++;
+            }
+        }
+        return toRet;
+    }
+
+    private int GetControllersInUse()
+    {
+        if (P1type == InputType.Controller && P2type == InputType.Controller)
+        {
+            return 2;
+        }
+        else if (P1type == InputType.Controller || P2type == InputType.Controller)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
         }
     }
 }
