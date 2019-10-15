@@ -163,7 +163,17 @@ public class InputManager : MonoBehaviour
 
     void Animate()
     {
-        if (P1type == InputType.Controller)
+        if (P1type == InputType.Controller && P2type == InputType.Controller)
+        {
+            if (GetControllersConnected() == 1)
+            {
+                inputTypeImg1.SetBool("controllerEnabled", true);
+                inputTypeImg2.SetBool("controllerEnabled", false);
+
+            }
+        }
+       
+        else if (P1type == InputType.Controller)
         {
             inputTypeImg1.SetBool("keyboard", false);
             if (GetControllersInUse() <= GetControllersConnected())
