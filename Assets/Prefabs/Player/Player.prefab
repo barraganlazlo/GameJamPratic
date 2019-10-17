@@ -158,6 +158,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1870648532}
   - component: {fileID: 1774910084}
+  - component: {fileID: 3332748679335550839}
   m_Layer: 10
   m_Name: colliderPlyr
   m_TagString: Player
@@ -192,7 +193,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016130591, y: 0.0010889545}
+  m_Offset: {x: -0.0005692565, y: 0.00084647536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -203,8 +204,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.057304986, y: 0.07791704}
+  m_Size: {x: 0.025298022, y: 0.06967284}
   m_EdgeRadius: 0
+--- !u!70 &3332748679335550839
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870648531}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0257}
+  m_Size: {x: 0.05, y: 0.02}
+  m_Direction: 1
 --- !u!1 &2884119370300662489
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,8 +323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.2
-  upOrder: 48
-  downOrder: 50
   margin: 0.2
 --- !u!114 &6147876184492308268
 MonoBehaviour:
@@ -321,12 +336,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3388b9294f3a6a84995e77a1b23e8ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplayerScript: {fileID: 0}
+  playerInputScript: {fileID: 0}
   weaponPos: {fileID: 2884119370300662489}
   hasFoin: 0
   foinPrefab: {fileID: 787891006450986237, guid: 90fe0944362be71488bc5d158595e292,
     type: 3}
   foin: {fileID: 0}
+  otherPlayer: {fileID: 0}
+  buttonCochon: {fileID: 0}
 --- !u!114 &6715619708996333713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +357,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idPlayer: 1
+  horizontal: 
+  vertical: 
+  interact: 
+  pick: 
 --- !u!1 &4529411527970945575
 GameObject:
   m_ObjectHideFlags: 0
