@@ -584,5 +584,65 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 97818024}
+    - target: {fileID: 8330073472654383765, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_Name
+      value: Rejouer_btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330073472654383767, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 97818024}
+    - target: {fileID: 8330073472654383767, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FadeToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330073472654383767, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Main Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 8330073472654383767, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 97818024}
+    - target: {fileID: 8330073472654383767, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayConfirmSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506828012067479263, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_Name
+      value: Quitter_Btn
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506828012067479261, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 97818024}
+    - target: {fileID: 7506828012067479261, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506828012067479261, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506828012067479261, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 97818024}
+    - target: {fileID: 7506828012067479261, guid: 70bc1290a5136854e9d9f3f98e7cb340,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayCancelSound
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bc1290a5136854e9d9f3f98e7cb340, type: 3}

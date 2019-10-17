@@ -10,6 +10,10 @@ public class SceneManagerScript : MonoBehaviour
     private Animator animator;
     private string newLevel;
     [HideInInspector] public bool isPaused;
+    public GameObject AmenuOption_obj;
+    public GameObject BmenuOption_obj;
+    private SpriteSwap AmenuOption;
+    private SpriteSwap BmenuOption;
 
     public static SceneManagerScript Instance;
 
@@ -23,6 +27,14 @@ public class SceneManagerScript : MonoBehaviour
 
         animator = GetComponent<Animator>();
         transform.GetChild(0).gameObject.SetActive(true);
+        if (AmenuOption_obj != null)
+        {
+            AmenuOption = AmenuOption_obj.GetComponent<SpriteSwap>();
+            if (BmenuOption_obj != null)
+            {
+                BmenuOption = BmenuOption_obj.GetComponent<SpriteSwap>();
+            }
+        }
     }
     // Update is called once per frame
     void Update()
@@ -53,6 +65,8 @@ public class SceneManagerScript : MonoBehaviour
         {
             if (Input.GetButtonDown("C_Btn_Interact1") || Input.GetButtonDown("C_Btn_Interact2"))
             {
+                PlayConfirmSound();
+                AmenuOption.Swap();
                 if (newLevel == null)
                 {
                     
@@ -61,10 +75,12 @@ public class SceneManagerScript : MonoBehaviour
                 else
                 {
                     FadeToLevel(newLevel);
+
                 }
             }
             else if (Input.GetButtonDown("C_Btn_Pick1") || Input.GetButtonDown("C_Btn_Pick2"))
             {
+                BmenuOption.Swap();
                 Quit();
             }
         }
