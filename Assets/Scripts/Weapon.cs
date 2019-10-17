@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
     public Sprite defaultSprite;
     public Sprite emptySprite;
 
-    ButtonSprite button;
+    [HideInInspector] public ButtonSprite button;
     List<PlayerHandleWeapon> players;
 
     void Awake()
@@ -139,6 +139,7 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+
     public void ActivateButton(bool b, PlayerHandleWeapon player)
     {
         if (b)

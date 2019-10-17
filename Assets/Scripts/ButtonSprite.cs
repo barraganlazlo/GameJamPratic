@@ -88,4 +88,15 @@ public class ButtonSprite : MonoBehaviour
             }
         }
     }
+
+    public void Flip()
+    {
+        Vector3 theScale = transform.parent.localScale;
+        transform.parent.localScale = new Vector3(-theScale.x, theScale.y, theScale.z);
+    }
+
+    public Vector3 GetLocalScale()
+    {
+        return transform.parent.localScale;
+    }
 }

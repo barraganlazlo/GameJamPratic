@@ -102,6 +102,14 @@ public class PlayerHandleWeapon : MonoBehaviour
         if (weapon != null)
         {
             weapon.transform.parent = null;
+            if (weapon.transform.localScale.x > 0 && weapon.button.GetLocalScale().x < 0)
+            {
+                weapon.button.Flip();
+            }
+            else if (weapon.transform.localScale.x < 0 && weapon.button.GetLocalScale().x > 0)
+            {
+                weapon.button.Flip();
+            }
             weapon.isHeld = false;
             weapon.sr.sortingOrder -= 1;
             weapon = null;
@@ -120,6 +128,7 @@ public class PlayerHandleWeapon : MonoBehaviour
         if (Mathf.Sign(weapon.transform.localScale.x) != Mathf.Sign(transform.localScale.x))
         {
             weapon.transform.localScale = new Vector3(weapon.transform.localScale.x * -1, weapon.transform.localScale.y, weapon.transform.localScale.z);
+            
         }
         weapon.transform.parent = transform;
         weapon.transform.position = weaponPos.transform.position;

@@ -1831,6 +1831,11 @@ PrefabInstance:
       propertyPath: _Myinput
       value: Pick
       objectReference: {fileID: 0}
+    - target: {fileID: 5280684621979921989, guid: bb4f3888d182ce54690a7e1e5ea26062,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb4f3888d182ce54690a7e1e5ea26062, type: 3}
 --- !u!1 &1723589290
