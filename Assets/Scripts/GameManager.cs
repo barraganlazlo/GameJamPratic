@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         if (!lost && !won)
         {
             lost = true;
-            AudioManager.instance.FadeOutOnEntity("musique", AudioManager.instance.gameObject);
+           // AudioManager.instance.FadeOutOnEntity("musique", AudioManager.instance.gameObject);
             Instantiate<GameObject>(uiLose);
             Debug.Log("lost");
             buffBar.transform.parent.gameObject.SetActive(false);

@@ -185,7 +185,7 @@ public class InputManager : MonoBehaviour
                 inputTypeImg1.SetBool("controllerEnabled", false);
             }
         }
-        else
+        else 
         {
             inputTypeImg1.SetBool("keyboard", true);
             inputTypeImg1.SetBool("controllerEnabled", false);
