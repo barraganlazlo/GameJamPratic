@@ -186,6 +186,20 @@ public class PlayerHandleWeapon : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("shootZone"))
+        {
+            if (weapon != null)
+            {
+                Epouvantail epou = collision.GetComponentInParent<Epouvantail>();
+                weapon.currentSpawnerAim = epou.spawner;
+                epou.ActivateButton(true, this);
+                canShoot = true;
+            }
+        }
+    }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         if (!GameManager.instance.started)

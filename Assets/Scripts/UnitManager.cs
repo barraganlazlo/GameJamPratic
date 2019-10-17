@@ -30,20 +30,20 @@ public class UnitManager : MonoBehaviour
     private void LoadUnitTypes()
     {
         unitTypes = Resources.LoadAll<UnitType>("UnitTypes");
-        Debug.Log("Loaded " + unitTypes.Length + " UnitTypes");
+        //Debug.Log("Loaded " + unitTypes.Length + " UnitTypes");
         Array.Sort(unitTypes,new UnitTypeComparer());
 
     }
     private void LoadEscouadeTypes()
     {
         escouadeTypes = Resources.LoadAll<EscouadeType>("EscouadeTypes");
-        Debug.Log("Loaded " + escouadeTypes.Length + " EscouadeTypes");
+        //Debug.Log("Loaded " + escouadeTypes.Length + " EscouadeTypes");
         Array.Sort(escouadeTypes,new EscouadeTypeComparer());
     }
     private void LoadEpouvantailSprites()
     {
         epouvantailsSprites = Resources.LoadAll<Sprite>("Epouvantail");
-        Debug.Log("Loaded " + epouvantailsSprites.Length + " Epouvantail Sprites");
+        //Debug.Log("Loaded " + epouvantailsSprites.Length + " Epouvantail Sprites");
     }
     public EscouadeType[] GetEscouadeTypesOfCurrentWave()
     {

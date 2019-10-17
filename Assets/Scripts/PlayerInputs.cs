@@ -31,7 +31,5 @@ public class PlayerInputs : MonoBehaviour
             interact = InputManager.Instance.p2_Inputs["Interact"];
             pick = InputManager.Instance.p2_Inputs["Pick"];
         }
-
-        Debug.Log(horizontal);
     }
 }

@@ -93,7 +93,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
         AudioSource audioSource = InitializeAudioSource(s, go);
-        if(!audioSource.isPlaying)
+        //if(!audioSource.isPlaying)
             audioSource.Play();
     }
     public void StopLoopOnEntity(AudioSource source)

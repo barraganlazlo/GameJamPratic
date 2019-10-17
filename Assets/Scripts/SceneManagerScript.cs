@@ -53,7 +53,6 @@ public class SceneManagerScript : MonoBehaviour
         {
             if (Input.GetButtonDown("C_Btn_Interact1") || Input.GetButtonDown("C_Btn_Interact2"))
             {
-                Debug.Log("AAAAAAAAAAAAAh");
                 if (newLevel == null)
                 {
                     

@@ -10,6 +10,7 @@ public class HandleLevelCochon : MonoBehaviour
     //[SerializeField] private float valueCharge = 0.01f;
     [SerializeField] private ButtonSprite buttonScript;
     private string buttonToPress;
+    private string playerButton;
     [SerializeField] private Image jauge;
 
     [Header("HandleProgression")]
@@ -58,9 +59,13 @@ public class HandleLevelCochon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerScript != null)
+        {
+            Debug.Log(playerScript.gameObject);
+        }
         if (playerScript != null && playerIsClose && playerScript.hasFoin)
         {
-            if (Input.GetButton(buttonToPress))
+            if (Input.GetButton(buttonScript.realInput))
             {
                 if (!buttonScript.isActive)
                 {
@@ -216,7 +221,7 @@ public class HandleLevelCochon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && !feeding)
+        if (collision.gameObject.tag == "Player" && !feeding && !playerIsClose)
         {
             playerScript = collision.gameObject.transform.parent.parent.GetComponent<PlayerHandleWeapon>();
             if (playerScript.hasFoin)
