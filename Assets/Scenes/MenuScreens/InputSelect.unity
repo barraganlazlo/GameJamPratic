@@ -3111,7 +3111,7 @@ MonoBehaviour:
   Player2Select: {fileID: 265069589}
   inputTypeImg1: {fileID: 4090426}
   inputTypeImg2: {fileID: 538830586}
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 1907442488}
 --- !u!224 &1504819222
 RectTransform:
   m_ObjectHideFlags: 0

@@ -352,6 +352,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8920520168144947760, guid: af408122eef73604f8f554a345ecb15d,
+        type: 3}
+      propertyPath: sounds.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fa4f8754b42304c43acf10d0a5d3896c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af408122eef73604f8f554a345ecb15d, type: 3}
 --- !u!1 &1184338047
@@ -722,12 +727,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2975910448019762869, guid: 4a1587203b617ef4fbaa19ee70b85058,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
-        type: 3}
     - target: {fileID: 2975910448019762866, guid: 4a1587203b617ef4fbaa19ee70b85058,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -756,6 +755,12 @@ PrefabInstance:
     - target: {fileID: 2975910448019762866, guid: 4a1587203b617ef4fbaa19ee70b85058,
         type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
+        type: 3}
+    - target: {fileID: 2975910448019762869, guid: 4a1587203b617ef4fbaa19ee70b85058,
+        type: 3}
+      propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
         type: 3}

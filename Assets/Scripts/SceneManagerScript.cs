@@ -54,7 +54,6 @@ public class SceneManagerScript : MonoBehaviour
         {
             if (!inMenu)
             {
-                Debug.Log("Pause !!!");
                 PauseGame();
             }
         }
@@ -63,7 +62,7 @@ public class SceneManagerScript : MonoBehaviour
 
         if (inMenu)
         {
-            if (Input.GetButtonDown("C_Btn_Interact1") || Input.GetButtonDown("C_Btn_Interact2"))
+            if (AmenuOption_obj != null && (Input.GetButtonDown("C_Btn_Interact1") || Input.GetButtonDown("C_Btn_Interact2")))
             {
                 PlayConfirmSound();
                 AmenuOption.Swap();
@@ -78,9 +77,11 @@ public class SceneManagerScript : MonoBehaviour
 
                 }
             }
-            else if (Input.GetButtonDown("C_Btn_Pick1") || Input.GetButtonDown("C_Btn_Pick2"))
+            else if (BmenuOption_obj != null && (Input.GetButtonDown("C_Btn_Pick1") || Input.GetButtonDown("C_Btn_Pick2")))
             {
+                PlayCancelSound();
                 BmenuOption.Swap();
+                PlayCancelSound();
                 Quit();
             }
         }
@@ -88,6 +89,7 @@ public class SceneManagerScript : MonoBehaviour
 
     public void PauseGame()
     {
+        PlayConfirmSound();
         if (isPaused)
         {
             Time.timeScale = 1;

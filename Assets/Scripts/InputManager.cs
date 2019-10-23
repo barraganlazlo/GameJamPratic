@@ -163,16 +163,16 @@ public class InputManager : MonoBehaviour
 
     void Animate()
     {
-        if (P1type == InputType.Controller && P2type == InputType.Controller)
-        {
-            if (GetControllersConnected() == 1)
-            {
-                inputTypeImg1.SetBool("controllerEnabled", true);
-                inputTypeImg2.SetBool("controllerEnabled", false);
+        Debug.Log("ControllersInUse : " + GetControllersInUse());
+        Debug.Log("ControllersConnected : " + GetControllersConnected());
 
-            }
+        if (P1type == InputType.Controller && P2type == InputType.Controller && GetControllersConnected() == 1)
+        {
+            inputTypeImg1.SetBool("keyboard", false);
+            inputTypeImg2.SetBool("keyboard", false);
+            inputTypeImg1.SetBool("controllerEnabled", true);
+            inputTypeImg2.SetBool("controllerEnabled", false);
         }
-       
         else if (P1type == InputType.Controller)
         {
             inputTypeImg1.SetBool("keyboard", false);
@@ -185,7 +185,7 @@ public class InputManager : MonoBehaviour
                 inputTypeImg1.SetBool("controllerEnabled", false);
             }
         }
-        else 
+        else
         {
             inputTypeImg1.SetBool("keyboard", true);
             inputTypeImg1.SetBool("controllerEnabled", false);
@@ -208,6 +208,7 @@ public class InputManager : MonoBehaviour
             inputTypeImg2.SetBool("keyboard", true);
             inputTypeImg2.SetBool("controllerEnabled", false);
         }
+
     }
 
     public void SetAllPlayerInputs()
@@ -215,7 +216,7 @@ public class InputManager : MonoBehaviour
         if (P1type == InputType.Controller)
         {
             //C && K
-            if (P2type == InputType.Keyboard) 
+            if (P2type == InputType.Keyboard)
             {
                 SetPlayerControls(PlayerIndex.P1, InputIndex.I1, InputType.Controller);
                 SetPlayerControls(PlayerIndex.P2, InputIndex.I1, InputType.Keyboard);
@@ -337,7 +338,7 @@ public class InputManager : MonoBehaviour
                 Debug.LogWarning("only one controller is connected");
                 return false;
             }
-            else 
+            else
             {
                 return true;
             }
@@ -349,7 +350,7 @@ public class InputManager : MonoBehaviour
                 Debug.LogWarning("no controllers detected");
                 return false;
             }
-            else 
+            else
             {
                 return true;
             }
