@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
         {
             won = true;
             buffBar.transform.parent.gameObject.SetActive(false);
+            Castle.instance.FleeAllUnits();
             StartCoroutine(GotoWinScreen());
         }
     }

@@ -77,7 +77,7 @@ public class Escouade : MonoBehaviour
         bool b = false;
         foreach(Unit u in units)
         {
-            if (u.type.id==id)
+            if (u.type.id==id || id==-3)
             {
                 u.StartFleeing();
                 b = true;

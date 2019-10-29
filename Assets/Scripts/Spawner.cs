@@ -70,4 +70,11 @@ public class Spawner : MonoBehaviour
             e.Flee(id);
         }
     }
+    public void FleeAll()
+    {
+        foreach (Escouade e in escouades)
+        {
+            e.Flee(-3);
+        }
+    }
 }

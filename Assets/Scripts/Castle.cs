@@ -114,4 +114,12 @@ public class Castle : MonoBehaviour
         pos *= distance;
         return pos;
     }
+    public void FleeAllUnits()
+    {
+        spawnersParent.SetActive(false);
+        foreach (Spawner s in spawners)
+        {
+            s.FleeAll();
+        }
+    }
 }
