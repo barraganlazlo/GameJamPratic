@@ -219,6 +219,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inMenu: 1
   defaultNextScene: Main Scene
+  isPaused: 0
+  AmenuOption_obj: {fileID: 0}
+  BmenuOption_obj: {fileID: 0}
+  pauseIcon: {fileID: 0}
 --- !u!95 &4336433810959529202
 Animator:
   serializedVersion: 3

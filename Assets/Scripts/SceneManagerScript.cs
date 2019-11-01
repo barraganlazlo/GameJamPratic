@@ -14,6 +14,7 @@ public class SceneManagerScript : MonoBehaviour
     public GameObject BmenuOption_obj;
     private SpriteSwap AmenuOption;
     private SpriteSwap BmenuOption;
+    [SerializeField] private GameObject pauseMenu;
 
     public static SceneManagerScript Instance;
 
@@ -94,11 +95,19 @@ public class SceneManagerScript : MonoBehaviour
         {
             Time.timeScale = 1;
             isPaused = false;
+            if (pauseMenu != null)
+            {
+                pauseMenu.SetActive(false);
+            }
         }
         else
         {
             Time.timeScale = 0;
             isPaused = true;
+            if (pauseMenu != null)
+            {
+                pauseMenu.SetActive(true);
+            }
         }
     }
 
@@ -128,4 +137,26 @@ public class SceneManagerScript : MonoBehaviour
     {
         AudioManager.instance.PlayOnEntity("ui_cancel", AudioManager.instance.gameObject);
     }
+
+    //private void StopWorldSounds()
+    //{
+    //    foreach (Sound sound in AudioManager.instance.sounds)
+    //    {
+    //        if (sound.name != "musique")
+    //        {
+    //            AudioManager.instance.FadeOutOnEntity(sound.name, AudioManager.instance.gameObject);
+    //        }
+    //    }
+    //}
+
+    //private void StartWorldSounds()
+    //{
+    //    foreach (Sound sound in AudioManager.instance.sounds)
+    //    {
+    //        if (sound.name != "musique")
+    //        {
+    //            AudioManager.instance.FadeOutOnEntity(sound.name, AudioManager.instance.gameObject);
+    //        }
+    //    }
+    //}
 }

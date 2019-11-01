@@ -414,7 +414,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62c2c4e08c4efbd4f8cdb667ce57139b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7424bae7729d6a4bb9941ee90434842, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -727,6 +727,24 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2975910448019762871, guid: 4a1587203b617ef4fbaa19ee70b85058,
+        type: 3}
+      propertyPath: image1
+      value: 
+      objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
+        type: 3}
+    - target: {fileID: 2975910448019762871, guid: 4a1587203b617ef4fbaa19ee70b85058,
+        type: 3}
+      propertyPath: image2
+      value: 
+      objectReference: {fileID: -1819052349266426106, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
+        type: 3}
+    - target: {fileID: 2975910448019762869, guid: 4a1587203b617ef4fbaa19ee70b85058,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
+        type: 3}
     - target: {fileID: 2975910448019762866, guid: 4a1587203b617ef4fbaa19ee70b85058,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -755,24 +773,6 @@ PrefabInstance:
     - target: {fileID: 2975910448019762866, guid: 4a1587203b617ef4fbaa19ee70b85058,
         type: 3}
       propertyPath: m_SpriteState.m_PressedSprite
-      value: 
-      objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
-        type: 3}
-    - target: {fileID: 2975910448019762869, guid: 4a1587203b617ef4fbaa19ee70b85058,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
-        type: 3}
-    - target: {fileID: 2975910448019762871, guid: 4a1587203b617ef4fbaa19ee70b85058,
-        type: 3}
-      propertyPath: image1
-      value: 
-      objectReference: {fileID: -7718620061449553440, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
-        type: 3}
-    - target: {fileID: 2975910448019762871, guid: 4a1587203b617ef4fbaa19ee70b85058,
-        type: 3}
-      propertyPath: image2
       value: 
       objectReference: {fileID: -1819052349266426106, guid: 3e863b2b02c5b8042b94e5dd7b691d39,
         type: 3}
