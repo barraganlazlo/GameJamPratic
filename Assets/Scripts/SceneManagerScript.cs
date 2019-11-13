@@ -59,8 +59,6 @@ public class SceneManagerScript : MonoBehaviour
             }
         }
 
-
-
         if (inMenu)
         {
             if (AmenuOption_obj != null && (Input.GetButtonDown("C_Btn_Interact1") || Input.GetButtonDown("C_Btn_Interact2")))

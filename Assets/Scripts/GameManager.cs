@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
     IEnumerator GotoWinScreen()
     {
         yield return new WaitForSeconds(7.3f);
+        AudioManager.instance.PlayOnEntity("musique", AudioManager.instance.gameObject);
         SceneManagerScript.Instance.FadeToLevel("WinScreen");
     }
 
